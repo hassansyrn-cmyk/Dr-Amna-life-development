@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدكتورة آمنة | للإستشارات الحياتية</title>
+    <!-- خطوط جوجل: كايرو للنصوص، وخط إنجليزي أنيق للزينة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* المتغيرات والألوان الأساسية */
+        :root {
+            --primary: #4A6760; /* أخضر مريمي داكن */
+            --primary-light: #70978D; /* أخضر فاتح */
+            --accent: #D4A373; /* لون رملي للتباين */
+            --bg-color: #F8F9FA; /* خلفية ناصعة */
+            --text-dark: #2C3E38;
+            --text-light: #6C7A76;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* تأثيرات الخلفية المتحركة */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.5;
+            border-radius: 50%;
+            animation: float 15s infinite alternate;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary-light);
+            top: -10%;
+            right: -5%;
+        }
+
+        .shape-2 {
+            width: 500px;
+            height: 500px;
+            background: rgba(212, 163, 115, 0.3);
+            bottom: -10%;
+            left: -10%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-50px, 50px) rotate(20deg); }
+        }
+
+        /* شريط التنقل (Header) */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            transition: 0.4s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* القسم الرئيسي (Hero) */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-left: 2rem;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+            box-shadow: 0 10px 20px rgba(74, 103, 96, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .hero-media {
+            flex: 1;
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .hero-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+
+        /* قسم الخدمات مع تأثير 3D */
+        .services {
+            padding: 8rem 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: var(--glass-shadow);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transition: box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 15px 35px rgba(74, 103, 96, 0.15);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 163, 115, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            transform: translateZ(30px); /* تأثير العمق 3D */
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            transform: translateZ(40px);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            transform: translateZ(20px);
+        }
+
+        /* قسم فيديو تفاعلي أو صورة العرض */
+        .media-section {
+            padding: 5rem 5%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .media-container {
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .media-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.7s ease;
+        }
+
+        .media-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .media-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(44, 62, 56, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 3rem;
+        }
+
+        .media-text {
+            color: white;
+        }
+
+        .media-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* نموذج التواصل */
+        .contact {
+            padding: 8rem 5%;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-form .btn {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .contact-form .btn:hover {
+            background: white;
+            color: var(--accent);
+            border-color: white;
+        }
+
+        /* الفوتر */
+        footer {
+            background: #23312D;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+        }
+
+        /* فئات التحريك للـ Scroll Reveal */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* التجاوب مع الشاشات (Responsive) */
+        @media (max-width: 991px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+            }
+            .hero-content {
+                padding-left: 0;
+                margin-bottom: 3rem;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                margin: 0 auto 2rem;
+            }
+            .nav-links {
+                display: none; /* يمكن استبدالها بقائمة هامبرغر لاحقاً */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .media-overlay { padding: 1.5rem; }
+            .media-text h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الأشكال المتحركة في الخلفية -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <!-- شريط التنقل -->
+    <header id="header">
+        <a href="#" class="logo">د. آمنة <span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#hero">الرئيسية</a></li>
+            <li><a href="#services">استشاراتنا</a></li>
+            <li><a href="#media">فلسفتنا</a></li>
+            <li><a href="#contact">احجز جلستك</a></li>
+        </ul>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero" id="hero">
+        <div class="hero-content reveal-right">
+            <span class="hero-subtitle">استشارات تطوير الحياة والذات</span>
+            <h1>رحلتك نحو السلام الداخلي تبدأ بخطوة</h1>
+            <p>نساعدك على تجاوز العقبات، فهم ذاتك بعمق، وبناء حياة مليئة بالوعي والتوازن. الدكتورة آمنة هنا لترافقك في رحلة التغيير الإيجابي.</p>
+            <a href="#contact" class="btn">ابدأ رحلتك الآن</a>
+        </div>
+        
+        <!-- مساحة للفيديو أو صورة متحركة -->
+        <div class="hero-media reveal-left">
+            <!-- استخدمنا فيديو مجاني كعنصر نائب (Placeholder) -->
+            <video autoplay loop muted playsinline>
+                <source src="https://cdn.coverr.co/videos/coverr-woman-walking-in-a-forest-4796/1080p.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section class="services" id="services">
+        <h2 class="section-title reveal-up">مجالات الاستشارة</h2>
+        <p class="section-subtitle reveal-up">برامج مصممة خصيصاً لتناسب احتياجاتك الشخصية والمهنية</p>
+
+        <div class="services-grid">
+            <!-- البطاقة الأولى -->
+            <div class="service-card tilt-card reveal-up">
+                <div class="service-icon">🌱</div>
+                <h3>النمو الشخصي</h3>
+                <p>جلسات فردية تركز على اكتشاف الشغف، تعزيز الثقة بالنفس، والتخلص من الأفكار المقيدة التي تمنعك من التقدم.</p>
+            </div>
+            
+            <!-- البطاقة الثانية -->
+            <div class="service-card tilt-card reveal-up" style="transition-delay: 0.2s;">
+                <div class="service-icon">🤝</div>
+                <h3>العلاقات الأسرية</h3>
+                <p>توجيه وإرشاد لبناء علاقات صحية ومتوازنة مع الشريك والعائلة، وتطوير لغة حوار فعالة مبنية على التفهم.</p>
+            </div>
+
+            <!-- البطاقة الثالثة -->
+            <div class="service-card tilt-card reveal-up" style="transition-delay: 0.4s;">
+                <div class="service-icon">⚖️</div>
+                <h3>التوازن المهني</h3>
+                <p>إدارة الضغوط الوظيفية، التخطيط لمسارك المهني بوضوح، وتحقيق التوازن المثالي بين العمل والحياة الخاصة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الميديا / الصورة الكبيرة -->
+    <section class="media-section" id="media">
+        <div class="media-container reveal-up">
+            <!-- صورة نائبة عالية الجودة (Placeholder) -->
+            <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=2070&auto=format&fit=crop" alt="تأمل وسلام داخلي">
+            <div class="media-overlay">
+                <div class="media-text">
+                    <h2>"التغيير لا يبدأ من الخارج، بل يبدأ بقرار صادق من الداخل"</h2>
+                    <p>- د. آمنة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section class="contact" id="contact">
+        <h2 class="section-title reveal-up">هل أنت مستعد للتغيير؟</h2>
+        <p class="section-subtitle reveal-up" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">احجز جلستك الاستشارية الأولى وسنقوم بالتواصل معك لتأكيد الموعد</p>
+
+        <form class="contact-form reveal-up">
+            <div class="input-group">
+                <input type="text" placeholder="الاسم الكامل" required>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="البريد الإلكتروني" required>
+            </div>
+            <div class="input-group">
+                <textarea placeholder="أخبرنا قليلاً عن ما تود مناقشته في الجلسة (اختياري)"></textarea>
+            </div>
+            <button type="submit" class="btn">إرسال طلب الحجز</button>
+        </form>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 | الدكتورة آمنة للإستشارات الحياتية</p>
+    </footer>
+
+    <!-- سكريبت التفاعلات -->
+    <script>
+        // 1. تأثير الظهور عند التمرير (Scroll Reveal)
+        const revealElements = document.querySelectorAll('.reveal-up, .reveal-right, .reveal-left');
+        
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // إيقاف المراقبة بعد الظهور
+                }
+            });
+        };
+
+        const revealOptions = {
+            threshold: 0.15, // يظهر العنصر عندما يظهر 15% منه في الشاشة
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 2. تأثير الـ 3D Tilt للبطاقات (فقط للشاشات الكبيرة)
+        if (window.innerWidth > 768) {
+            const tiltCards = document.querySelectorAll('.tilt-card');
+            
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left; // موقع الماوس داخل البطاقة (X)
+                    const y = e.clientY - rect.top;  // موقع الماوس داخل البطاقة (Y)
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    // حساب زاوية الدوران بناءً على موقع الماوس
+                    const rotateX = ((y - centerY) / centerY) * -10; 
+                    const rotateY = ((x - centerX) / centerX) * 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+
+                // إعادة البطاقة لوضعها الطبيعي عند خروج الماوس
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
