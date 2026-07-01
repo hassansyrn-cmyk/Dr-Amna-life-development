@@ -3556,6 +3556,135 @@
     .radius-soft-120 {
       border-radius: 16px;
     }
+
+
+    /* Image fit fix - make every visual fully fill its card on desktop and mobile */
+    .hero-main-card,
+    .mini-media,
+    .profile-img,
+    .contact-img,
+    .faq-img,
+    .tab-image,
+    .image-card,
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .hero-main-card > img,
+    .mini-media > img,
+    .profile-img > img,
+    .contact-img > img,
+    .faq-img > img,
+    .tab-image > img,
+    .image-card > img,
+    .gallery-card > img,
+    .hero-main-card > video,
+    .mini-media > video {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      display: block !important;
+      background: var(--cream);
+    }
+
+    .hero-main-card {
+      height: auto;
+      aspect-ratio: 16 / 10;
+    }
+
+    .mini-media {
+      height: 220px;
+      min-height: 0;
+    }
+
+    .profile-img {
+      height: 520px;
+      min-height: 0;
+    }
+
+    .contact-img {
+      height: 420px;
+      min-height: 0;
+    }
+
+    .faq-img {
+      height: 525px;
+    }
+
+    .tab-image {
+      height: 340px;
+      min-height: 0;
+    }
+
+    .image-strip > .image-card,
+    .image-strip > .gallery-card,
+    .image-stack > .image-card,
+    .image-stack > .gallery-card {
+      min-height: 0;
+      height: 100%;
+    }
+
+    @media (max-width: 1090px) {
+      .faq-img {
+        height: 370px;
+      }
+
+      .image-strip > .image-card,
+      .image-strip > .gallery-card,
+      .image-stack > .image-card,
+      .image-stack > .gallery-card {
+        height: 300px;
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero-main-card {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        border-radius: 34px;
+      }
+
+      .mini-media {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        border-radius: 28px;
+      }
+
+      .profile-img,
+      .contact-img {
+        height: 330px;
+        min-height: 0;
+        border-radius: 28px;
+      }
+
+      .faq-img {
+        height: 370px;
+        min-height: 0;
+      }
+
+      .tab-image {
+        height: 250px;
+        min-height: 0;
+      }
+
+      .image-strip > .image-card,
+      .image-strip > .gallery-card,
+      .image-stack > .image-card,
+      .image-stack > .gallery-card {
+        height: 260px;
+        min-height: 0;
+      }
+    }
+
   </style>
 </head>
 <body>
