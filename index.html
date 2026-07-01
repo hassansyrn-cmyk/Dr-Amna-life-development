@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الدكتورة آمنة | للإستشارات الحياتية</title>
-    <!-- خطوط جوجل: كايرو للنصوص، وخط إنجليزي أنيق للزينة -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <!-- خطوط جوجل: كايرو للنصوص -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
         /* المتغيرات والألوان الأساسية */
@@ -262,7 +262,7 @@
             box-shadow: var(--glass-shadow);
             transform-style: preserve-3d;
             transform: perspective(1000px);
-            transition: box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
             position: relative;
         }
 
@@ -506,7 +506,6 @@
         
         <!-- مساحة للفيديو أو صورة متحركة -->
         <div class="hero-media reveal-left">
-            <!-- استخدمنا فيديو مجاني كعنصر نائب (Placeholder) -->
             <video autoplay loop muted playsinline>
                 <source src="https://cdn.coverr.co/videos/coverr-woman-walking-in-a-forest-4796/1080p.mp4" type="video/mp4">
                 متصفحك لا يدعم تشغيل الفيديو.
@@ -520,21 +519,18 @@
         <p class="section-subtitle reveal-up">برامج مصممة خصيصاً لتناسب احتياجاتك الشخصية والمهنية</p>
 
         <div class="services-grid">
-            <!-- البطاقة الأولى -->
             <div class="service-card tilt-card reveal-up">
                 <div class="service-icon">🌱</div>
                 <h3>النمو الشخصي</h3>
                 <p>جلسات فردية تركز على اكتشاف الشغف، تعزيز الثقة بالنفس، والتخلص من الأفكار المقيدة التي تمنعك من التقدم.</p>
             </div>
             
-            <!-- البطاقة الثانية -->
             <div class="service-card tilt-card reveal-up" style="transition-delay: 0.2s;">
                 <div class="service-icon">🤝</div>
                 <h3>العلاقات الأسرية</h3>
                 <p>توجيه وإرشاد لبناء علاقات صحية ومتوازنة مع الشريك والعائلة، وتطوير لغة حوار فعالة مبنية على التفهم.</p>
             </div>
 
-            <!-- البطاقة الثالثة -->
             <div class="service-card tilt-card reveal-up" style="transition-delay: 0.4s;">
                 <div class="service-icon">⚖️</div>
                 <h3>التوازن المهني</h3>
@@ -546,7 +542,6 @@
     <!-- قسم الميديا / الصورة الكبيرة -->
     <section class="media-section" id="media">
         <div class="media-container reveal-up">
-            <!-- صورة نائبة عالية الجودة (Placeholder) -->
             <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=2070&auto=format&fit=crop" alt="تأمل وسلام داخلي">
             <div class="media-overlay">
                 <div class="media-text">
@@ -590,13 +585,13 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // إيقاف المراقبة بعد الظهور
+                    observer.unobserve(entry.target);
                 }
             });
         };
 
         const revealOptions = {
-            threshold: 0.15, // يظهر العنصر عندما يظهر 15% منه في الشاشة
+            threshold: 0.15,
             rootMargin: "0px 0px -50px 0px"
         };
 
@@ -610,19 +605,24 @@
             tiltCards.forEach(card => {
                 card.addEventListener('mousemove', (e) => {
                     const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left; // موقع الماوس داخل البطاقة (X)
-                    const y = e.clientY - rect.top;  // موقع الماوس داخل البطاقة (Y)
+                    const x = e.clientX - rect.left; 
+                    const y = e.clientY - rect.top;  
                     
                     const centerX = rect.width / 2;
                     const centerY = rect.height / 2;
                     
-                    // حساب زاوية الدوران بناءً على موقع الماوس
                     const rotateX = ((y - centerY) / centerY) * -10; 
                     const rotateY = ((x - centerX) / centerX) * 10;
                     
                     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                 });
 
-                // إعادة البطاقة لوضعها الطبيعي عند خروج الماوس
+                // الكود الذي كان مفقوداً في النسخة السابقة وتمت إضافته هنا
                 card.addEventListener('mouseleave', () => {
-                    card.style.transform = Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
