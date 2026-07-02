@@ -3694,6 +3694,203 @@
     }
 
 
+    /* Extra interactive tools: cards, dice, intentions, and habit meter */
+    .interactive-special-card {
+      overflow: hidden;
+    }
+    .flip-tip {
+      width: 100%;
+      min-height: 210px;
+      border: 0;
+      border-radius: 28px;
+      background: transparent;
+      perspective: 1000px;
+      display: grid;
+      cursor: pointer;
+      color: inherit;
+      margin-top: 16px;
+    }
+    .flip-tip .flip-face {
+      grid-area: 1 / 1;
+      min-height: 210px;
+      border-radius: 28px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.65s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.76);
+      box-shadow: var(--shadow-soft);
+    }
+    .flip-tip .flip-front {
+      background: radial-gradient(circle at 20% 15%, rgba(255,255,255,0.76), transparent 30%), linear-gradient(135deg, rgba(74,103,96,0.14), rgba(212,163,115,0.18));
+      color: var(--primary);
+    }
+    .flip-tip .flip-back {
+      background: linear-gradient(135deg, var(--primary), var(--accent-2));
+      color: white;
+      transform: rotateY(180deg);
+    }
+    .flip-tip.is-flipped .flip-front {
+      transform: rotateY(-180deg);
+    }
+    .flip-tip.is-flipped .flip-back {
+      transform: rotateY(0deg);
+    }
+    .flip-tip strong {
+      font-size: 22px;
+      line-height: 1.6;
+    }
+    .flip-tip small,
+    .flip-tip #dailyTipText {
+      line-height: 1.9;
+      font-weight: 800;
+    }
+    .mini-orbit {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: 2px solid rgba(212,163,115,0.45);
+      position: relative;
+      animation: softSpin 7s linear infinite;
+    }
+    .mini-orbit::before,
+    .mini-orbit::after {
+      content: "";
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      top: 4px;
+      inset-inline-start: 8px;
+      box-shadow: 0 0 0 8px rgba(212,163,115,0.14);
+    }
+    .mini-orbit::after {
+      width: 8px;
+      height: 8px;
+      top: auto;
+      bottom: 8px;
+      inset-inline-start: auto;
+      inset-inline-end: 9px;
+      background: var(--primary-2);
+    }
+    @keyframes softSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .intention-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px;
+      margin-top: 16px;
+    }
+    .intention-card {
+      min-height: 92px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+      color: var(--ink);
+      font-weight: 900;
+      cursor: pointer;
+      padding: 16px;
+      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .intention-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-soft);
+    }
+    .intention-card.is-selected {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      border-color: transparent;
+    }
+    .dice-wrap {
+      display: grid;
+      place-items: center;
+      margin: 20px 0 8px;
+    }
+    .dice-btn {
+      width: 94px;
+      height: 94px;
+      border: 0;
+      border-radius: 28px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: var(--shadow-accent);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .dice-btn:hover {
+      transform: translateY(-5px) rotate(-4deg);
+      box-shadow: var(--shadow);
+    }
+    body.en .dice-btn:hover {
+      transform: translateY(-5px) rotate(4deg);
+    }
+    .dice-btn.is-rolling {
+      animation: diceRoll 0.55s ease;
+    }
+    @keyframes diceRoll {
+      0% { transform: rotate(0deg) scale(1); }
+      40% { transform: rotate(18deg) scale(1.07); }
+      70% { transform: rotate(-14deg) scale(0.96); }
+      100% { transform: rotate(0deg) scale(1); }
+    }
+    .dice-btn svg {
+      width: 50px;
+      height: 50px;
+    }
+    .challenge-result {
+      min-height: 88px;
+      display: grid;
+      place-items: center;
+    }
+    .habit-meter {
+      height: 15px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(74,103,96,0.13);
+      margin-top: 20px;
+    }
+    .habit-meter span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary-2), var(--accent));
+      transition: width 0.35s ease;
+    }
+    .habit-score {
+      margin-top: 13px;
+      text-align: center;
+      color: var(--primary);
+      font-size: 28px;
+      font-weight: 900;
+      direction: ltr;
+    }
+    @media (max-width: 720px) {
+      .intention-grid {
+        grid-template-columns: 1fr;
+      }
+      .flip-tip,
+      .flip-tip .flip-face {
+        min-height: 190px;
+      }
+      .dice-btn {
+        width: 84px;
+        height: 84px;
+        border-radius: 24px;
+      }
+    }
+
     /* Video replacement enhancement - keep all video visuals filling their cards on desktop and mobile */
     .hero-main-card video,
     .mini-media video,
@@ -3812,15 +4009,15 @@
         <div class="hero-visual reveal from-left delay-2">
           <div class="hero-main-card">
             <video autoplay muted loop playsinline preload="metadata" aria-label="الدكتورة آمنة للاستشارات الحياتية" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
-                <source src="Images/amna-hero.webm" type="video/webm">
-                <source src="Images/amna-hero.mp4" type="video/mp4">
+              <source src="Images/amna-hero.webm" type="video/webm">
+              <source src="Images/amna-hero.mp4" type="video/mp4">
               </video>
           </div>
           <div class="hero-side-row">
             <div class="mini-media">
               <video autoplay muted loop playsinline preload="metadata" aria-label="جلسة استشارة أونلاين" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
-                <source src="Images/amna-online.webm" type="video/webm">
-                <source src="Images/amna-online.mp4" type="video/mp4">
+              <source src="Images/amna-online.webm" type="video/webm">
+              <source src="Images/amna-online.mp4" type="video/mp4">
               </video>
             </div>
             <div class="floating-note">
@@ -4148,6 +4345,57 @@
               <button class="btn btn-primary" type="button" id="newPrompt" data-i18n="newPrompt"></button>
             </div>
           </div>
+          <div class="tool-card reveal delay-extra-12 interactive-special-card">
+            <h3 data-i18n="tipTitle"></h3>
+            <p data-i18n="tipText"></p>
+            <button class="flip-tip" id="dailyTipCard" type="button" aria-live="polite">
+              <span class="flip-face flip-front">
+                <span class="mini-orbit" aria-hidden="true"></span>
+                <strong data-i18n="tipCardFront"></strong>
+                <small data-i18n="tipCardHint"></small>
+              </span>
+              <span class="flip-face flip-back">
+                <strong data-i18n="tipCardBack"></strong>
+                <span id="dailyTipText"></span>
+              </span>
+            </button>
+            <div class="breathing-actions">
+              <button class="btn btn-primary" type="button" id="revealTip" data-i18n="revealTip"></button>
+              <button class="btn btn-outline" type="button" id="shuffleTip" data-i18n="shuffleTip"></button>
+            </div>
+          </div>
+          <div class="tool-card reveal delay-extra-24 interactive-special-card">
+            <h3 data-i18n="intentionTitle"></h3>
+            <p data-i18n="intentionText"></p>
+            <div class="intention-grid" id="intentionGrid">
+              <button class="intention-card" type="button" data-intention="focus"><span data-i18n="intentionFocus"></span></button>
+              <button class="intention-card" type="button" data-intention="calm"><span data-i18n="intentionCalm"></span></button>
+              <button class="intention-card" type="button" data-intention="habit"><span data-i18n="intentionHabit"></span></button>
+              <button class="intention-card" type="button" data-intention="boundaries"><span data-i18n="intentionBoundaries"></span></button>
+            </div>
+            <div class="score-box" id="intentionResult" data-i18n="intentionHint"></div>
+          </div>
+          <div class="tool-card reveal delay-extra-36 interactive-special-card">
+            <h3 data-i18n="challengeTitle"></h3>
+            <p data-i18n="challengeText"></p>
+            <div class="dice-wrap">
+              <button class="dice-btn" id="challengeDice" type="button" aria-label="تحدي عشوائي">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.9"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <div class="score-box challenge-result" id="challengeResult" data-i18n="challengeHint"></div>
+          </div>
+          <div class="tool-card reveal delay-extra-48 interactive-special-card">
+            <h3 data-i18n="habitTitle"></h3>
+            <p data-i18n="habitText"></p>
+            <div class="habit-meter" aria-hidden="true"><span id="habitMeterBar"></span></div>
+            <div class="habit-score" id="habitScore">0/7</div>
+            <div class="breathing-actions">
+              <button class="btn btn-primary" type="button" id="habitPlus" data-i18n="habitPlus"></button>
+              <button class="btn btn-outline" type="button" id="habitReset" data-i18n="habitReset"></button>
+            </div>
+            <div class="score-box" id="habitMessage" data-i18n="habitHint"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -4426,6 +4674,30 @@
         journalPrompt3: "ما العادة الصغيرة التي تريد أن تجعلها أسهل بدل أن تجعلها مثالية؟",
         journalPrompt4: "ما القرار الذي يحتاج منك ترتيبًا لا استعجالًا؟",
         newPrompt: "سؤال جديد",
+
+        tipTitle: "نصيحة اليوم",
+        tipText: "بطاقة خفيفة تظهر نصيحة عشوائية تساعدك على تطوير الذات ونمط الحياة بخطوة بسيطة.",
+        tipCardFront: "اقلب البطاقة",
+        tipCardHint: "اضغط لاكتشاف نصيحة مناسبة لليوم",
+        tipCardBack: "نصيحتك اليوم",
+        revealTip: "اكشف النصيحة",
+        shuffleTip: "نصيحة أخرى",
+        intentionTitle: "بوصلة النية",
+        intentionText: "اختر نية صغيرة ليومك، وستظهر لك خطوة عملية مرتبطة بها.",
+        intentionFocus: "تركيز",
+        intentionCalm: "هدوء",
+        intentionHabit: "عادة",
+        intentionBoundaries: "حدود",
+        intentionHint: "اختر نية اليوم لعرض خطوة لطيفة.",
+        challengeTitle: "تحدي صغير",
+        challengeText: "اضغط النرد لتحصل على تحدي بسيط يمكن تنفيذه خلال دقائق.",
+        challengeHint: "اضغط النرد لاقتراح تحدي اليوم.",
+        habitTitle: "عداد عادة 7 أيام",
+        habitText: "سجّل خطوة صغيرة يومية، وشاهد تقدمك حتى 7 أيام بطريقة مشجعة.",
+        habitPlus: "سجل خطوة",
+        habitReset: "إعادة ضبط",
+        habitHint: "ابدأ بخطوة واحدة اليوم، ولا تنتظر الكمال.",
+        habitDone: "ممتاز، أكملت دائرة 7 أيام. يمكنك البدء من جديد بخطوة أبسط.",
         faqKicker: "أسئلة شائعة",
         faqTitle: "قبل أن تبدأ",
         q1: "هل الجلسات أونلاين؟",
@@ -4615,6 +4887,30 @@
         journalPrompt3: "What small habit do you want to make easier rather than perfect?",
         journalPrompt4: "Which decision needs organization rather than rushing?",
         newPrompt: "New Question",
+
+        tipTitle: "Tip of the Day",
+        tipText: "A light card with a random practical tip for self-development and lifestyle improvement.",
+        tipCardFront: "Flip the Card",
+        tipCardHint: "Tap to discover a useful tip for today",
+        tipCardBack: "Your Tip Today",
+        revealTip: "Reveal Tip",
+        shuffleTip: "Another Tip",
+        intentionTitle: "Intention Compass",
+        intentionText: "Choose a small intention for your day, and you will get one practical step.",
+        intentionFocus: "Focus",
+        intentionCalm: "Calm",
+        intentionHabit: "Habit",
+        intentionBoundaries: "Boundaries",
+        intentionHint: "Choose today’s intention to see a gentle step.",
+        challengeTitle: "Small Challenge",
+        challengeText: "Roll the dice to get a simple challenge you can do in a few minutes.",
+        challengeHint: "Press the dice to suggest today’s challenge.",
+        habitTitle: "7-Day Habit Counter",
+        habitText: "Record a small daily step and watch your progress toward 7 days.",
+        habitPlus: "Log Step",
+        habitReset: "Reset",
+        habitHint: "Start with one step today; do not wait for perfection.",
+        habitDone: "Great, you completed a 7-day cycle. You can start again with an easier step.",
         faqKicker: "FAQ",
         faqTitle: "Before You Start",
         q1: "Are the sessions online?",
@@ -4846,6 +5142,167 @@
       }
       if (checkScore && !checkScore.dataset.changed) {
         checkScore.textContent = translations[lang].checkScoreInitial;
+      }
+      updateExtraInteractiveTexts(lang);
+    }
+
+
+
+    const extraInteractiveData = {
+      ar: {
+        tips: [
+          "اختر عادة واحدة فقط هذا الأسبوع، واجعلها سهلة لدرجة يصعب تركها.",
+          "ابدأ يومك بسؤال: ما الشيء الواحد الذي يجعل بقية اليوم أخف؟",
+          "بدل أن تضع قائمة طويلة، اختر خطوة واحدة وامنحها وقتًا واضحًا.",
+          "رتّب مكانًا صغيرًا حولك؛ أحيانًا الوضوح يبدأ من مساحة بسيطة.",
+          "قلّل القرار القادم إلى خيارين، ثم اسأل: أيهما أقرب لقيمي الحالية؟",
+          "اكتب إنجازًا صغيرًا قبل النوم حتى لا يرى عقلك النقص فقط.",
+          "اجعل العادة مرتبطة بشيء موجود أصلًا: بعد القهوة، بعد الصلاة، أو بعد إغلاق اللابتوب.",
+          "إذا شعرت بالتشتت، اكتب ثلاث كلمات: أحتاج، أستطيع، سأبدأ."
+        ],
+        intentions: {
+          focus: "خطوة التركيز: اختر مهمة واحدة، واضبط مؤقتًا 20 دقيقة بدون تبديل.",
+          calm: "خطوة الهدوء: خذ 6 أنفاس بطيئة قبل الرد أو اتخاذ قرار.",
+          habit: "خطوة العادة: اجعل البداية دقيقتين فقط حتى يصبح الدخول أسهل.",
+          boundaries: "خطوة الحدود: قل جملة واضحة ولطيفة بدل شرح طويل يستهلك طاقتك."
+        },
+        challenges: [
+          "اكتب 3 أولويات فقط لليوم، ثم ابدأ بالأخف.",
+          "رتّب سطح المكتب أو الهاتف لمدة 5 دقائق.",
+          "اشرب كوب ماء، ثم خذ دقيقة تنفس قبل متابعة يومك.",
+          "اكتب جملة واحدة تصف ما تحتاجه الآن بوضوح.",
+          "احذف مهمة غير ضرورية من قائمة اليوم.",
+          "أرسل رسالة تقدير قصيرة لشخص ساعدك أو ألهمك.",
+          "امشِ داخل المكان أو خارجه لمدة 7 دقائق بدون هاتف."
+        ],
+        habitProgress: "تم تسجيل {count} من 7 خطوات. الاستمرارية الصغيرة أهم من المثالية."
+      },
+      en: {
+        tips: [
+          "Choose one habit this week and make it so easy that it is hard to skip.",
+          "Start your day by asking: what one thing would make the rest of today lighter?",
+          "Instead of a long list, choose one step and give it a clear time.",
+          "Organize one small space around you; clarity often begins with a simple area.",
+          "Narrow the next decision to two options, then ask which one fits your current values.",
+          "Write one small win before sleep so your mind does not only notice what is missing.",
+          "Attach the habit to something already present: after coffee, after prayer, or after closing the laptop.",
+          "When you feel scattered, write three words: I need, I can, I will start."
+        ],
+        intentions: {
+          focus: "Focus step: choose one task and set a 20-minute timer without switching.",
+          calm: "Calm step: take 6 slow breaths before replying or deciding.",
+          habit: "Habit step: make the beginning only two minutes so it is easier to enter.",
+          boundaries: "Boundary step: use one clear and kind sentence instead of a long explanation."
+        },
+        challenges: [
+          "Write only 3 priorities for today, then start with the lightest one.",
+          "Organize your desk or phone for 5 minutes.",
+          "Drink a glass of water, then take one breathing minute.",
+          "Write one sentence that clearly says what you need now.",
+          "Remove one unnecessary task from today’s list.",
+          "Send a short appreciation message to someone who helped or inspired you.",
+          "Walk inside or outside for 7 minutes without your phone."
+        ],
+        habitProgress: "You logged {count} of 7 steps. Small consistency matters more than perfection."
+      }
+    };
+
+    function setRandomTip(forceNew) {
+      const card = document.getElementById("dailyTipCard");
+      const text = document.getElementById("dailyTipText");
+      if (!card || !text) return;
+      const lang = currentLang();
+      const tips = extraInteractiveData[lang].tips;
+      let index = Number(card.dataset.tipIndex || "-1");
+      if (forceNew || index < 0) {
+        const next = Math.floor(Math.random() * tips.length);
+        index = next === index ? (next + 1) % tips.length : next;
+        card.dataset.tipIndex = String(index);
+      }
+      text.textContent = tips[index];
+      card.classList.add("is-flipped");
+    }
+
+    function updateExtraInteractiveTexts(lang) {
+      const tipCard = document.getElementById("dailyTipCard");
+      const dailyTipText = document.getElementById("dailyTipText");
+      const intentionResult = document.getElementById("intentionResult");
+      const challengeResult = document.getElementById("challengeResult");
+      const habitMessage = document.getElementById("habitMessage");
+      if (tipCard && tipCard.classList.contains("is-flipped") && dailyTipText) {
+        const index = Number(tipCard.dataset.tipIndex || "0");
+        dailyTipText.textContent = extraInteractiveData[lang].tips[index] || extraInteractiveData[lang].tips[0];
+      }
+      if (intentionResult && !intentionResult.dataset.selected) {
+        intentionResult.textContent = translations[lang].intentionHint;
+      }
+      if (challengeResult && !challengeResult.dataset.changed) {
+        challengeResult.textContent = translations[lang].challengeHint;
+      }
+      updateHabitMeter(false);
+      if (habitMessage && !habitMessage.dataset.changed) {
+        habitMessage.textContent = translations[lang].habitHint;
+      }
+    }
+
+    function initExtraInteractiveTools() {
+      const card = document.getElementById("dailyTipCard");
+      const reveal = document.getElementById("revealTip");
+      const shuffle = document.getElementById("shuffleTip");
+      if (card) card.addEventListener("click", function() { setRandomTip(!card.classList.contains("is-flipped")); });
+      if (reveal) reveal.addEventListener("click", function() { setRandomTip(false); });
+      if (shuffle) shuffle.addEventListener("click", function() { setRandomTip(true); });
+
+      const intentionResult = document.getElementById("intentionResult");
+      document.querySelectorAll("[data-intention]").forEach(function(button) {
+        button.addEventListener("click", function() {
+          document.querySelectorAll("[data-intention]").forEach(function(btn) { btn.classList.remove("is-selected"); });
+          button.classList.add("is-selected");
+          const key = button.getAttribute("data-intention");
+          intentionResult.dataset.selected = "true";
+          intentionResult.textContent = extraInteractiveData[currentLang()].intentions[key];
+        });
+      });
+
+      const dice = document.getElementById("challengeDice");
+      const result = document.getElementById("challengeResult");
+      if (dice && result) {
+        dice.addEventListener("click", function() {
+          const challenges = extraInteractiveData[currentLang()].challenges;
+          dice.classList.remove("is-rolling");
+          void dice.offsetWidth;
+          dice.classList.add("is-rolling");
+          const index = Math.floor(Math.random() * challenges.length);
+          result.dataset.changed = "true";
+          setTimeout(function() { result.textContent = challenges[index]; }, 180);
+        });
+      }
+
+      const plus = document.getElementById("habitPlus");
+      const reset = document.getElementById("habitReset");
+      if (plus) plus.addEventListener("click", function() {
+        const current = Number(localStorage.getItem("amnaHabitCount") || "0");
+        localStorage.setItem("amnaHabitCount", String(Math.min(7, current + 1)));
+        updateHabitMeter(true);
+      });
+      if (reset) reset.addEventListener("click", function() {
+        localStorage.setItem("amnaHabitCount", "0");
+        updateHabitMeter(true);
+      });
+      updateExtraInteractiveTexts(currentLang());
+    }
+
+    function updateHabitMeter(markChanged) {
+      const bar = document.getElementById("habitMeterBar");
+      const score = document.getElementById("habitScore");
+      const message = document.getElementById("habitMessage");
+      if (!bar || !score || !message) return;
+      const count = Math.max(0, Math.min(7, Number(localStorage.getItem("amnaHabitCount") || "0")));
+      bar.style.width = (count / 7 * 100) + "%";
+      score.textContent = count + "/7";
+      if (markChanged || message.dataset.changed) {
+        message.dataset.changed = "true";
+        message.textContent = count >= 7 ? translations[currentLang()].habitDone : extraInteractiveData[currentLang()].habitProgress.replace("{count}", count);
       }
     }
 
@@ -5087,6 +5544,7 @@
     initBreathing();
     initChecklist();
     initJournal();
+    initExtraInteractiveTools();
     updateScrollEffects();
   </script>
 </body>
