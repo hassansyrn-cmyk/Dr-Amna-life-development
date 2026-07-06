@@ -3913,91 +3913,32 @@
     }
 
     /* Fix mobile menu arrows and custom service/offer UI */
-    .mobile-links a svg {
-      width: 22px;
-      height: 22px;
-      flex: 0 0 22px;
-      max-width: 22px;
-    }
-    .service-highlight {
-      border-color: rgba(212, 163, 115, 0.42);
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,253,248,0.78));
-      box-shadow: var(--shadow-accent);
-    }
-    .service-highlight .icon-box {
-      color: white;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent));
-    }
-    .services-list-shell {
-      margin-top: 24px;
-      padding: 28px;
-      border-radius: 34px;
-      background: var(--glass-strong);
-      border: 1px solid rgba(255,255,255,0.78);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(18px);
-    }
+    .mobile-links a svg { width: 22px; height: 22px; flex: 0 0 22px; max-width: 22px; }
+    .service-highlight { border-color: rgba(212, 163, 115, 0.42); background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,253,248,0.78)); box-shadow: var(--shadow-accent); }
+    .service-highlight .icon-box { color: white; background: linear-gradient(135deg, var(--accent-2), var(--accent)); }
+    .services-list-shell { margin-top: 24px; padding: 28px; border-radius: 34px; background: var(--glass-strong); border: 1px solid rgba(255,255,255,0.78); box-shadow: var(--shadow-soft); backdrop-filter: blur(18px); }
     .services-list-head { max-width: 850px; margin-bottom: 18px; }
     .services-list-head h3 { color: var(--primary); font-size: 26px; margin-bottom: 8px; }
     .services-list-head p { color: var(--muted); line-height: 1.9; }
     .service-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-    .service-tags span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 42px;
-      padding: 10px 15px;
-      border-radius: 999px;
-      color: var(--primary);
-      background: rgba(74,103,96,0.10);
-      border: 1px solid rgba(74,103,96,0.16);
-      font-weight: 900;
-      line-height: 1.4;
-    }
+    .service-tags span { display: inline-flex; align-items: center; min-height: 42px; padding: 10px 15px; border-radius: 999px; color: var(--primary); background: rgba(74,103,96,0.10); border: 1px solid rgba(74,103,96,0.16); font-weight: 900; line-height: 1.4; }
     .service-tags span.executive { color: var(--accent-2); background: rgba(212,163,115,0.13); border-color: rgba(212,163,115,0.25); }
     .service-legal { margin-top: 20px; }
     .offer-price { display: grid; gap: 7px; align-items: start; }
-    .offer-price .offer-badge {
-      display: inline-flex;
-      width: fit-content;
-      padding: 7px 12px;
-      border-radius: 999px;
-      color: white;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent));
-      font-size: 13px;
-      font-weight: 900;
-      box-shadow: var(--shadow-accent);
-    }
+    .offer-price .offer-badge { display: inline-flex; width: fit-content; padding: 7px 12px; border-radius: 999px; color: white; background: linear-gradient(135deg, var(--accent-2), var(--accent)); font-size: 13px; font-weight: 900; box-shadow: var(--shadow-accent); }
     .offer-price .price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; }
     .offer-price del { color: var(--muted); font-size: 18px; opacity: 0.78; }
     .offer-price strong { color: var(--primary); font-size: 34px; line-height: 1.2; }
+    .offer-price .package-offer { color: var(--accent-2); font-size: 15px; font-weight: 900; line-height: 1.7; }
     .service-modal-card { width: min(760px, 100%); }
-    .service-option-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-    .service-option {
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 16px;
-      cursor: pointer;
-      background: rgba(255,255,255,0.62);
-      color: var(--ink);
-      text-align: inherit;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-    }
+    .service-option-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; }
+    .service-option { border: 1px solid var(--line); border-radius: 22px; padding: 16px; cursor: pointer; background: rgba(255,255,255,0.62); color: var(--ink); text-align: inherit; transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease; }
     .service-option:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); border-color: rgba(212,163,115,0.45); }
     .service-option strong { display: block; color: var(--primary); font-size: 18px; margin-bottom: 8px; }
     .service-option .service-option-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; color: var(--accent-2); font-weight: 900; }
     .service-option del { color: var(--muted); opacity: 0.75; font-size: 13px; }
     .service-option mark { padding: 4px 9px; border-radius: 999px; border: 0; color: white; background: linear-gradient(135deg, var(--accent-2), var(--accent)); font-weight: 900; }
-    @media (max-width: 720px) {
-      .services-list-shell { padding: 20px; border-radius: 28px; }
-      .service-tags, .service-option-grid { display: grid; grid-template-columns: 1fr; }
-      .service-tags span { border-radius: 18px; justify-content: center; text-align: center; }
-      .offer-price strong { font-size: 30px; }
-    }
+    @media (max-width: 720px) { .services-list-shell { padding: 20px; border-radius: 28px; } .service-tags, .service-option-grid { display: grid; grid-template-columns: 1fr; } .service-tags span { border-radius: 18px; justify-content: center; text-align: center; } .offer-price strong { font-size: 30px; } }
   </style>
 </head>
 <body>
@@ -4646,7 +4587,8 @@
         { id: "stress", title: "جلسات إدارة الضغوط الحياتية", oldPrice: "2000 درهم", price: "600 درهم" },
         { id: "habits", title: "جلسات بناء العادات الإيجابية", oldPrice: "2000 درهم", price: "600 درهم" },
         { id: "mindful", title: "جلسات الحياة الواعية Mindful Living", oldPrice: "2000 درهم", price: "600 درهم" },
-        { id: "executive", title: "Executive Life Coaching", oldPrice: "2000 درهم", price: "600 درهم" }
+        { id: "executive", title: "Executive Life Coaching", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "package5", title: "باقة 5 جلسات", oldPrice: "3000 درهم", price: "2900 درهم", note: "وفر 100 درهم" }
       ],
       en: [
         { id: "marriage", title: "Marriage Session", oldPrice: "AED 2000", price: "AED 600" },
@@ -4661,7 +4603,8 @@
         { id: "stress", title: "Life Stress Management Sessions", oldPrice: "AED 2000", price: "AED 600" },
         { id: "habits", title: "Positive Habit Building Sessions", oldPrice: "AED 2000", price: "AED 600" },
         { id: "mindful", title: "Mindful Living Sessions", oldPrice: "AED 2000", price: "AED 600" },
-        { id: "executive", title: "Executive Life Coaching", oldPrice: "AED 2000", price: "AED 600" }
+        { id: "executive", title: "Executive Life Coaching", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "package5", title: "5-Session Package", oldPrice: "AED 3000", price: "AED 2900", note: "Save AED 100" }
       ]
     };
 
@@ -4694,16 +4637,16 @@
         floatTitle: "رحلة منظمة وليست عشوائية",
         floatText: "نبدأ بفهم ما تحتاجه، ثم نرتب الأولويات، وبعدها نخرج بخطوات صغيرة تساعدك على التقدم بثبات.",
         servicesKicker: "قائمة الخدمات",
-        servicesTitle: "جلسات لايف كوتش للتطوير الحياتي بدون إيحاء علاجي",
+        servicesTitle: "جلسات لايف كوتش للتطوير الحياتي",
         servicesDesc: "اختر الجلسة الأنسب لاحتياجك: تطوير ذات، توازن حياتي، علاقات، ثقة، أهداف، ووضوح ذهني.",
         serviceListTitle: "خدمات إضافية للتطوير الشخصي وجودة الحياة",
         serviceListDesc: "أسماء الخدمات مصاغة بشكل مهني مناسب للايف كوتش، وتركز على التطوير الشخصي وبناء المهارات الحياتية.",
         serviceTagsHtml: "<span>جلسات التوازن الحياتي</span><span>جلسات تطوير الذات</span><span>جلسات الوضوح الذهني</span><span>جلسات اكتشاف الذات</span><span>جلسات بناء الثقة بالنفس</span><span>جلسات تحقيق الأهداف</span><span>جلسات التمكين الشخصي</span><span>جلسات جودة الحياة</span><span>جلسات إدارة الضغوط الحياتية</span><span>جلسات المرونة النفسية</span><span>جلسات الوعي الذاتي</span><span>جلسات التغيير الإيجابي</span><span>جلسات إعادة ترتيب الأولويات</span><span>جلسات بناء العادات الإيجابية</span><span>جلسات النمو الشخصي</span><span>جلسات الاتزان العاطفي</span><span>جلسات القيادة الذاتية</span><span>جلسات صناعة التغيير</span><span>جلسات الانطلاق نحو الأفضل</span><span>جلسات الحياة الواعية Mindful Living</span><span class='executive'>Executive Life Coaching</span><span class='executive'>Personal Growth Sessions</span><span class='executive'>Mindset Coaching</span><span class='executive'>Life Balance Coaching</span><span class='executive'>Peak Performance Coaching</span><span class='executive'>Empowerment Sessions</span><span class='executive'>Transformational Coaching</span>",
         serviceLegal: "تنويه مهم: الجلسات ليست بديلاً عن التقييم أو العلاج النفسي أو التشخيص الطبي، بل تركز على التطوير الشخصي، تحقيق الأهداف، بناء الوعي، وتنمية المهارات الحياتية.",
-        serviceModalTitle: "اختر نوع الجلسة قبل فتح واتساب",
-        serviceModalText: "اختر الخدمة المناسبة، وسيتم تجهيز رسالة واتساب تحتوي على نوع الجلسة والسعر تلقائيًا.",
-        serviceModalNote: "السعر الحالي بعد الخصم: 600 درهم بدلًا من 2000 درهم.",
-        selectServicePlaceholder: "اختر نوع الجلسة",
+        serviceModalTitle: "اختر نوع الحجز قبل فتح واتساب",
+        serviceModalText: "اختر جلسة واحدة أو باقة 5 جلسات، وسيتم تجهيز رسالة واتساب تحتوي على نوع الحجز والسعر تلقائيًا.",
+        serviceModalNote: "الجلسة الواحدة: 600 درهم. باقة 5 جلسات: 2900 درهم بدل 3000 درهم — وفر 100 درهم.",
+        selectServicePlaceholder: "اختر نوع الجلسة أو الباقة",
         servicePriceLabel: "السعر بعد الخصم",
         feature1Title: "جلسة الزواج",
         feature1Text: "جلسة مميزة تساعد على فهم التوقعات، ترتيب الأولويات، وتحسين الحوار قبل أو أثناء الحياة الزوجية.",
@@ -4779,19 +4722,19 @@
         packagesDesc: "الأسعار والمدد قابلة للتعديل حسب القرار النهائي. هذه بنية جاهزة وأنيقة للموقع.",
         package1Title: "جلسة استشارة حياتية",
         package1Text: "جلسة فردية أونلاين للوضوح، ترتيب الأولويات، وبناء خطوة عملية مناسبة.",
-        package1Price: "<span class='offer-badge'>عرض خاص على الجلسات</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span>",
+        package1Price: "<span class='offer-badge'>عرض خاص على الجلسات</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span><span class='package-offer'>باقة 5 جلسات: 2900 درهم بدل 3000 درهم — وفر 100 درهم</span>",
         package1Item1: "تحديد الهدف الأساسي",
         package1Item2: "ترتيب الأفكار",
         package1Item3: "خطوة عملية واحدة",
         package2Title: "جلسة العلاقات والشخصية",
         package2Text: "الأكثر طلبًا لفهم الشريك، الحب، الزواج، واختبار الشخصية بطريقة عملية.",
-        package2Price: "<span class='offer-badge'>خصم محدود للجلسات</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span>",
+        package2Price: "<span class='offer-badge'>خصم محدود للجلسات</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span><span class='package-offer'>باقة 5 جلسات: 2900 درهم بدل 3000 درهم — وفر 100 درهم</span>",
         package2Item1: "فهم الاحتياج الحالي",
         package2Item2: "بناء خطة بسيطة",
         package2Item3: "توصيات بعد الجلسة",
         package3Title: "جلسة نمو وتوازن",
         package3Text: "لمن يريد تطوير الثقة، العادات، جودة الحياة، وتحقيق الأهداف.",
-        package3Price: "<span class='offer-badge'>سعر خاص الآن</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span>",
+        package3Price: "<span class='offer-badge'>سعر خاص الآن</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span><span class='package-offer'>باقة 5 جلسات: 2900 درهم بدل 3000 درهم — وفر 100 درهم</span>",
         package3Item1: "متابعة الأهداف",
         package3Item2: "تعديل الخطة",
         package3Item3: "دعم الاستمرارية",
@@ -4916,16 +4859,16 @@
         floatTitle: "A structured journey, not a random one",
         floatText: "We begin by understanding your needs, then clarify priorities, and shape small practical steps for steady progress.",
         servicesKicker: "Services Menu",
-        servicesTitle: "Life coaching sessions for personal development without clinical claims",
+        servicesTitle: "Life coaching sessions for personal development",
         servicesDesc: "Choose the session that fits your need: self-development, life balance, relationships, confidence, goals, and mental clarity.",
         serviceListTitle: "Additional personal growth and quality-of-life services",
         serviceListDesc: "Service names are worded professionally for life coaching and focus on personal growth and life skills.",
         serviceTagsHtml: "<span>Life Balance Sessions</span><span>Self-Development Sessions</span><span>Mental Clarity Sessions</span><span>Self-Discovery Sessions</span><span>Confidence Building Sessions</span><span>Goal Achievement Sessions</span><span>Personal Empowerment Sessions</span><span>Quality of Life Sessions</span><span>Life Stress Management Sessions</span><span>Psychological Resilience Sessions</span><span>Self-Awareness Sessions</span><span>Positive Change Sessions</span><span>Priority Reset Sessions</span><span>Positive Habit Building Sessions</span><span>Personal Growth Sessions</span><span>Emotional Balance Sessions</span><span>Self-Leadership Sessions</span><span>Change-Making Sessions</span><span>Moving Forward Sessions</span><span>Mindful Living Sessions</span><span class='executive'>Executive Life Coaching</span><span class='executive'>Personal Growth Sessions</span><span class='executive'>Mindset Coaching</span><span class='executive'>Life Balance Coaching</span><span class='executive'>Peak Performance Coaching</span><span class='executive'>Empowerment Sessions</span><span class='executive'>Transformational Coaching</span>",
         serviceLegal: "Important note: Sessions are not a substitute for psychological assessment, therapy, or medical diagnosis. They focus on personal development, goals, awareness, and life skills.",
-        serviceModalTitle: "Choose your session before WhatsApp opens",
-        serviceModalText: "Choose the service, and WhatsApp will open with the selected session and price included automatically.",
-        serviceModalNote: "Current discounted price: AED 600 instead of AED 2000.",
-        selectServicePlaceholder: "Choose session type",
+        serviceModalTitle: "Choose your booking before WhatsApp opens",
+        serviceModalText: "Choose one session or the 5-session package, and WhatsApp will open with the selected booking and price included automatically.",
+        serviceModalNote: "One session: AED 600. 5-session package: AED 2900 instead of AED 3000 — save AED 100.",
+        selectServicePlaceholder: "Choose session or package",
         servicePriceLabel: "Discounted price",
         feature1Title: "Marriage Session",
         feature1Text: "A focused session for understanding expectations, organizing priorities, and improving communication before or during marriage.",
@@ -5001,19 +4944,19 @@
         packagesDesc: "Prices and durations can be adjusted later. This is a ready elegant structure for now.",
         package1Title: "Life Consulting Session",
         package1Text: "One-to-one online session for clarity, priority setting, and one practical next step.",
-        package1Price: "<span class='offer-badge'>Special session offer</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span>",
+        package1Price: "<span class='offer-badge'>Special session offer</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span><span class='package-offer'>5-session package: AED 2900 instead of AED 3000 — save AED 100</span>",
         package1Item1: "Define the main goal",
         package1Item2: "Organize thoughts",
         package1Item3: "One practical step",
         package2Title: "Relationships & Personality Session",
         package2Text: "Most requested for understanding a partner, love, marriage, and personality in a practical way.",
-        package2Price: "<span class='offer-badge'>Limited session discount</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span>",
+        package2Price: "<span class='offer-badge'>Limited session discount</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span><span class='package-offer'>5-session package: AED 2900 instead of AED 3000 — save AED 100</span>",
         package2Item1: "Understand the current need",
         package2Item2: "Build a simple plan",
         package2Item3: "Recommendations after the session",
         package3Title: "Growth & Balance Session",
         package3Text: "For developing confidence, habits, quality of life, and goal achievement.",
-        package3Price: "<span class='offer-badge'>Special price now</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span>",
+        package3Price: "<span class='offer-badge'>Special price now</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span><span class='package-offer'>5-session package: AED 2900 instead of AED 3000 — save AED 100</span>",
         package3Item1: "Follow up on goals",
         package3Item2: "Adjust the plan",
         package3Item3: "Support consistency",
@@ -5164,20 +5107,22 @@
     function buildServiceWhatsAppMessage(service, lang) {
       if (lang === "ar") {
         return [
-          "مرحباً، أريد حجز جلسة عبر دكتور جوي للإستشارات الحياتية.",
-          "الخدمة المطلوبة: " + service.title,
+          service.id === "package5" ? "مرحباً، أريد حجز باقة عبر دكتور جوي للإستشارات الحياتية." : "مرحباً، أريد حجز جلسة عبر دكتور جوي للإستشارات الحياتية.",
+          "نوع الحجز: " + service.title,
           "السعر قبل الخصم: " + service.oldPrice,
           "السعر بعد الخصم: " + service.price,
+          service.note ? "ملاحظة العرض: " + service.note : "",
           "مع دكتورة آمنة المسماري."
-        ].join("\n");
+        ].filter(Boolean).join("\n");
       }
       return [
-        "Hello, I would like to book a session through Dr. Joy Life Consulting.",
-        "Requested service: " + service.title,
+        service.id === "package5" ? "Hello, I would like to book a package through Dr. Joy Life Consulting." : "Hello, I would like to book a session through Dr. Joy Life Consulting.",
+        "Booking type: " + service.title,
         "Price before discount: " + service.oldPrice,
         "Discounted price: " + service.price,
+        service.note ? "Offer note: " + service.note : "",
         "With Dr. Joyh AlMesmari."
-      ].join("\n");
+      ].filter(Boolean).join("\n");
     }
 
     function updateWhatsAppLinks(lang) {
@@ -5197,12 +5142,10 @@
         SERVICE_OPTIONS[lang].forEach(function(service) {
           const option = document.createElement("option");
           option.value = service.id;
-          option.textContent = service.title + " - " + service.price;
+          option.textContent = service.title + " - " + service.price + (service.note ? " - " + service.note : "");
           select.appendChild(option);
         });
-        if (selectedValue) {
-          select.value = selectedValue;
-        }
+        if (selectedValue) select.value = selectedValue;
       });
     }
 
@@ -5214,12 +5157,12 @@
         const button = document.createElement("button");
         button.type = "button";
         button.className = "service-option";
-        button.innerHTML = "<strong>" + service.title + "</strong><span class='service-option-price'><del>" + service.oldPrice + "</del><mark>" + service.price + "</mark></span>";
+        button.innerHTML = "<strong>" + service.title + "</strong><span class='service-option-price'><del>" + service.oldPrice + "</del><mark>" + service.price + "</mark></span>" + (service.note ? "<small>" + service.note + "</small>" : "");
         button.addEventListener("click", function() {
           const current = currentLang();
           window.open(getWhatsAppUrl("booking", current, buildServiceWhatsAppMessage(service, current)), "_blank", "noopener");
           closeServiceModal();
-          showToast(current === "ar" ? "تم تجهيز رسالة واتساب بالخدمة والسعر." : "WhatsApp message is ready with service and price.");
+          showToast(current === "ar" ? "تم تجهيز رسالة واتساب بنوع الحجز والسعر." : "WhatsApp message is ready with booking type and price.");
         });
         grid.appendChild(button);
       });
@@ -5344,27 +5287,27 @@
       const serviceId = document.getElementById(isModal ? "modalService" : "clientService").value || "marriage";
       const service = getServiceById(serviceId, lang);
       const time = isModal ? "" : document.getElementById("clientTime").value;
-
       if (lang === "ar") {
         return [
-          "مرحباً، أريد حجز موعد عبر دكتور جوي للإستشارات الحياتية.",
+          service.id === "package5" ? "مرحباً، أريد حجز باقة عبر دكتور جوي للإستشارات الحياتية." : "مرحباً، أريد حجز موعد عبر دكتور جوي للإستشارات الحياتية.",
           name ? "الاسم: " + name : "",
           phone ? "رقم الهاتف: " + phone : "",
-          "الخدمة المطلوبة: " + service.title,
+          "نوع الحجز: " + service.title,
           "السعر قبل الخصم: " + service.oldPrice,
           "السعر بعد الخصم: " + service.price,
+          service.note ? "ملاحظة العرض: " + service.note : "",
           time ? "الوقت المناسب: " + time : "",
           message ? "ملاحظة: " + message : ""
         ].filter(Boolean).join("\n");
       }
-
       return [
-        "Hello, I would like to book an appointment through Dr. Joy Life Consulting.",
+        service.id === "package5" ? "Hello, I would like to book a package through Dr. Joy Life Consulting." : "Hello, I would like to book an appointment through Dr. Joy Life Consulting.",
         name ? "Name: " + name : "",
         phone ? "Phone: " + phone : "",
-        "Requested service: " + service.title,
+        "Booking type: " + service.title,
         "Price before discount: " + service.oldPrice,
         "Discounted price: " + service.price,
+        service.note ? "Offer note: " + service.note : "",
         time ? "Preferred time: " + time : "",
         message ? "Note: " + message : ""
       ].filter(Boolean).join("\n");
@@ -5375,11 +5318,8 @@
       const lang = currentLang();
       const customMessage = buildBookingMessage(source);
       window.open(getWhatsAppUrl("booking", lang, customMessage), "_blank", "noopener");
-      showToast(lang === "ar" ? "تم تجهيز رسالة واتساب بالخدمة والسعر." : "WhatsApp message is ready with service and price.");
-      if (source === "modal") {
-        closeModal();
-        closeServiceModal();
-      }
+      showToast(lang === "ar" ? "تم تجهيز رسالة واتساب بنوع الحجز والسعر." : "WhatsApp message is ready with booking type and price.");
+      if (source === "modal") { closeModal(); closeServiceModal(); }
     }
 
     function updateToolTexts(lang) {
