@@ -3912,7 +3912,13 @@
       max-width: none !important;
     }
 
-    /* Custom updates for Dr. Joy service list and special offer pricing */
+    /* Fix mobile menu arrows and custom service/offer UI */
+    .mobile-links a svg {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      max-width: 22px;
+    }
     .service-highlight {
       border-color: rgba(212, 163, 115, 0.42);
       background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,253,248,0.78));
@@ -3931,24 +3937,10 @@
       box-shadow: var(--shadow-soft);
       backdrop-filter: blur(18px);
     }
-    .services-list-head {
-      max-width: 850px;
-      margin-bottom: 18px;
-    }
-    .services-list-head h3 {
-      color: var(--primary);
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
-    .services-list-head p {
-      color: var(--muted);
-      line-height: 1.9;
-    }
-    .service-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .services-list-head { max-width: 850px; margin-bottom: 18px; }
+    .services-list-head h3 { color: var(--primary); font-size: 26px; margin-bottom: 8px; }
+    .services-list-head p { color: var(--muted); line-height: 1.9; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 10px; }
     .service-tags span {
       display: inline-flex;
       align-items: center;
@@ -3961,19 +3953,9 @@
       font-weight: 900;
       line-height: 1.4;
     }
-    .service-tags span.executive {
-      color: var(--accent-2);
-      background: rgba(212,163,115,0.13);
-      border-color: rgba(212,163,115,0.25);
-    }
-    .service-legal {
-      margin-top: 20px;
-    }
-    .offer-price {
-      display: grid;
-      gap: 7px;
-      align-items: start;
-    }
+    .service-tags span.executive { color: var(--accent-2); background: rgba(212,163,115,0.13); border-color: rgba(212,163,115,0.25); }
+    .service-legal { margin-top: 20px; }
+    .offer-price { display: grid; gap: 7px; align-items: start; }
     .offer-price .offer-badge {
       display: inline-flex;
       width: fit-content;
@@ -3985,39 +3967,36 @@
       font-weight: 900;
       box-shadow: var(--shadow-accent);
     }
-    .offer-price .price-row {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 10px;
+    .offer-price .price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; }
+    .offer-price del { color: var(--muted); font-size: 18px; opacity: 0.78; }
+    .offer-price strong { color: var(--primary); font-size: 34px; line-height: 1.2; }
+    .service-modal-card { width: min(760px, 100%); }
+    .service-option-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
     }
-    .offer-price del {
-      color: var(--muted);
-      font-size: 18px;
-      opacity: 0.78;
+    .service-option {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+      cursor: pointer;
+      background: rgba(255,255,255,0.62);
+      color: var(--ink);
+      text-align: inherit;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
-    .offer-price strong {
-      color: var(--primary);
-      font-size: 34px;
-      line-height: 1.2;
-    }
+    .service-option:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); border-color: rgba(212,163,115,0.45); }
+    .service-option strong { display: block; color: var(--primary); font-size: 18px; margin-bottom: 8px; }
+    .service-option .service-option-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; color: var(--accent-2); font-weight: 900; }
+    .service-option del { color: var(--muted); opacity: 0.75; font-size: 13px; }
+    .service-option mark { padding: 4px 9px; border-radius: 999px; border: 0; color: white; background: linear-gradient(135deg, var(--accent-2), var(--accent)); font-weight: 900; }
     @media (max-width: 720px) {
-      .services-list-shell {
-        padding: 20px;
-        border-radius: 28px;
-      }
-      .service-tags {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-      .service-tags span {
-        border-radius: 18px;
-        justify-content: center;
-        text-align: center;
-      }
-      .offer-price strong {
-        font-size: 30px;
-      }
+      .services-list-shell { padding: 20px; border-radius: 28px; }
+      .service-tags, .service-option-grid { display: grid; grid-template-columns: 1fr; }
+      .service-tags span { border-radius: 18px; justify-content: center; text-align: center; }
+      .offer-price strong { font-size: 30px; }
     }
   </style>
 </head>
@@ -4569,7 +4548,7 @@
               <div class="field"><input id="clientPhone" type="tel" data-placeholder="phonePlaceholder" required></div>
             </div>
             <div class="field-row">
-              <div class="field"><select id="clientTopic" required><option value="" data-i18n="topicPlaceholder"></option><option data-i18n="topicGoals"></option><option data-i18n="topicHabits"></option><option data-i18n="topicLife"></option><option data-i18n="topicOther"></option></select></div>
+              <div class="field"><select id="clientService" required data-service-select></select></div>
               <div class="field"><select id="clientTime" required><option value="" data-i18n="timePlaceholder"></option><option data-i18n="timeMorning"></option><option data-i18n="timeAfternoon"></option><option data-i18n="timeEvening"></option></select></div>
             </div>
             <div class="field"><textarea id="clientMessage" data-placeholder="messagePlaceholder"></textarea></div>
@@ -4627,9 +4606,23 @@
       <form class="booking-form" id="modalForm">
         <div class="field"><input id="modalName" type="text" data-placeholder="namePlaceholder"></div>
         <div class="field"><input id="modalPhone" type="tel" data-placeholder="phonePlaceholder"></div>
+        <div class="field"><select id="modalService" data-service-select></select></div>
         <div class="field"><textarea id="modalMessage" data-placeholder="messagePlaceholder"></textarea></div>
         <button class="btn btn-primary" type="submit"><span data-i18n="sendWhatsapp"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </form>
+    </div>
+  </div>
+
+  <div class="modal service-select-modal" id="serviceModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-service-modal></div>
+    <div class="modal-card service-modal-card" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
+      <div class="modal-head">
+        <h3 id="serviceModalTitle" data-i18n="serviceModalTitle"></h3>
+        <button class="btn btn-soft round-btn" type="button" data-close-service-modal aria-label="إغلاق اختيار الخدمة"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      </div>
+      <p class="section-desc" data-i18n="serviceModalText"></p>
+      <div class="service-option-grid" id="serviceOptionGrid"></div>
+      <div class="legal-note" data-i18n="serviceModalNote"></div>
     </div>
   </div>
   <div class="toast" id="toast"></div>
@@ -4639,13 +4632,47 @@
       instagramUrl: "https://www.instagram.com/dramnahalmesmari?utm_source=qr&igsh=MThuZ3B2bjZnbnBmOA=="
     };
 
+    const SERVICE_OPTIONS = {
+      ar: [
+        { id: "marriage", title: "جلسة الزواج", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "partner", title: "جلسة فهم شخصية شريكي", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "love", title: "جلسة حب", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "personality", title: "جلسة اختبار شخصية", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "balance", title: "جلسات التوازن الحياتي", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "self-development", title: "جلسات تطوير الذات", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "clarity", title: "جلسات الوضوح الذهني", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "confidence", title: "جلسات بناء الثقة بالنفس", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "goals", title: "جلسات تحقيق الأهداف", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "stress", title: "جلسات إدارة الضغوط الحياتية", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "habits", title: "جلسات بناء العادات الإيجابية", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "mindful", title: "جلسات الحياة الواعية Mindful Living", oldPrice: "2000 درهم", price: "600 درهم" },
+        { id: "executive", title: "Executive Life Coaching", oldPrice: "2000 درهم", price: "600 درهم" }
+      ],
+      en: [
+        { id: "marriage", title: "Marriage Session", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "partner", title: "Understanding My Partner Session", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "love", title: "Love Session", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "personality", title: "Personality Test Session", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "balance", title: "Life Balance Sessions", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "self-development", title: "Self-Development Sessions", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "clarity", title: "Mental Clarity Sessions", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "confidence", title: "Confidence Building Sessions", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "goals", title: "Goal Achievement Sessions", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "stress", title: "Life Stress Management Sessions", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "habits", title: "Positive Habit Building Sessions", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "mindful", title: "Mindful Living Sessions", oldPrice: "AED 2000", price: "AED 600" },
+        { id: "executive", title: "Executive Life Coaching", oldPrice: "AED 2000", price: "AED 600" }
+      ]
+    };
+
+
     const translations = {
       ar: {
         topNote: "دكتور جوي للإستشارات الحياتية مع دكتورة آمنة المسماري | جلسات أونلاين للتوازن، الثقة، العلاقات، وتحقيق الأهداف",
         brand: "دكتور جوي",
         brandSub: "للإستشارات الحياتية",
         navAbout: "عن الخدمة",
-        navServices: "المحاور",
+        navServices: "الخدمات",
         navSteps: "الخطوات",
         navPrograms: "البرامج",
         navTools: "أدوات تفاعلية",
@@ -4673,6 +4700,11 @@
         serviceListDesc: "أسماء الخدمات مصاغة بشكل مهني مناسب للايف كوتش، وتركز على التطوير الشخصي وبناء المهارات الحياتية.",
         serviceTagsHtml: "<span>جلسات التوازن الحياتي</span><span>جلسات تطوير الذات</span><span>جلسات الوضوح الذهني</span><span>جلسات اكتشاف الذات</span><span>جلسات بناء الثقة بالنفس</span><span>جلسات تحقيق الأهداف</span><span>جلسات التمكين الشخصي</span><span>جلسات جودة الحياة</span><span>جلسات إدارة الضغوط الحياتية</span><span>جلسات المرونة النفسية</span><span>جلسات الوعي الذاتي</span><span>جلسات التغيير الإيجابي</span><span>جلسات إعادة ترتيب الأولويات</span><span>جلسات بناء العادات الإيجابية</span><span>جلسات النمو الشخصي</span><span>جلسات الاتزان العاطفي</span><span>جلسات القيادة الذاتية</span><span>جلسات صناعة التغيير</span><span>جلسات الانطلاق نحو الأفضل</span><span>جلسات الحياة الواعية Mindful Living</span><span class='executive'>Executive Life Coaching</span><span class='executive'>Personal Growth Sessions</span><span class='executive'>Mindset Coaching</span><span class='executive'>Life Balance Coaching</span><span class='executive'>Peak Performance Coaching</span><span class='executive'>Empowerment Sessions</span><span class='executive'>Transformational Coaching</span>",
         serviceLegal: "تنويه مهم: الجلسات ليست بديلاً عن التقييم أو العلاج النفسي أو التشخيص الطبي، بل تركز على التطوير الشخصي، تحقيق الأهداف، بناء الوعي، وتنمية المهارات الحياتية.",
+        serviceModalTitle: "اختر نوع الجلسة قبل فتح واتساب",
+        serviceModalText: "اختر الخدمة المناسبة، وسيتم تجهيز رسالة واتساب تحتوي على نوع الجلسة والسعر تلقائيًا.",
+        serviceModalNote: "السعر الحالي بعد الخصم: 600 درهم بدلًا من 2000 درهم.",
+        selectServicePlaceholder: "اختر نوع الجلسة",
+        servicePriceLabel: "السعر بعد الخصم",
         feature1Title: "جلسة الزواج",
         feature1Text: "جلسة مميزة تساعد على فهم التوقعات، ترتيب الأولويات، وتحسين الحوار قبل أو أثناء الحياة الزوجية.",
         feature2Title: "جلسة فهم شخصية شريكي",
@@ -4748,21 +4780,21 @@
         package1Title: "جلسة استشارة حياتية",
         package1Text: "جلسة فردية أونلاين للوضوح، ترتيب الأولويات، وبناء خطوة عملية مناسبة.",
         package1Price: "<span class='offer-badge'>عرض خاص على الجلسات</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span>",
-        package1Item1: "فهم الاحتياج الحالي",
-        package1Item2: "خطة واضحة وبسيطة",
-        package1Item3: "توصية عملية بعد الجلسة",
+        package1Item1: "تحديد الهدف الأساسي",
+        package1Item2: "ترتيب الأفكار",
+        package1Item3: "خطوة عملية واحدة",
         package2Title: "جلسة العلاقات والشخصية",
         package2Text: "الأكثر طلبًا لفهم الشريك، الحب، الزواج، واختبار الشخصية بطريقة عملية.",
         package2Price: "<span class='offer-badge'>خصم محدود للجلسات</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span>",
-        package2Item1: "جلسة الزواج أو الحب",
-        package2Item2: "فهم شخصية الشريك",
-        package2Item3: "اختبار شخصية إرشادي",
+        package2Item1: "فهم الاحتياج الحالي",
+        package2Item2: "بناء خطة بسيطة",
+        package2Item3: "توصيات بعد الجلسة",
         package3Title: "جلسة نمو وتوازن",
         package3Text: "لمن يريد تطوير الثقة، العادات، جودة الحياة، وتحقيق الأهداف.",
         package3Price: "<span class='offer-badge'>سعر خاص الآن</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span>",
-        package3Item1: "بناء الثقة بالنفس",
-        package3Item2: "إدارة الضغوط الحياتية",
-        package3Item3: "خطة نمو شخصية",
+        package3Item1: "متابعة الأهداف",
+        package3Item2: "تعديل الخطة",
+        package3Item3: "دعم الاستمرارية",
         toolsKicker: "أدوات تفاعلية",
         toolsTitle: "ابدأ بتجربة صغيرة قبل الحجز",
         toolsDesc: "أدوات بسيطة تساعد الزائر على التفاعل مع الصفحة بطريقة مفيدة وهادئة.",
@@ -4862,7 +4894,7 @@
         brand: "Dr. Joy",
         brandSub: "Life Consulting",
         navAbout: "About",
-        navServices: "Focus Areas",
+        navServices: "Services",
         navSteps: "Steps",
         navPrograms: "Programs",
         navTools: "Interactive Tools",
@@ -4890,6 +4922,11 @@
         serviceListDesc: "Service names are worded professionally for life coaching and focus on personal growth and life skills.",
         serviceTagsHtml: "<span>Life Balance Sessions</span><span>Self-Development Sessions</span><span>Mental Clarity Sessions</span><span>Self-Discovery Sessions</span><span>Confidence Building Sessions</span><span>Goal Achievement Sessions</span><span>Personal Empowerment Sessions</span><span>Quality of Life Sessions</span><span>Life Stress Management Sessions</span><span>Psychological Resilience Sessions</span><span>Self-Awareness Sessions</span><span>Positive Change Sessions</span><span>Priority Reset Sessions</span><span>Positive Habit Building Sessions</span><span>Personal Growth Sessions</span><span>Emotional Balance Sessions</span><span>Self-Leadership Sessions</span><span>Change-Making Sessions</span><span>Moving Forward Sessions</span><span>Mindful Living Sessions</span><span class='executive'>Executive Life Coaching</span><span class='executive'>Personal Growth Sessions</span><span class='executive'>Mindset Coaching</span><span class='executive'>Life Balance Coaching</span><span class='executive'>Peak Performance Coaching</span><span class='executive'>Empowerment Sessions</span><span class='executive'>Transformational Coaching</span>",
         serviceLegal: "Important note: Sessions are not a substitute for psychological assessment, therapy, or medical diagnosis. They focus on personal development, goals, awareness, and life skills.",
+        serviceModalTitle: "Choose your session before WhatsApp opens",
+        serviceModalText: "Choose the service, and WhatsApp will open with the selected session and price included automatically.",
+        serviceModalNote: "Current discounted price: AED 600 instead of AED 2000.",
+        selectServicePlaceholder: "Choose session type",
+        servicePriceLabel: "Discounted price",
         feature1Title: "Marriage Session",
         feature1Text: "A focused session for understanding expectations, organizing priorities, and improving communication before or during marriage.",
         feature2Title: "Understanding My Partner Session",
@@ -4965,21 +5002,21 @@
         package1Title: "Life Consulting Session",
         package1Text: "One-to-one online session for clarity, priority setting, and one practical next step.",
         package1Price: "<span class='offer-badge'>Special session offer</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span>",
-        package1Item1: "Understand the current need",
-        package1Item2: "Clear and simple plan",
-        package1Item3: "Practical recommendation after the session",
+        package1Item1: "Define the main goal",
+        package1Item2: "Organize thoughts",
+        package1Item3: "One practical step",
         package2Title: "Relationships & Personality Session",
         package2Text: "Most requested for understanding a partner, love, marriage, and personality in a practical way.",
         package2Price: "<span class='offer-badge'>Limited session discount</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span>",
-        package2Item1: "Marriage or love session",
-        package2Item2: "Understand partner personality",
-        package2Item3: "Guided personality test",
+        package2Item1: "Understand the current need",
+        package2Item2: "Build a simple plan",
+        package2Item3: "Recommendations after the session",
         package3Title: "Growth & Balance Session",
         package3Text: "For developing confidence, habits, quality of life, and goal achievement.",
         package3Price: "<span class='offer-badge'>Special price now</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span>",
-        package3Item1: "Build self-confidence",
-        package3Item2: "Manage life stress",
-        package3Item3: "Personal growth plan",
+        package3Item1: "Follow up on goals",
+        package3Item2: "Adjust the plan",
+        package3Item3: "Support consistency",
         toolsKicker: "Interactive Tools",
         toolsTitle: "Start with a small experience before booking",
         toolsDesc: "Simple tools that help visitors interact with the page in a calm and useful way.",
@@ -5065,7 +5102,7 @@
         timeEvening: "Evening",
         messagePlaceholder: "Write a short optional note",
         sendRequest: "Send Booking Request",
-        sendWhatsapp: "Send on WhatsApp",
+        sendWhatsapp: "Send via WhatsApp",
         modalTitle: "Quick Booking",
         modalText: "Enter basic details and a WhatsApp message will be prepared automatically.",
         footerBrand: "Dr. Joy",
@@ -5119,11 +5156,90 @@
       return "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(message);
     }
 
+    function getServiceById(id, lang) {
+      const list = SERVICE_OPTIONS[lang] || SERVICE_OPTIONS.ar;
+      return list.find(function(item) { return item.id === id; }) || list[0];
+    }
+
+    function buildServiceWhatsAppMessage(service, lang) {
+      if (lang === "ar") {
+        return [
+          "مرحباً، أريد حجز جلسة عبر دكتور جوي للإستشارات الحياتية.",
+          "الخدمة المطلوبة: " + service.title,
+          "السعر قبل الخصم: " + service.oldPrice,
+          "السعر بعد الخصم: " + service.price,
+          "مع دكتورة آمنة المسماري."
+        ].join("\n");
+      }
+      return [
+        "Hello, I would like to book a session through Dr. Joy Life Consulting.",
+        "Requested service: " + service.title,
+        "Price before discount: " + service.oldPrice,
+        "Discounted price: " + service.price,
+        "With Dr. Joyh AlMesmari."
+      ].join("\n");
+    }
+
     function updateWhatsAppLinks(lang) {
       document.querySelectorAll("[data-wa]").forEach(function(link) {
-        const type = link.getAttribute("data-wa");
-        link.href = getWhatsAppUrl(type, lang);
+        link.href = "#choose-service";
       });
+    }
+
+    function populateServiceSelects(lang) {
+      document.querySelectorAll("[data-service-select]").forEach(function(select) {
+        const selectedValue = select.value;
+        select.innerHTML = "";
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent = translations[lang].selectServicePlaceholder;
+        select.appendChild(placeholder);
+        SERVICE_OPTIONS[lang].forEach(function(service) {
+          const option = document.createElement("option");
+          option.value = service.id;
+          option.textContent = service.title + " - " + service.price;
+          select.appendChild(option);
+        });
+        if (selectedValue) {
+          select.value = selectedValue;
+        }
+      });
+    }
+
+    function renderServiceOptions(lang) {
+      const grid = document.getElementById("serviceOptionGrid");
+      if (!grid) return;
+      grid.innerHTML = "";
+      SERVICE_OPTIONS[lang].forEach(function(service) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "service-option";
+        button.innerHTML = "<strong>" + service.title + "</strong><span class='service-option-price'><del>" + service.oldPrice + "</del><mark>" + service.price + "</mark></span>";
+        button.addEventListener("click", function() {
+          const current = currentLang();
+          window.open(getWhatsAppUrl("booking", current, buildServiceWhatsAppMessage(service, current)), "_blank", "noopener");
+          closeServiceModal();
+          showToast(current === "ar" ? "تم تجهيز رسالة واتساب بالخدمة والسعر." : "WhatsApp message is ready with service and price.");
+        });
+        grid.appendChild(button);
+      });
+    }
+
+    function openServiceModal() {
+      const lang = currentLang();
+      renderServiceOptions(lang);
+      const modal = document.getElementById("serviceModal");
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      body.classList.add("no-scroll");
+    }
+
+    function closeServiceModal() {
+      const modal = document.getElementById("serviceModal");
+      if (!modal) return;
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      body.classList.remove("no-scroll");
     }
 
     function updatePlaceholders(lang) {
@@ -5153,6 +5269,8 @@
       document.title = lang === "ar" ? "دكتور جوي للإستشارات الحياتية" : "Dr. Joy Life Consulting";
       updatePlaceholders(lang);
       updateWhatsAppLinks(lang);
+      populateServiceSelects(lang);
+      renderServiceOptions(lang);
       updateToolTexts(lang);
     }
 
@@ -5223,25 +5341,30 @@
       const name = document.getElementById(isModal ? "modalName" : "clientName").value.trim();
       const phone = document.getElementById(isModal ? "modalPhone" : "clientPhone").value.trim();
       const message = document.getElementById(isModal ? "modalMessage" : "clientMessage").value.trim();
-      const topic = isModal ? "" : document.getElementById("clientTopic").value;
+      const serviceId = document.getElementById(isModal ? "modalService" : "clientService").value || "marriage";
+      const service = getServiceById(serviceId, lang);
       const time = isModal ? "" : document.getElementById("clientTime").value;
 
       if (lang === "ar") {
         return [
-          "مرحباً، أريد حجز موعد مع دكتور جوي.",
+          "مرحباً، أريد حجز موعد عبر دكتور جوي للإستشارات الحياتية.",
           name ? "الاسم: " + name : "",
           phone ? "رقم الهاتف: " + phone : "",
-          topic ? "موضوع الجلسة: " + topic : "",
+          "الخدمة المطلوبة: " + service.title,
+          "السعر قبل الخصم: " + service.oldPrice,
+          "السعر بعد الخصم: " + service.price,
           time ? "الوقت المناسب: " + time : "",
           message ? "ملاحظة: " + message : ""
         ].filter(Boolean).join("\n");
       }
 
       return [
-        "Hello, I would like to book an appointment with Dr. Joy.",
+        "Hello, I would like to book an appointment through Dr. Joy Life Consulting.",
         name ? "Name: " + name : "",
         phone ? "Phone: " + phone : "",
-        topic ? "Session topic: " + topic : "",
+        "Requested service: " + service.title,
+        "Price before discount: " + service.oldPrice,
+        "Discounted price: " + service.price,
         time ? "Preferred time: " + time : "",
         message ? "Note: " + message : ""
       ].filter(Boolean).join("\n");
@@ -5252,9 +5375,10 @@
       const lang = currentLang();
       const customMessage = buildBookingMessage(source);
       window.open(getWhatsAppUrl("booking", lang, customMessage), "_blank", "noopener");
-      showToast(lang === "ar" ? "تم تجهيز رسالة واتساب للحجز." : "WhatsApp booking message is ready.");
+      showToast(lang === "ar" ? "تم تجهيز رسالة واتساب بالخدمة والسعر." : "WhatsApp message is ready with service and price.");
       if (source === "modal") {
         closeModal();
+        closeServiceModal();
       }
     }
 
@@ -5638,10 +5762,23 @@
       element.addEventListener("click", closeModal);
     });
 
+    document.querySelectorAll("[data-close-service-modal]").forEach(function(element) {
+      element.addEventListener("click", closeServiceModal);
+    });
+
+    document.querySelectorAll("[data-wa]").forEach(function(link) {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        closeMenu();
+        openServiceModal();
+      });
+    });
+
     document.addEventListener("keydown", function(event) {
       if (event.key === "Escape") {
         closeMenu();
         closeModal();
+        closeServiceModal();
       }
     });
 
