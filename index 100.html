@@ -1,0 +1,5675 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دكتور جوي للإستشارات الحياتية | Dr. Joy Life Consulting</title>
+  <meta name="description" content="دكتور جوي للإستشارات الحياتية مع دكتورة آمنة المسماري، جلسات أونلاين لتطوير نمط الحياة، فهم الذات، بناء الثقة، وتحقيق الأهداف." />
+  <meta name="theme-color" content="#4A6760" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600;700;800;900&display=swap" />
+  <style>
+    :root {
+      --bg: #f8f9f6;
+      --bg-soft: #fffdf8;
+      --paper: #ffffff;
+      --cream: #f3ede2;
+      --primary: #4a6760;
+      --primary-2: #5f8278;
+      --primary-3: #9caf9f;
+      --accent: #d4a373;
+      --accent-2: #b8865b;
+      --rose: #c7897f;
+      --mint: #dfe9e3;
+      --sage: #708579;
+      --ink: #26342f;
+      --muted: #6d7b75;
+      --line: rgba(38, 52, 47, 0.13);
+      --glass: rgba(255, 255, 255, 0.72);
+      --glass-strong: rgba(255, 255, 255, 0.90);
+      --shadow: 0 26px 70px rgba(54, 75, 68, 0.16);
+      --shadow-soft: 0 14px 42px rgba(54, 75, 68, 0.10);
+      --shadow-accent: 0 20px 52px rgba(212, 163, 115, 0.22);
+      --radius-xl: 40px;
+      --radius-lg: 30px;
+      --radius-md: 22px;
+      --max: 1180px;
+      --header-height: 82px;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .dark-mode {
+      --bg: #18211e;
+      --bg-soft: #202b27;
+      --paper: #23302b;
+      --cream: #2a3832;
+      --primary: #dfe9e3;
+      --primary-2: #b7c8bf;
+      --primary-3: #7e9a8f;
+      --accent: #e0b07f;
+      --accent-2: #f1c795;
+      --rose: #d59d94;
+      --mint: #2f423a;
+      --sage: #b2c5bc;
+      --ink: #eef5f1;
+      --muted: #b9c8c1;
+      --line: rgba(255, 255, 255, 0.14);
+      --glass: rgba(35, 48, 43, 0.74);
+      --glass-strong: rgba(35, 48, 43, 0.92);
+      --shadow: 0 26px 70px rgba(0, 0, 0, 0.32);
+      --shadow-soft: 0 14px 42px rgba(0, 0, 0, 0.24);
+      --shadow-accent: 0 20px 52px rgba(224, 176, 127, 0.13);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 9% 0%, rgba(212, 163, 115, 0.22), transparent 32%),
+        radial-gradient(circle at 92% 13%, rgba(74, 103, 96, 0.20), transparent 34%),
+        linear-gradient(180deg, var(--bg), var(--bg-soft), var(--bg));
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body.en {
+      direction: ltr;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    img,
+    video {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    img {
+      background: var(--cream);
+      color: transparent;
+      font-size: 0;
+    }
+
+    ::selection {
+      background: rgba(212, 163, 115, 0.32);
+      color: var(--ink);
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 34px));
+      margin-inline: auto;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      inset-inline-start: 0;
+      width: 0%;
+      height: 4px;
+      z-index: 3000;
+      background: linear-gradient(90deg, var(--primary-2), var(--accent), var(--rose));
+      box-shadow: 0 0 22px rgba(212, 163, 115, 0.35);
+      transition: width 0.08s linear;
+    }
+
+    .cursor-ring {
+      position: fixed;
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(212, 163, 115, 0.55);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 2500;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+    }
+
+    .cursor-ring.is-active {
+      opacity: 1;
+    }
+
+    .cursor-ring.is-hovering {
+      width: 42px;
+      height: 42px;
+      border-color: rgba(74, 103, 96, 0.55);
+      background: rgba(212, 163, 115, 0.06);
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .ambient .orb {
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      filter: blur(50px);
+      opacity: 0.23;
+      animation: orbMove 15s ease-in-out infinite;
+    }
+
+    .ambient .orb.one {
+      background: var(--accent);
+      top: 7%;
+      inset-inline-end: -140px;
+    }
+
+    .ambient .orb.two {
+      background: var(--primary-2);
+      bottom: 12%;
+      inset-inline-start: -150px;
+      animation-delay: 3s;
+    }
+
+    .ambient .orb.three {
+      background: var(--rose);
+      top: 46%;
+      inset-inline-end: 32%;
+      opacity: 0.14;
+      animation-delay: 6s;
+    }
+
+    .ambient .orb.four {
+      background: var(--mint);
+      top: 72%;
+      inset-inline-end: 10%;
+      opacity: 0.20;
+      animation-delay: 9s;
+    }
+
+    @keyframes orbMove {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      50% {
+        transform: translate3d(-26px, 30px, 0) scale(1.07);
+      }
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      opacity: 0.26;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: radial-gradient(circle at center, black, transparent 78%);
+    }
+
+    .top-note {
+      background: linear-gradient(90deg, var(--primary), var(--accent-2));
+      color: white;
+      min-height: 38px;
+      display: grid;
+      place-items: center;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-note::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      inset-inline-start: -90px;
+      width: 80px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      animation: noteShine 4.6s ease-in-out infinite;
+    }
+
+    @keyframes noteShine {
+      0% {
+        transform: translateX(0);
+      }
+      55%, 100% {
+        transform: translateX(1500px);
+      }
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      background: rgba(248, 249, 246, 0.78);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(20px);
+      transition: box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .dark-mode header {
+      background: rgba(24, 33, 30, 0.76);
+    }
+
+    header.scrolled {
+      box-shadow: 0 14px 42px rgba(54, 75, 68, 0.12);
+      background: rgba(248, 249, 246, 0.90);
+    }
+
+    .dark-mode header.scrolled {
+      background: rgba(24, 33, 30, 0.88);
+    }
+
+    .nav {
+      min-height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 21px;
+      color: white;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 32% 24%, rgba(255,255,255,0.50), transparent 30%),
+        linear-gradient(135deg, var(--primary-2), var(--accent));
+      box-shadow: 0 16px 36px rgba(74, 103, 96, 0.24);
+      overflow: hidden;
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: -22%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.42), transparent);
+      transform: translateX(120%);
+      animation: brandShine 5.2s ease-in-out infinite;
+    }
+
+    @keyframes brandShine {
+      0%, 62% {
+        transform: translateX(120%);
+      }
+      100% {
+        transform: translateX(-120%);
+      }
+    }
+
+    .brand-mark svg {
+      width: 31px;
+      height: 31px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: "Amiri", serif;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .brand-text span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 9px 0;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      inset-inline-start: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--primary-2));
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.is-active {
+      color: var(--primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.is-active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex: 0 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      border-radius: 999px;
+      border: 0;
+      padding: 13px 20px;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      font-weight: 900;
+      line-height: 1;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.32), transparent);
+      transform: translateX(-135%);
+      transition: transform 0.65s ease;
+      pointer-events: none;
+    }
+
+    .btn:hover::before {
+      transform: translateX(135%);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn span,
+    .btn strong {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      box-shadow: 0 18px 36px rgba(74, 103, 96, 0.25);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 22px 46px rgba(74, 103, 96, 0.30);
+    }
+
+    .btn-soft {
+      background: var(--glass-strong);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+    }
+
+    .btn-outline {
+      color: var(--primary);
+      border: 1px solid rgba(74, 103, 96, 0.26);
+      background: rgba(255,255,255,0.24);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      color: white;
+      box-shadow: var(--shadow-accent);
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #1f9f64, #16764b);
+      color: white;
+      box-shadow: 0 18px 36px rgba(31, 159, 100, 0.24);
+    }
+
+    .round-btn {
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .mobile-panel {
+      position: fixed;
+      inset: 0;
+      z-index: 2400;
+      display: none;
+      pointer-events: none;
+    }
+
+    .mobile-panel.is-open {
+      display: block;
+      pointer-events: auto;
+    }
+
+    .mobile-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 22, 20, 0.45);
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .mobile-panel.is-open .mobile-backdrop {
+      opacity: 1;
+    }
+
+    .mobile-drawer {
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      inset-inline-end: 12px;
+      width: min(390px, calc(100% - 24px));
+      border-radius: 34px;
+      background: var(--glass-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(24px);
+      padding: 18px;
+      transform: translateX(110%);
+      transition: transform 0.33s ease;
+      overflow: auto;
+    }
+
+    [dir="ltr"] .mobile-drawer {
+      inset-inline-end: auto;
+      inset-inline-start: 12px;
+      transform: translateX(-110%);
+    }
+
+    .mobile-panel.is-open .mobile-drawer {
+      transform: translateX(0);
+    }
+
+    .mobile-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .mobile-links {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.45);
+      border: 1px solid var(--line);
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .mobile-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .hero {
+      position: relative;
+      padding: 76px 0 72px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      width: min(780px, 88vw);
+      height: min(780px, 88vw);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.68), transparent 64%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content {
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 40px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      color: var(--primary);
+      background: var(--glass);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(212, 163, 115, 0.14);
+      animation: pulseDot 2.3s ease-in-out infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% {
+        box-shadow: 0 0 0 8px rgba(212, 163, 115, 0.14);
+      }
+      50% {
+        box-shadow: 0 0 0 15px rgba(212, 163, 115, 0.04);
+      }
+    }
+
+    .hero-name {
+      font-family: "Amiri", serif;
+      color: var(--primary);
+      font-size: clamp(64px, 9vw, 132px);
+      line-height: 0.95;
+      margin: 22px 0 10px;
+      letter-spacing: -2px;
+      text-shadow: 0 18px 44px rgba(74, 103, 96, 0.16);
+      animation: softGlow 5.4s ease-in-out infinite;
+    }
+
+    body.en .hero-name {
+      font-family: "Cairo", sans-serif;
+      font-size: clamp(54px, 7vw, 104px);
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    @keyframes softGlow {
+      0%, 100% {
+        filter: drop-shadow(0 12px 22px rgba(74, 103, 96, 0.11));
+      }
+      50% {
+        filter: drop-shadow(0 17px 34px rgba(212, 163, 115, 0.22));
+      }
+    }
+
+    h1 {
+      font-family: "Amiri", serif;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.18;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+
+    body.en h1,
+    body.en .section-title,
+    body.en .quote h2,
+    body.en .about-text h2,
+    body.en .contact-box h2 {
+      font-family: "Cairo", sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+
+    .accent-text {
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+
+    .accent-text::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      bottom: 6px;
+      width: 100%;
+      height: 13px;
+      border-radius: 999px;
+      background: rgba(212, 163, 115, 0.22);
+      z-index: -1;
+    }
+
+    .hero-subtitle {
+      font-family: "Amiri", serif;
+      color: var(--accent-2);
+      font-size: clamp(25px, 3.5vw, 39px);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    body.en .hero-subtitle {
+      font-family: "Cairo", sans-serif;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 900;
+    }
+
+    .lead {
+      color: var(--muted);
+      line-height: 2;
+      font-size: 17px;
+      max-width: 690px;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-stats {
+      margin-top: 31px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+      max-width: 700px;
+    }
+
+    .stat-card {
+      min-height: 112px;
+      padding: 17px;
+      border-radius: 24px;
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.70);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .stat-number {
+      display: block;
+      color: var(--primary);
+      font-size: 24px;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .stat-card span:last-child {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      perspective: 1200px;
+    }
+
+    .hero-main-card {
+      position: relative;
+      border-radius: 40px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: var(--cream);
+      border: 1px solid rgba(255,255,255,0.86);
+      box-shadow: var(--shadow);
+      transform: rotateY(-2deg) rotateX(1deg);
+      transition: transform 0.35s ease;
+    }
+
+    body.en .hero-main-card {
+      transform: rotateY(2deg) rotateX(1deg);
+    }
+
+    .hero-visual:hover .hero-main-card {
+      transform: rotateY(0deg) rotateX(0deg) translateY(-4px);
+    }
+
+    .hero-main-card video,
+    .hero-main-card img,
+    .mini-media video,
+    .mini-media img,
+    .image-card img,
+    .profile-img img,
+    .contact-img img,
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-main-card video,
+    .mini-media video {
+      display: block;
+      background: var(--cream);
+    }
+
+    .hero-main-card::after,
+    .mini-media::after,
+    .image-card::after,
+    .profile-img::after,
+    .contact-img::after,
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(145deg, rgba(255,255,255,0.22), transparent 42%, rgba(38,52,47,0.13));
+    }
+
+    .hero-side-row {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 16px;
+    }
+
+    .mini-media {
+      position: relative;
+      min-height: 220px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--cream);
+      border: 7px solid rgba(255,255,255,0.72);
+      box-shadow: var(--shadow-soft);
+      animation: floaty 6.5s ease-in-out infinite;
+    }
+
+    .floating-note {
+      position: relative;
+      min-height: 220px;
+      padding: 22px;
+      border-radius: 30px;
+      background: var(--glass-strong);
+      border: 1px solid rgba(255,255,255,0.86);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: floaty 7.2s ease-in-out infinite;
+    }
+
+    @keyframes floaty {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .floating-note h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .floating-note p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .progress-line {
+      margin-top: 16px;
+      height: 8px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(74,103,96,0.14);
+    }
+
+    .progress-line span {
+      display: block;
+      height: 100%;
+      width: 65%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary-2), var(--accent));
+      animation: miniProgress 4s ease-in-out infinite;
+    }
+
+    @keyframes miniProgress {
+      0%, 100% {
+        width: 58%;
+      }
+      50% {
+        width: 86%;
+      }
+    }
+
+    section {
+      position: relative;
+      padding: 84px 0;
+    }
+
+    .section-head {
+      max-width: 790px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .kicker {
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Amiri", serif;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      line-height: 2;
+      font-size: 16px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      position: relative;
+      min-height: 270px;
+      border-radius: 30px;
+      padding: 28px 23px;
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.74);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+      transform-style: preserve-3d;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      inset-inline-end: -68px;
+      bottom: -90px;
+      background: rgba(212, 163, 115, 0.12);
+      pointer-events: none;
+    }
+
+    .feature-card:hover {
+      box-shadow: var(--shadow);
+      background: var(--glass-strong);
+    }
+
+    .icon-box {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      color: var(--primary);
+      background: linear-gradient(135deg, rgba(74,103,96,0.16), rgba(212,163,115,0.14));
+      transition: transform 0.25s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card:hover .icon-box {
+      transform: rotate(-4deg) scale(1.08);
+    }
+
+    body.en .feature-card:hover .icon-box {
+      transform: rotate(4deg) scale(1.08);
+    }
+
+    .icon-box svg {
+      width: 29px;
+      height: 29px;
+    }
+
+    .feature-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+      color: var(--ink);
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-box {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 42px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 42px;
+      padding: 28px;
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.76);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+    }
+
+    .about-box::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(74,103,96,0.10);
+      inset-inline-start: -98px;
+      top: -98px;
+    }
+
+    .profile-img {
+      position: relative;
+      min-height: 520px;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--cream);
+      z-index: 1;
+    }
+
+    .about-text {
+      position: relative;
+      z-index: 1;
+      padding: 18px;
+    }
+
+    .about-text h2 {
+      font-family: "Amiri", serif;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      line-height: 2.05;
+      margin-bottom: 16px;
+    }
+
+    .chips {
+      margin: 24px 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .chip {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid rgba(255,255,255,0.72);
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 700;
+      backdrop-filter: blur(16px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .chip strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .soft-section {
+      background: linear-gradient(180deg, rgba(223,233,227,0.60), rgba(255,253,248,0.58));
+      border-block: 1px solid var(--line);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step-card {
+      counter-increment: step;
+      position: relative;
+      min-height: 260px;
+      padding: 30px;
+      border-radius: 30px;
+      background: var(--glass-strong);
+      border: 1px solid rgba(255,255,255,0.76);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .step-card::before {
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      top: 10px;
+      inset-inline-start: 22px;
+      direction: ltr;
+      font-size: 54px;
+      color: rgba(212, 163, 115, 0.17);
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .step-card h3 {
+      font-size: 22px;
+      margin-bottom: 11px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-card p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .experience-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .experience-panel {
+      position: relative;
+      min-height: 430px;
+      padding: 34px;
+      border-radius: var(--radius-xl);
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.76);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .experience-panel:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .experience-panel.image-bg {  
+      display: flex;  
+      flex-direction: column;  
+      justify-content: flex-end;  
+      color: white;  
+      background: linear-gradient(rgba(38, 52, 47, 0.23), rgba(38, 52, 47, 0.23));  
+    }  
+    .experience-panel.image-bg .panel-bg-video {  
+      position: absolute;  
+      inset: 0;  
+      width: 100%;  
+      height: 100%;  
+      object-fit: cover;  
+      object-position: center center;  
+      z-index: 0;  
+      background: var(--cream);  
+    }
+
+    .experience-panel.image-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(0deg, rgba(38,52,47,0.45), transparent 72%);
+    }
+
+    .experience-panel.image-bg > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .experience-panel h2 {
+      font-family: "Amiri", serif;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.18;
+      margin-bottom: 16px;
+    }
+
+    .experience-panel p {
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    .experience-panel.image-bg p,
+    .experience-panel.image-bg .small-label {
+      color: rgba(255,255,255,0.90);
+    }
+
+    .small-label {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .soft-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .soft-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px;
+      border-radius: 17px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.58);
+      font-weight: 800;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .soft-item:hover {
+      transform: translateX(-6px);
+      background: rgba(255,255,255,0.82);
+    }
+
+    body.en .soft-item:hover {
+      transform: translateX(6px);
+    }
+
+    .soft-check {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      background: rgba(74,103,96,0.14);
+      flex: 0 0 auto;
+    }
+
+    .soft-check svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .tabs-shell {
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.74);
+      box-shadow: var(--shadow-soft);
+      border-radius: 38px;
+      padding: 18px;
+      backdrop-filter: blur(18px);
+    }
+
+    .tabs-nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tab-btn {
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.52);
+      color: var(--muted);
+      font-weight: 900;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .tab-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .tab-btn.is-active {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      border-color: transparent;
+    }
+
+    .tab-panel {
+      display: none;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+      min-height: 360px;
+    }
+
+    .tab-panel.is-active {
+      display: grid;
+      animation: fadeIn 0.35s ease both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tab-image {
+      position: relative;
+      min-height: 340px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .tab-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tab-content {
+      padding: 26px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.52);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tab-content h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .tab-content p {
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 18px;
+    }
+
+    .tab-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .tab-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 700;
+    }
+
+    .tab-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .image-strip {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 16px;
+      height: 530px;
+    }
+
+    .image-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .image-card,
+    .gallery-card {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      background: var(--cream);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .image-card:hover,
+    .gallery-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .image-card img,
+    .gallery-card img {
+      transition: transform 0.65s ease;
+    }
+
+    .image-card:hover img,
+    .gallery-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .quote {
+      position: relative;
+      overflow: hidden;
+      border-radius: 42px;
+      padding: clamp(34px, 6vw, 70px);
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(74, 103, 96, 0.92), rgba(184, 134, 91, 0.85)),
+        url("Images/amna-abstract.png") center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .quote::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: -90px;
+      top: -90px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.13);
+      animation: quoteOrb 8s ease-in-out infinite;
+    }
+
+    @keyframes quoteOrb {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(28px, 22px);
+      }
+    }
+
+    .quote h2,
+    .quote p,
+    .quote .quote-actions {
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote h2 {
+      font-family: "Amiri", serif;
+      font-size: clamp(34px, 5vw, 61px);
+      line-height: 1.25;
+      max-width: 900px;
+      margin-bottom: 16px;
+    }
+
+    .quote p {
+      max-width: 790px;
+      color: rgba(255,255,255,0.90);
+      line-height: 2;
+    }
+
+    .quote-actions {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .package-card {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border-radius: 32px;
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.76);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .package-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(74,103,96,0.16), transparent 45%, rgba(212,163,115,0.14));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .package-card:hover::before {
+      opacity: 1;
+    }
+
+    .package-card.highlight {
+      transform: translateY(-10px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,253,248,0.82));
+      border-color: rgba(212,163,115,0.35);
+      box-shadow: var(--shadow);
+    }
+
+    .dark-mode .package-card.highlight {
+      background: linear-gradient(180deg, rgba(35,48,43,0.96), rgba(42,56,50,0.86));
+    }
+
+    .package-card.highlight:hover {
+      transform: translateY(-14px);
+    }
+
+    .package-card h3,
+    .package-card p,
+    .package-card ul,
+    .package-card .price,
+    .package-card .btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    .package-card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .package-card p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 1.4;
+      margin-bottom: 18px;
+    }
+
+    .package-card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .package-card li {
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+      font-weight: 800;
+      line-height: 1.7;
+    }
+
+    .package-card li svg {
+      width: 18px;
+      height: 18px;
+      color: var(--primary);
+      flex: 0 0 auto;
+      margin-top: 5px;
+    }
+
+    .interactive-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .tool-card {
+      border-radius: 34px;
+      padding: 28px;
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.74);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+    }
+
+    .tool-card h3 {
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .tool-card p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .mood-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .mood-btn {
+      min-height: 86px;
+      padding: 12px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.54);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-weight: 900;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .mood-btn:hover {
+      transform: translateY(-5px);
+    }
+
+    .mood-btn.is-selected {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      border-color: transparent;
+    }
+
+    .mood-btn svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .breathing-circle-wrap {
+      display: grid;
+      place-items: center;
+      padding: 26px 0 12px;
+    }
+
+    .breathing-circle {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      background: radial-gradient(circle at 35% 24%, rgba(255,255,255,0.38), transparent 35%), linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 18px 46px rgba(74,103,96,0.22);
+      transform: scale(1);
+      transition: transform 1.6s ease-in-out;
+    }
+
+    .breathing-circle.is-breathing {
+      animation: breathe 8s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        transform: scale(0.88);
+      }
+      50% {
+        transform: scale(1.14);
+      }
+    }
+
+    .breathing-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.54);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .check-row:hover {
+      transform: translateX(-5px);
+      background: rgba(255,255,255,0.78);
+    }
+
+    body.en .check-row:hover {
+      transform: translateX(5px);
+    }
+
+    .check-row input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+
+    .score-box {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(74,103,96,0.10);
+      color: var(--primary);
+      font-weight: 900;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .faq-img {
+      position: sticky;
+      top: 112px;
+      height: 525px;
+      border-radius: 36px;
+      overflow: hidden;
+      background: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .faq-img img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      padding: 18px 20px;
+      border-radius: 24px;
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.76);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    details:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-accent);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-weight: 900;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary span {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(74,103,96,0.14);
+      color: var(--primary);
+      flex: 0 0 auto;
+      transition: transform 0.25s ease;
+    }
+
+    details[open] summary span {
+      transform: rotate(45deg);
+    }
+
+    details p {
+      padding-top: 13px;
+      color: var(--muted);
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 30px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 42px;
+      padding: clamp(28px, 5vw, 56px);
+      background: var(--glass-strong);
+      border: 1px solid rgba(255,255,255,0.78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .contact-box::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: rgba(212,163,115,0.12);
+      inset-inline-end: -145px;
+      bottom: -145px;
+    }
+
+    .contact-box > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-box h2 {
+      font-family: "Amiri", serif;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.16;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+
+    .contact-img {
+      min-height: 420px;
+      border-radius: 34px;
+      overflow: hidden;
+      background: var(--cream);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .field {
+      position: relative;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 17px;
+      border: 1px solid var(--line);
+      outline: none;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.58);
+      color: var(--ink);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: rgba(74,103,96,0.52);
+      box-shadow: 0 0 0 4px rgba(74,103,96,0.10);
+      background: rgba(255,255,255,0.82);
+    }
+
+    .legal-note {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.56);
+      border: 1px solid rgba(255,255,255,0.70);
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 13px;
+      backdrop-filter: blur(14px);
+    }
+
+    footer {
+      margin-top: 10px;
+      background: #23312d;
+      color: rgba(255,255,255,0.82);
+      padding: 48px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    footer h3 {
+      font-family: "Amiri", serif;
+      color: white;
+      font-size: 29px;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(-4px);
+    }
+
+    body.en .footer-links a:hover {
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+    }
+
+    .floating-actions {
+      position: fixed;
+      inset-inline-start: 18px;
+      bottom: calc(18px + var(--safe-bottom));
+      z-index: 2100;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    body.en .floating-actions {
+      inset-inline-start: auto;
+      inset-inline-end: 18px;
+      flex-direction: row-reverse;
+    }
+
+    .floating-label {
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--glass-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    .floating-label:hover {
+      transform: translateY(-3px);
+      color: var(--primary);
+    }
+
+    .floating-whatsapp {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, #1f9f64, #16764b);
+      box-shadow: 0 18px 40px rgba(31,159,100,0.32);
+      animation: whatsappPulse 2.5s ease-in-out infinite;
+      transition: transform 0.25s ease;
+    }
+
+    @keyframes whatsappPulse {
+      0%, 100% {
+        box-shadow: 0 18px 40px rgba(31,159,100,0.32), 0 0 0 0 rgba(31,159,100,0.22);
+      }
+      50% {
+        box-shadow: 0 18px 40px rgba(31,159,100,0.32), 0 0 0 12px rgba(31,159,100,0);
+      }
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-4px) scale(1.04);
+    }
+
+    .floating-whatsapp svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2600;
+      display: none;
+      place-items: center;
+      padding: 18px;
+    }
+
+    .modal.is-open {
+      display: grid;
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15,22,20,0.50);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-card {
+      position: relative;
+      width: min(620px, 100%);
+      max-height: min(760px, 94vh);
+      overflow: auto;
+      border-radius: 34px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      animation: modalIn 0.25s ease both;
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .modal-head h3 {
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .toast {
+      position: fixed;
+      inset-inline-end: 18px;
+      bottom: calc(18px + var(--safe-bottom));
+      z-index: 2800;
+      width: min(360px, calc(100% - 36px));
+      padding: 14px 16px;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: var(--shadow);
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      line-height: 1.7;
+      font-weight: 800;
+    }
+
+    .toast.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.from-left {
+      transform: translateX(-26px);
+    }
+
+    .reveal.from-right {
+      transform: translateX(26px);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    .delay-1 {
+      transition-delay: 0.12s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.24s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.36s;
+    }
+
+    .tilt-card {
+      transform-style: preserve-3d;
+    }
+
+    .icon-flip {
+      transition: transform 0.2s ease;
+    }
+
+    html[dir="rtl"] .icon-flip {
+      transform: scaleX(-1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media (max-width: 1090px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      .hero-grid,
+      .about-box,
+      .experience-layout,
+      .interactive-area,
+      .faq-layout,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid,
+      .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-img {
+        position: relative;
+        top: auto;
+        height: 370px;
+      }
+
+      .image-strip {
+        height: auto;
+        grid-template-columns: 1fr;
+      }
+
+      .image-card {
+        min-height: 300px;
+      }
+
+      .image-stack {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tab-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --header-height: 72px;
+      }
+
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .cursor-ring {
+        display: none;
+      }
+
+      .top-note {
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .brand-mark {
+        width: 46px;
+        height: 46px;
+        border-radius: 17px;
+      }
+
+      .brand-text strong {
+        font-size: 23px;
+      }
+
+      .brand-text span {
+        font-size: 10px;
+        max-width: 160px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .nav-actions .btn-primary,
+      .nav-actions .instagram-btn {
+        display: none;
+      }
+
+      .hero {
+        padding: 48px 0 42px;
+      }
+
+      .hero-grid {
+        gap: 34px;
+      }
+
+      .hero-name {
+        font-size: 74px;
+        margin-top: 20px;
+      }
+
+      body.en .hero-name {
+        font-size: 54px;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      .hero-subtitle {
+        font-size: 28px;
+      }
+
+      .lead {
+        font-size: 15px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .quote-actions .btn {
+        width: 100%;
+      }
+
+      .hero-stats,
+      .feature-grid,
+      .chips,
+      .packages-grid,
+      .tabs-nav,
+      .field-row,
+      .mood-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main-card {
+        aspect-ratio: 16 / 9;
+        border-radius: 34px;
+        transform: none;
+      }
+
+      .hero-side-row {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-media {
+        min-height: auto;
+        aspect-ratio: 16 / 9;
+        border-radius: 28px;
+        border-width: 6px;
+      }
+
+      .floating-note {
+        min-height: auto;
+        border-radius: 28px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 18px;
+        border-radius: 30px;
+      }
+
+      .profile-img,
+      .contact-img {
+        min-height: 330px;
+        border-radius: 28px;
+      }
+
+      .about-text {
+        padding: 8px;
+      }
+
+      .experience-panel {
+        min-height: auto;
+        padding: 26px;
+      }
+
+      .image-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .tab-image {
+        min-height: 250px;
+      }
+
+      .package-card.highlight {
+        transform: none;
+      }
+
+      .floating-actions {
+        inset-inline-start: 14px;
+        bottom: calc(14px + var(--safe-bottom));
+        gap: 8px;
+      }
+
+      body.en .floating-actions {
+        inset-inline-end: 14px;
+      }
+
+      .floating-label {
+        padding: 10px 13px;
+        font-size: 12px;
+      }
+
+      .floating-whatsapp {
+        width: 54px;
+        height: 54px;
+      }
+
+      .footer-bottom {
+        display: grid;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .floating-label {
+        max-width: 175px;
+        white-space: normal;
+        line-height: 1.4;
+        border-radius: 18px;
+      }
+
+      .round-btn:not(.menu-btn):not(.theme-btn):not(.lang-btn) {
+        display: none;
+      }
+
+      .btn-soft:not(.round-btn) {
+        display: none;
+      }
+    }
+    .soft-glow-1 {
+      box-shadow: 0 11px 25px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-1 {
+      transition-delay: 0.015s;
+    }
+    .radius-soft-1 {
+      border-radius: 17px;
+    }
+    .soft-glow-2 {
+      box-shadow: 0 12px 26px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-2 {
+      transition-delay: 0.030s;
+    }
+    .radius-soft-2 {
+      border-radius: 18px;
+    }
+    .soft-glow-3 {
+      box-shadow: 0 13px 27px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-3 {
+      transition-delay: 0.045s;
+    }
+    .radius-soft-3 {
+      border-radius: 19px;
+    }
+    .soft-glow-4 {
+      box-shadow: 0 14px 28px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-4 {
+      transition-delay: 0.060s;
+    }
+    .radius-soft-4 {
+      border-radius: 20px;
+    }
+    .soft-glow-5 {
+      box-shadow: 0 15px 29px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-5 {
+      transition-delay: 0.075s;
+    }
+    .radius-soft-5 {
+      border-radius: 21px;
+    }
+    .soft-glow-6 {
+      box-shadow: 0 16px 30px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-6 {
+      transition-delay: 0.090s;
+    }
+    .radius-soft-6 {
+      border-radius: 22px;
+    }
+    .soft-glow-7 {
+      box-shadow: 0 17px 31px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-7 {
+      transition-delay: 0.105s;
+    }
+    .radius-soft-7 {
+      border-radius: 23px;
+    }
+    .soft-glow-8 {
+      box-shadow: 0 18px 32px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-8 {
+      transition-delay: 0.120s;
+    }
+    .radius-soft-8 {
+      border-radius: 24px;
+    }
+    .soft-glow-9 {
+      box-shadow: 0 19px 33px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-9 {
+      transition-delay: 0.135s;
+    }
+    .radius-soft-9 {
+      border-radius: 25px;
+    }
+    .soft-glow-10 {
+      box-shadow: 0 20px 34px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-10 {
+      transition-delay: 0.150s;
+    }
+    .radius-soft-10 {
+      border-radius: 26px;
+    }
+    .soft-glow-11 {
+      box-shadow: 0 21px 35px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-11 {
+      transition-delay: 0.165s;
+    }
+    .radius-soft-11 {
+      border-radius: 27px;
+    }
+    .soft-glow-12 {
+      box-shadow: 0 10px 36px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-12 {
+      transition-delay: 0.180s;
+    }
+    .radius-soft-12 {
+      border-radius: 28px;
+    }
+    .soft-glow-13 {
+      box-shadow: 0 11px 37px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-13 {
+      transition-delay: 0.195s;
+    }
+    .radius-soft-13 {
+      border-radius: 29px;
+    }
+    .soft-glow-14 {
+      box-shadow: 0 12px 38px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-14 {
+      transition-delay: 0.210s;
+    }
+    .radius-soft-14 {
+      border-radius: 30px;
+    }
+    .soft-glow-15 {
+      box-shadow: 0 13px 39px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-15 {
+      transition-delay: 0.225s;
+    }
+    .radius-soft-15 {
+      border-radius: 31px;
+    }
+    .soft-glow-16 {
+      box-shadow: 0 14px 40px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-16 {
+      transition-delay: 0.240s;
+    }
+    .radius-soft-16 {
+      border-radius: 32px;
+    }
+    .soft-glow-17 {
+      box-shadow: 0 15px 41px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-17 {
+      transition-delay: 0.255s;
+    }
+    .radius-soft-17 {
+      border-radius: 33px;
+    }
+    .soft-glow-18 {
+      box-shadow: 0 16px 42px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-18 {
+      transition-delay: 0.270s;
+    }
+    .radius-soft-18 {
+      border-radius: 34px;
+    }
+    .soft-glow-19 {
+      box-shadow: 0 17px 43px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-19 {
+      transition-delay: 0.285s;
+    }
+    .radius-soft-19 {
+      border-radius: 35px;
+    }
+    .soft-glow-20 {
+      box-shadow: 0 18px 24px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-20 {
+      transition-delay: 0.300s;
+    }
+    .radius-soft-20 {
+      border-radius: 36px;
+    }
+    .soft-glow-21 {
+      box-shadow: 0 19px 25px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-21 {
+      transition-delay: 0.315s;
+    }
+    .radius-soft-21 {
+      border-radius: 37px;
+    }
+    .soft-glow-22 {
+      box-shadow: 0 20px 26px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-22 {
+      transition-delay: 0.330s;
+    }
+    .radius-soft-22 {
+      border-radius: 38px;
+    }
+    .soft-glow-23 {
+      box-shadow: 0 21px 27px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-23 {
+      transition-delay: 0.345s;
+    }
+    .radius-soft-23 {
+      border-radius: 39px;
+    }
+    .soft-glow-24 {
+      box-shadow: 0 10px 28px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-24 {
+      transition-delay: 0.360s;
+    }
+    .radius-soft-24 {
+      border-radius: 16px;
+    }
+    .soft-glow-25 {
+      box-shadow: 0 11px 29px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-25 {
+      transition-delay: 0.375s;
+    }
+    .radius-soft-25 {
+      border-radius: 17px;
+    }
+    .soft-glow-26 {
+      box-shadow: 0 12px 30px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-26 {
+      transition-delay: 0.390s;
+    }
+    .radius-soft-26 {
+      border-radius: 18px;
+    }
+    .soft-glow-27 {
+      box-shadow: 0 13px 31px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-27 {
+      transition-delay: 0.405s;
+    }
+    .radius-soft-27 {
+      border-radius: 19px;
+    }
+    .soft-glow-28 {
+      box-shadow: 0 14px 32px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-28 {
+      transition-delay: 0.420s;
+    }
+    .radius-soft-28 {
+      border-radius: 20px;
+    }
+    .soft-glow-29 {
+      box-shadow: 0 15px 33px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-29 {
+      transition-delay: 0.435s;
+    }
+    .radius-soft-29 {
+      border-radius: 21px;
+    }
+    .soft-glow-30 {
+      box-shadow: 0 16px 34px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-30 {
+      transition-delay: 0.450s;
+    }
+    .radius-soft-30 {
+      border-radius: 22px;
+    }
+    .soft-glow-31 {
+      box-shadow: 0 17px 35px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-31 {
+      transition-delay: 0.465s;
+    }
+    .radius-soft-31 {
+      border-radius: 23px;
+    }
+    .soft-glow-32 {
+      box-shadow: 0 18px 36px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-32 {
+      transition-delay: 0.480s;
+    }
+    .radius-soft-32 {
+      border-radius: 24px;
+    }
+    .soft-glow-33 {
+      box-shadow: 0 19px 37px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-33 {
+      transition-delay: 0.495s;
+    }
+    .radius-soft-33 {
+      border-radius: 25px;
+    }
+    .soft-glow-34 {
+      box-shadow: 0 20px 38px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-34 {
+      transition-delay: 0.510s;
+    }
+    .radius-soft-34 {
+      border-radius: 26px;
+    }
+    .soft-glow-35 {
+      box-shadow: 0 21px 39px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-35 {
+      transition-delay: 0.525s;
+    }
+    .radius-soft-35 {
+      border-radius: 27px;
+    }
+    .soft-glow-36 {
+      box-shadow: 0 10px 40px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-36 {
+      transition-delay: 0.540s;
+    }
+    .radius-soft-36 {
+      border-radius: 28px;
+    }
+    .soft-glow-37 {
+      box-shadow: 0 11px 41px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-37 {
+      transition-delay: 0.555s;
+    }
+    .radius-soft-37 {
+      border-radius: 29px;
+    }
+    .soft-glow-38 {
+      box-shadow: 0 12px 42px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-38 {
+      transition-delay: 0.570s;
+    }
+    .radius-soft-38 {
+      border-radius: 30px;
+    }
+    .soft-glow-39 {
+      box-shadow: 0 13px 43px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-39 {
+      transition-delay: 0.585s;
+    }
+    .radius-soft-39 {
+      border-radius: 31px;
+    }
+    .soft-glow-40 {
+      box-shadow: 0 14px 24px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-40 {
+      transition-delay: 0.600s;
+    }
+    .radius-soft-40 {
+      border-radius: 32px;
+    }
+    .soft-glow-41 {
+      box-shadow: 0 15px 25px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-41 {
+      transition-delay: 0.615s;
+    }
+    .radius-soft-41 {
+      border-radius: 33px;
+    }
+    .soft-glow-42 {
+      box-shadow: 0 16px 26px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-42 {
+      transition-delay: 0.630s;
+    }
+    .radius-soft-42 {
+      border-radius: 34px;
+    }
+    .soft-glow-43 {
+      box-shadow: 0 17px 27px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-43 {
+      transition-delay: 0.645s;
+    }
+    .radius-soft-43 {
+      border-radius: 35px;
+    }
+    .soft-glow-44 {
+      box-shadow: 0 18px 28px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-44 {
+      transition-delay: 0.660s;
+    }
+    .radius-soft-44 {
+      border-radius: 36px;
+    }
+    .soft-glow-45 {
+      box-shadow: 0 19px 29px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-45 {
+      transition-delay: 0.675s;
+    }
+    .radius-soft-45 {
+      border-radius: 37px;
+    }
+    .soft-glow-46 {
+      box-shadow: 0 20px 30px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-46 {
+      transition-delay: 0.690s;
+    }
+    .radius-soft-46 {
+      border-radius: 38px;
+    }
+    .soft-glow-47 {
+      box-shadow: 0 21px 31px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-47 {
+      transition-delay: 0.705s;
+    }
+    .radius-soft-47 {
+      border-radius: 39px;
+    }
+    .soft-glow-48 {
+      box-shadow: 0 10px 32px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-48 {
+      transition-delay: 0.720s;
+    }
+    .radius-soft-48 {
+      border-radius: 16px;
+    }
+    .soft-glow-49 {
+      box-shadow: 0 11px 33px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-49 {
+      transition-delay: 0.735s;
+    }
+    .radius-soft-49 {
+      border-radius: 17px;
+    }
+    .soft-glow-50 {
+      box-shadow: 0 12px 34px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-50 {
+      transition-delay: 0.750s;
+    }
+    .radius-soft-50 {
+      border-radius: 18px;
+    }
+    .soft-glow-51 {
+      box-shadow: 0 13px 35px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-51 {
+      transition-delay: 0.765s;
+    }
+    .radius-soft-51 {
+      border-radius: 19px;
+    }
+    .soft-glow-52 {
+      box-shadow: 0 14px 36px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-52 {
+      transition-delay: 0.780s;
+    }
+    .radius-soft-52 {
+      border-radius: 20px;
+    }
+    .soft-glow-53 {
+      box-shadow: 0 15px 37px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-53 {
+      transition-delay: 0.795s;
+    }
+    .radius-soft-53 {
+      border-radius: 21px;
+    }
+    .soft-glow-54 {
+      box-shadow: 0 16px 38px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-54 {
+      transition-delay: 0.810s;
+    }
+    .radius-soft-54 {
+      border-radius: 22px;
+    }
+    .soft-glow-55 {
+      box-shadow: 0 17px 39px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-55 {
+      transition-delay: 0.825s;
+    }
+    .radius-soft-55 {
+      border-radius: 23px;
+    }
+    .soft-glow-56 {
+      box-shadow: 0 18px 40px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-56 {
+      transition-delay: 0.840s;
+    }
+    .radius-soft-56 {
+      border-radius: 24px;
+    }
+    .soft-glow-57 {
+      box-shadow: 0 19px 41px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-57 {
+      transition-delay: 0.855s;
+    }
+    .radius-soft-57 {
+      border-radius: 25px;
+    }
+    .soft-glow-58 {
+      box-shadow: 0 20px 42px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-58 {
+      transition-delay: 0.870s;
+    }
+    .radius-soft-58 {
+      border-radius: 26px;
+    }
+    .soft-glow-59 {
+      box-shadow: 0 21px 43px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-59 {
+      transition-delay: 0.885s;
+    }
+    .radius-soft-59 {
+      border-radius: 27px;
+    }
+    .soft-glow-60 {
+      box-shadow: 0 10px 24px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-60 {
+      transition-delay: 0.900s;
+    }
+    .radius-soft-60 {
+      border-radius: 28px;
+    }
+    .soft-glow-61 {
+      box-shadow: 0 11px 25px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-61 {
+      transition-delay: 0.915s;
+    }
+    .radius-soft-61 {
+      border-radius: 29px;
+    }
+    .soft-glow-62 {
+      box-shadow: 0 12px 26px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-62 {
+      transition-delay: 0.930s;
+    }
+    .radius-soft-62 {
+      border-radius: 30px;
+    }
+    .soft-glow-63 {
+      box-shadow: 0 13px 27px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-63 {
+      transition-delay: 0.945s;
+    }
+    .radius-soft-63 {
+      border-radius: 31px;
+    }
+    .soft-glow-64 {
+      box-shadow: 0 14px 28px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-64 {
+      transition-delay: 0.960s;
+    }
+    .radius-soft-64 {
+      border-radius: 32px;
+    }
+    .soft-glow-65 {
+      box-shadow: 0 15px 29px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-65 {
+      transition-delay: 0.975s;
+    }
+    .radius-soft-65 {
+      border-radius: 33px;
+    }
+    .soft-glow-66 {
+      box-shadow: 0 16px 30px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-66 {
+      transition-delay: 0.990s;
+    }
+    .radius-soft-66 {
+      border-radius: 34px;
+    }
+    .soft-glow-67 {
+      box-shadow: 0 17px 31px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-67 {
+      transition-delay: 1.005s;
+    }
+    .radius-soft-67 {
+      border-radius: 35px;
+    }
+    .soft-glow-68 {
+      box-shadow: 0 18px 32px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-68 {
+      transition-delay: 1.020s;
+    }
+    .radius-soft-68 {
+      border-radius: 36px;
+    }
+    .soft-glow-69 {
+      box-shadow: 0 19px 33px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-69 {
+      transition-delay: 1.035s;
+    }
+    .radius-soft-69 {
+      border-radius: 37px;
+    }
+    .soft-glow-70 {
+      box-shadow: 0 20px 34px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-70 {
+      transition-delay: 1.050s;
+    }
+    .radius-soft-70 {
+      border-radius: 38px;
+    }
+    .soft-glow-71 {
+      box-shadow: 0 21px 35px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-71 {
+      transition-delay: 1.065s;
+    }
+    .radius-soft-71 {
+      border-radius: 39px;
+    }
+    .soft-glow-72 {
+      box-shadow: 0 10px 36px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-72 {
+      transition-delay: 1.080s;
+    }
+    .radius-soft-72 {
+      border-radius: 16px;
+    }
+    .soft-glow-73 {
+      box-shadow: 0 11px 37px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-73 {
+      transition-delay: 1.095s;
+    }
+    .radius-soft-73 {
+      border-radius: 17px;
+    }
+    .soft-glow-74 {
+      box-shadow: 0 12px 38px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-74 {
+      transition-delay: 1.110s;
+    }
+    .radius-soft-74 {
+      border-radius: 18px;
+    }
+    .soft-glow-75 {
+      box-shadow: 0 13px 39px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-75 {
+      transition-delay: 1.125s;
+    }
+    .radius-soft-75 {
+      border-radius: 19px;
+    }
+    .soft-glow-76 {
+      box-shadow: 0 14px 40px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-76 {
+      transition-delay: 1.140s;
+    }
+    .radius-soft-76 {
+      border-radius: 20px;
+    }
+    .soft-glow-77 {
+      box-shadow: 0 15px 41px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-77 {
+      transition-delay: 1.155s;
+    }
+    .radius-soft-77 {
+      border-radius: 21px;
+    }
+    .soft-glow-78 {
+      box-shadow: 0 16px 42px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-78 {
+      transition-delay: 1.170s;
+    }
+    .radius-soft-78 {
+      border-radius: 22px;
+    }
+    .soft-glow-79 {
+      box-shadow: 0 17px 43px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-79 {
+      transition-delay: 1.185s;
+    }
+    .radius-soft-79 {
+      border-radius: 23px;
+    }
+    .soft-glow-80 {
+      box-shadow: 0 18px 24px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-80 {
+      transition-delay: 1.200s;
+    }
+    .radius-soft-80 {
+      border-radius: 24px;
+    }
+    .soft-glow-81 {
+      box-shadow: 0 19px 25px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-81 {
+      transition-delay: 1.215s;
+    }
+    .radius-soft-81 {
+      border-radius: 25px;
+    }
+    .soft-glow-82 {
+      box-shadow: 0 20px 26px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-82 {
+      transition-delay: 1.230s;
+    }
+    .radius-soft-82 {
+      border-radius: 26px;
+    }
+    .soft-glow-83 {
+      box-shadow: 0 21px 27px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-83 {
+      transition-delay: 1.245s;
+    }
+    .radius-soft-83 {
+      border-radius: 27px;
+    }
+    .soft-glow-84 {
+      box-shadow: 0 10px 28px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-84 {
+      transition-delay: 1.260s;
+    }
+    .radius-soft-84 {
+      border-radius: 28px;
+    }
+    .soft-glow-85 {
+      box-shadow: 0 11px 29px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-85 {
+      transition-delay: 1.275s;
+    }
+    .radius-soft-85 {
+      border-radius: 29px;
+    }
+    .soft-glow-86 {
+      box-shadow: 0 12px 30px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-86 {
+      transition-delay: 1.290s;
+    }
+    .radius-soft-86 {
+      border-radius: 30px;
+    }
+    .soft-glow-87 {
+      box-shadow: 0 13px 31px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-87 {
+      transition-delay: 1.305s;
+    }
+    .radius-soft-87 {
+      border-radius: 31px;
+    }
+    .soft-glow-88 {
+      box-shadow: 0 14px 32px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-88 {
+      transition-delay: 1.320s;
+    }
+    .radius-soft-88 {
+      border-radius: 32px;
+    }
+    .soft-glow-89 {
+      box-shadow: 0 15px 33px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-89 {
+      transition-delay: 1.335s;
+    }
+    .radius-soft-89 {
+      border-radius: 33px;
+    }
+    .soft-glow-90 {
+      box-shadow: 0 16px 34px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-90 {
+      transition-delay: 1.350s;
+    }
+    .radius-soft-90 {
+      border-radius: 34px;
+    }
+    .soft-glow-91 {
+      box-shadow: 0 17px 35px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-91 {
+      transition-delay: 1.365s;
+    }
+    .radius-soft-91 {
+      border-radius: 35px;
+    }
+    .soft-glow-92 {
+      box-shadow: 0 18px 36px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-92 {
+      transition-delay: 1.380s;
+    }
+    .radius-soft-92 {
+      border-radius: 36px;
+    }
+    .soft-glow-93 {
+      box-shadow: 0 19px 37px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-93 {
+      transition-delay: 1.395s;
+    }
+    .radius-soft-93 {
+      border-radius: 37px;
+    }
+    .soft-glow-94 {
+      box-shadow: 0 20px 38px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-94 {
+      transition-delay: 1.410s;
+    }
+    .radius-soft-94 {
+      border-radius: 38px;
+    }
+    .soft-glow-95 {
+      box-shadow: 0 21px 39px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-95 {
+      transition-delay: 1.425s;
+    }
+    .radius-soft-95 {
+      border-radius: 39px;
+    }
+    .soft-glow-96 {
+      box-shadow: 0 10px 40px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-96 {
+      transition-delay: 1.440s;
+    }
+    .radius-soft-96 {
+      border-radius: 16px;
+    }
+    .soft-glow-97 {
+      box-shadow: 0 11px 41px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-97 {
+      transition-delay: 1.455s;
+    }
+    .radius-soft-97 {
+      border-radius: 17px;
+    }
+    .soft-glow-98 {
+      box-shadow: 0 12px 42px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-98 {
+      transition-delay: 1.470s;
+    }
+    .radius-soft-98 {
+      border-radius: 18px;
+    }
+    .soft-glow-99 {
+      box-shadow: 0 13px 43px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-99 {
+      transition-delay: 1.485s;
+    }
+    .radius-soft-99 {
+      border-radius: 19px;
+    }
+    .soft-glow-100 {
+      box-shadow: 0 14px 24px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-100 {
+      transition-delay: 1.500s;
+    }
+    .radius-soft-100 {
+      border-radius: 20px;
+    }
+    .soft-glow-101 {
+      box-shadow: 0 15px 25px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-101 {
+      transition-delay: 1.515s;
+    }
+    .radius-soft-101 {
+      border-radius: 21px;
+    }
+    .soft-glow-102 {
+      box-shadow: 0 16px 26px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-102 {
+      transition-delay: 1.530s;
+    }
+    .radius-soft-102 {
+      border-radius: 22px;
+    }
+    .soft-glow-103 {
+      box-shadow: 0 17px 27px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-103 {
+      transition-delay: 1.545s;
+    }
+    .radius-soft-103 {
+      border-radius: 23px;
+    }
+    .soft-glow-104 {
+      box-shadow: 0 18px 28px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-104 {
+      transition-delay: 1.560s;
+    }
+    .radius-soft-104 {
+      border-radius: 24px;
+    }
+    .soft-glow-105 {
+      box-shadow: 0 19px 29px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-105 {
+      transition-delay: 1.575s;
+    }
+    .radius-soft-105 {
+      border-radius: 25px;
+    }
+    .soft-glow-106 {
+      box-shadow: 0 20px 30px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-106 {
+      transition-delay: 1.590s;
+    }
+    .radius-soft-106 {
+      border-radius: 26px;
+    }
+    .soft-glow-107 {
+      box-shadow: 0 21px 31px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-107 {
+      transition-delay: 1.605s;
+    }
+    .radius-soft-107 {
+      border-radius: 27px;
+    }
+    .soft-glow-108 {
+      box-shadow: 0 10px 32px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-108 {
+      transition-delay: 1.620s;
+    }
+    .radius-soft-108 {
+      border-radius: 28px;
+    }
+    .soft-glow-109 {
+      box-shadow: 0 11px 33px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-109 {
+      transition-delay: 1.635s;
+    }
+    .radius-soft-109 {
+      border-radius: 29px;
+    }
+    .soft-glow-110 {
+      box-shadow: 0 12px 34px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-110 {
+      transition-delay: 1.650s;
+    }
+    .radius-soft-110 {
+      border-radius: 30px;
+    }
+    .soft-glow-111 {
+      box-shadow: 0 13px 35px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-111 {
+      transition-delay: 1.665s;
+    }
+    .radius-soft-111 {
+      border-radius: 31px;
+    }
+    .soft-glow-112 {
+      box-shadow: 0 14px 36px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-112 {
+      transition-delay: 1.680s;
+    }
+    .radius-soft-112 {
+      border-radius: 32px;
+    }
+    .soft-glow-113 {
+      box-shadow: 0 15px 37px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-113 {
+      transition-delay: 1.695s;
+    }
+    .radius-soft-113 {
+      border-radius: 33px;
+    }
+    .soft-glow-114 {
+      box-shadow: 0 16px 38px rgba(74, 103, 96, 0.07);
+    }
+    .delay-extra-114 {
+      transition-delay: 1.710s;
+    }
+    .radius-soft-114 {
+      border-radius: 34px;
+    }
+    .soft-glow-115 {
+      box-shadow: 0 17px 39px rgba(74, 103, 96, 0.08);
+    }
+    .delay-extra-115 {
+      transition-delay: 1.725s;
+    }
+    .radius-soft-115 {
+      border-radius: 35px;
+    }
+    .soft-glow-116 {
+      box-shadow: 0 18px 40px rgba(74, 103, 96, 0.09);
+    }
+    .delay-extra-116 {
+      transition-delay: 1.740s;
+    }
+    .radius-soft-116 {
+      border-radius: 36px;
+    }
+    .soft-glow-117 {
+      box-shadow: 0 19px 41px rgba(74, 103, 96, 0.10);
+    }
+    .delay-extra-117 {
+      transition-delay: 1.755s;
+    }
+    .radius-soft-117 {
+      border-radius: 37px;
+    }
+    .soft-glow-118 {
+      box-shadow: 0 20px 42px rgba(74, 103, 96, 0.11);
+    }
+    .delay-extra-118 {
+      transition-delay: 1.770s;
+    }
+    .radius-soft-118 {
+      border-radius: 38px;
+    }
+    .soft-glow-119 {
+      box-shadow: 0 21px 43px rgba(74, 103, 96, 0.05);
+    }
+    .delay-extra-119 {
+      transition-delay: 1.785s;
+    }
+    .radius-soft-119 {
+      border-radius: 39px;
+    }
+    .soft-glow-120 {
+      box-shadow: 0 10px 24px rgba(74, 103, 96, 0.06);
+    }
+    .delay-extra-120 {
+      transition-delay: 1.800s;
+    }
+    .radius-soft-120 {
+      border-radius: 16px;
+    }
+
+
+    /* Image fit fix - make every visual fully fill its card on desktop and mobile */
+    .hero-main-card,
+    .mini-media,
+    .profile-img,
+    .contact-img,
+    .faq-img,
+    .tab-image,
+    .image-card,
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .hero-main-card > img,
+    .mini-media > img,
+    .profile-img > img,
+    .contact-img > img,
+    .faq-img > img,
+    .tab-image > img,
+    .image-card > img,
+    .gallery-card > img,
+    .hero-main-card > video,
+    .mini-media > video {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      display: block !important;
+      background: var(--cream);
+    }
+
+    .hero-main-card {
+      height: auto;
+      aspect-ratio: 16 / 10;
+    }
+
+    .mini-media {
+      height: 220px;
+      min-height: 0;
+    }
+
+    .profile-img {
+      height: 520px;
+      min-height: 0;
+    }
+
+    .contact-img {
+      height: 420px;
+      min-height: 0;
+    }
+
+    .faq-img {
+      height: 525px;
+    }
+
+    .tab-image {
+      height: 340px;
+      min-height: 0;
+    }
+
+    .image-strip > .image-card,
+    .image-strip > .gallery-card,
+    .image-stack > .image-card,
+    .image-stack > .gallery-card {
+      min-height: 0;
+      height: 100%;
+    }
+
+    @media (max-width: 1090px) {
+      .faq-img {
+        height: 370px;
+      }
+
+      .image-strip > .image-card,
+      .image-strip > .gallery-card,
+      .image-stack > .image-card,
+      .image-stack > .gallery-card {
+        height: 300px;
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero-main-card {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        border-radius: 34px;
+      }
+
+      .mini-media {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        border-radius: 28px;
+      }
+
+      .profile-img,
+      .contact-img {
+        height: 330px;
+        min-height: 0;
+        border-radius: 28px;
+      }
+
+      .faq-img {
+        height: 370px;
+        min-height: 0;
+      }
+
+      .tab-image {
+        height: 250px;
+        min-height: 0;
+      }
+
+      .image-strip > .image-card,
+      .image-strip > .gallery-card,
+      .image-stack > .image-card,
+      .image-stack > .gallery-card {
+        height: 260px;
+        min-height: 0;
+      }
+    }
+
+
+    /* Extra interactive tools: cards, dice, intentions, and habit meter */
+    .interactive-special-card {
+      overflow: hidden;
+    }
+    .flip-tip {
+      width: 100%;
+      min-height: 210px;
+      border: 0;
+      border-radius: 28px;
+      background: transparent;
+      perspective: 1000px;
+      display: grid;
+      cursor: pointer;
+      color: inherit;
+      margin-top: 16px;
+    }
+    .flip-tip .flip-face {
+      grid-area: 1 / 1;
+      min-height: 210px;
+      border-radius: 28px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.65s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.76);
+      box-shadow: var(--shadow-soft);
+    }
+    .flip-tip .flip-front {
+      background: radial-gradient(circle at 20% 15%, rgba(255,255,255,0.76), transparent 30%), linear-gradient(135deg, rgba(74,103,96,0.14), rgba(212,163,115,0.18));
+      color: var(--primary);
+    }
+    .flip-tip .flip-back {
+      background: linear-gradient(135deg, var(--primary), var(--accent-2));
+      color: white;
+      transform: rotateY(180deg);
+    }
+    .flip-tip.is-flipped .flip-front {
+      transform: rotateY(-180deg);
+    }
+    .flip-tip.is-flipped .flip-back {
+      transform: rotateY(0deg);
+    }
+    .flip-tip strong {
+      font-size: 22px;
+      line-height: 1.6;
+    }
+    .flip-tip small,
+    .flip-tip #dailyTipText {
+      line-height: 1.9;
+      font-weight: 800;
+    }
+    .mini-orbit {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: 2px solid rgba(212,163,115,0.45);
+      position: relative;
+      animation: softSpin 7s linear infinite;
+    }
+    .mini-orbit::before,
+    .mini-orbit::after {
+      content: "";
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      top: 4px;
+      inset-inline-start: 8px;
+      box-shadow: 0 0 0 8px rgba(212,163,115,0.14);
+    }
+    .mini-orbit::after {
+      width: 8px;
+      height: 8px;
+      top: auto;
+      bottom: 8px;
+      inset-inline-start: auto;
+      inset-inline-end: 9px;
+      background: var(--primary-2);
+    }
+    @keyframes softSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .intention-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px;
+      margin-top: 16px;
+    }
+    .intention-card {
+      min-height: 92px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+      color: var(--ink);
+      font-weight: 900;
+      cursor: pointer;
+      padding: 16px;
+      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .intention-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-soft);
+    }
+    .intention-card.is-selected {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      border-color: transparent;
+    }
+    .dice-wrap {
+      display: grid;
+      place-items: center;
+      margin: 20px 0 8px;
+    }
+    .dice-btn {
+      width: 94px;
+      height: 94px;
+      border: 0;
+      border-radius: 28px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: var(--shadow-accent);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .dice-btn:hover {
+      transform: translateY(-5px) rotate(-4deg);
+      box-shadow: var(--shadow);
+    }
+    body.en .dice-btn:hover {
+      transform: translateY(-5px) rotate(4deg);
+    }
+    .dice-btn.is-rolling {
+      animation: diceRoll 0.55s ease;
+    }
+    @keyframes diceRoll {
+      0% { transform: rotate(0deg) scale(1); }
+      40% { transform: rotate(18deg) scale(1.07); }
+      70% { transform: rotate(-14deg) scale(0.96); }
+      100% { transform: rotate(0deg) scale(1); }
+    }
+    .dice-btn svg {
+      width: 50px;
+      height: 50px;
+    }
+    .challenge-result {
+      min-height: 88px;
+      display: grid;
+      place-items: center;
+    }
+    .habit-meter {
+      height: 15px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(74,103,96,0.13);
+      margin-top: 20px;
+    }
+    .habit-meter span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary-2), var(--accent));
+      transition: width 0.35s ease;
+    }
+    .habit-score {
+      margin-top: 13px;
+      text-align: center;
+      color: var(--primary);
+      font-size: 28px;
+      font-weight: 900;
+      direction: ltr;
+    }
+    @media (max-width: 720px) {
+      .intention-grid {
+        grid-template-columns: 1fr;
+      }
+      .flip-tip,
+      .flip-tip .flip-face {
+        min-height: 190px;
+      }
+      .dice-btn {
+        width: 84px;
+        height: 84px;
+        border-radius: 24px;
+      }
+    }
+
+    /* Video replacement enhancement - keep all video visuals filling their cards on desktop and mobile */
+    .hero-main-card video,
+    .mini-media video,
+    .image-card video,
+    .gallery-card video,
+    .experience-panel.image-bg .panel-bg-video {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      display: block !important;
+    }
+    .hero-main-card video,
+    .mini-media video,
+    .image-card video,
+    .gallery-card video {
+      position: absolute !important;
+      inset: 0 !important;
+      max-width: none !important;
+    }
+
+    /* Custom updates for Dr. Joy service list and special offer pricing */
+    .service-highlight {
+      border-color: rgba(212, 163, 115, 0.42);
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,253,248,0.78));
+      box-shadow: var(--shadow-accent);
+    }
+    .service-highlight .icon-box {
+      color: white;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+    }
+    .services-list-shell {
+      margin-top: 24px;
+      padding: 28px;
+      border-radius: 34px;
+      background: var(--glass-strong);
+      border: 1px solid rgba(255,255,255,0.78);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+    }
+    .services-list-head {
+      max-width: 850px;
+      margin-bottom: 18px;
+    }
+    .services-list-head h3 {
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+    .services-list-head p {
+      color: var(--muted);
+      line-height: 1.9;
+    }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .service-tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      color: var(--primary);
+      background: rgba(74,103,96,0.10);
+      border: 1px solid rgba(74,103,96,0.16);
+      font-weight: 900;
+      line-height: 1.4;
+    }
+    .service-tags span.executive {
+      color: var(--accent-2);
+      background: rgba(212,163,115,0.13);
+      border-color: rgba(212,163,115,0.25);
+    }
+    .service-legal {
+      margin-top: 20px;
+    }
+    .offer-price {
+      display: grid;
+      gap: 7px;
+      align-items: start;
+    }
+    .offer-price .offer-badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: var(--shadow-accent);
+    }
+    .offer-price .price-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .offer-price del {
+      color: var(--muted);
+      font-size: 18px;
+      opacity: 0.78;
+    }
+    .offer-price strong {
+      color: var(--primary);
+      font-size: 34px;
+      line-height: 1.2;
+    }
+    @media (max-width: 720px) {
+      .services-list-shell {
+        padding: 20px;
+        border-radius: 28px;
+      }
+      .service-tags {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .service-tags span {
+        border-radius: 18px;
+        justify-content: center;
+        text-align: center;
+      }
+      .offer-price strong {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+    <div class="orb four"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="top-note" data-i18n="topNote"></div>
+  <header id="siteHeader">
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="دكتور جوي للإستشارات الحياتية">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.35-7-10.2C5 7.58 7.32 5 10.22 5c1.48 0 2.67.68 3.48 1.75C14.5 5.68 15.7 5 17.18 5 20.08 5 22.4 7.58 22.4 10.8 22.4 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <span class="brand-text">
+          <strong data-i18n="brand"></strong>
+          <span data-i18n="brandSub"></span>
+        </span>
+      </a>
+      <ul class="nav-links" aria-label="روابط الموقع">
+        <li><a href="#about" data-nav-link data-i18n="navAbout"></a></li>
+        <li><a href="#services" data-nav-link data-i18n="navServices"></a></li>
+        <li><a href="#steps" data-nav-link data-i18n="navSteps"></a></li>
+        <li><a href="#programs" data-nav-link data-i18n="navPrograms"></a></li>
+        <li><a href="#tools" data-nav-link data-i18n="navTools"></a></li>
+        <li><a href="#faq" data-nav-link data-i18n="navFaq"></a></li>
+        <li><a href="#contact" data-nav-link data-i18n="navContact"></a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-soft round-btn theme-btn" id="themeBtn" type="button" aria-label="تغيير الثيم"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 14.6A7.8 7.8 0 0 1 9.4 3 8.7 8.7 0 1 0 21 14.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+        <button class="btn btn-soft round-btn lang-btn" id="langBtn" type="button" aria-label="تغيير اللغة">EN</button>
+        <a class="btn btn-soft round-btn" data-wa="inquiry" href="#" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.8A8.45 8.45 0 0 1 8.1 19.25L4 20.5l1.34-3.96A8.45 8.45 0 1 1 20.5 11.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.55 8.2c.18-.44.38-.45.62-.45h.45c.14 0 .36.05.55.42.2.38.68 1.67.74 1.8.06.12.1.27.02.43-.08.17-.13.27-.25.41-.13.15-.27.33-.38.44-.13.13-.26.27-.11.53.14.27.63 1.04 1.36 1.68.94.84 1.73 1.1 2 .23.27-.87.35-.1.55-.06.19.04 1.21.57 1.42.67.21.1.35.15.4.24.05.1.05.55-.13 1.08-.18.53-1.05 1.02-1.47 1.06-.38.04-.86.06-1.39-.09-.32-.1-.74-.24-1.27-.47-2.24-.96-3.7-3.2-3.81-3.35-.11-.15-.91-1.21-.91-2.31 0-1.1.58-1.64.79-1.86.2-.22.45-.27.6-.27" fill="currentColor"/></svg></a>
+        <a class="btn btn-soft instagram-btn" href="https://www.instagram.com/dramnahalmesmari?utm_source=qr&igsh=MThuZ3B2bjZnbnBmOA==" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg><span>Instagram</span></a>
+        <a class="btn btn-primary" data-wa="booking" href="#" target="_blank" rel="noopener"><span data-i18n="cta"></span></a>
+        <button class="btn btn-soft round-btn menu-btn" id="menuBtn" type="button" aria-label="فتح القائمة"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+    <div class="mobile-backdrop" data-close-menu></div>
+    <aside class="mobile-drawer" aria-label="القائمة الجانبية">
+      <div class="mobile-head">
+        <a href="#top" class="brand" data-close-menu>
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.35-7-10.2C5 7.58 7.32 5 10.22 5c1.48 0 2.67.68 3.48 1.75C14.5 5.68 15.7 5 17.18 5 20.08 5 22.4 7.58 22.4 10.8 22.4 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          <span class="brand-text"><strong data-i18n="brand"></strong><span data-i18n="brandSub"></span></span>
+        </a>
+        <button class="btn btn-soft round-btn" type="button" data-close-menu aria-label="إغلاق القائمة"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="#about" data-close-menu><span data-i18n="navAbout"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a href="#services" data-close-menu><span data-i18n="navServices"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a href="#steps" data-close-menu><span data-i18n="navSteps"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a href="#programs" data-close-menu><span data-i18n="navPrograms"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a href="#tools" data-close-menu><span data-i18n="navTools"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a href="#faq" data-close-menu><span data-i18n="navFaq"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a href="#contact" data-close-menu><span data-i18n="navContact"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+      </ul>
+      <div class="mobile-actions">
+        <a class="btn btn-primary" data-wa="booking" href="#" target="_blank" rel="noopener"><span data-i18n="cta"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-whatsapp" data-wa="general" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.8A8.45 8.45 0 0 1 8.1 19.25L4 20.5l1.34-3.96A8.45 8.45 0 1 1 20.5 11.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.55 8.2c.18-.44.38-.45.62-.45h.45c.14 0 .36.05.55.42.2.38.68 1.67.74 1.8.06.12.1.27.02.43-.08.17-.13.27-.25.41-.13.15-.27.33-.38.44-.13.13-.26.27-.11.53.14.27.63 1.04 1.36 1.68.94.84 1.73 1.1 2 .23.27-.87.35-.1.55-.06.19.04 1.21.57 1.42.67.21.1.35.15.4.24.05.1.05.55-.13 1.08-.18.53-1.05 1.02-1.47 1.06-.38.04-.86.06-1.39-.09-.32-.1-.74-.24-1.27-.47-2.24-.96-3.7-3.2-3.81-3.35-.11-.15-.91-1.21-.91-2.31 0-1.1.58-1.64.79-1.86.2-.22.45-.27.6-.27" fill="currentColor"/></svg><span data-i18n="whatsapp"></span></a>
+      </div>
+    </aside>
+  </div>
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow reveal"><span class="eyebrow-dot"></span><span data-i18n="badge"></span></div>
+          <div class="hero-name reveal delay-1" data-i18n="heroName"></div>
+          <h1 class="reveal delay-2" data-i18n-html="heroTitle"></h1>
+          <div class="hero-subtitle reveal delay-2" data-i18n="heroSubtitle"></div>
+          <p class="lead reveal delay-3" data-i18n="heroText"></p>
+          <div class="hero-actions reveal delay-3">
+            <a class="btn btn-primary" data-wa="booking" href="#" target="_blank" rel="noopener"><span data-i18n="cta"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <button class="btn btn-outline" type="button" data-open-modal><span data-i18n="quickBook"></span></button>
+            <a class="btn btn-whatsapp" data-wa="general" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.8A8.45 8.45 0 0 1 8.1 19.25L4 20.5l1.34-3.96A8.45 8.45 0 1 1 20.5 11.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.55 8.2c.18-.44.38-.45.62-.45h.45c.14 0 .36.05.55.42.2.38.68 1.67.74 1.8.06.12.1.27.02.43-.08.17-.13.27-.25.41-.13.15-.27.33-.38.44-.13.13-.26.27-.11.53.14.27.63 1.04 1.36 1.68.94.84 1.73 1.1 2 .23.27-.87.35-.1.55-.06.19.04 1.21.57 1.42.67.21.1.35.15.4.24.05.1.05.55-.13 1.08-.18.53-1.05 1.02-1.47 1.06-.38.04-.86.06-1.39-.09-.32-.1-.74-.24-1.27-.47-2.24-.96-3.7-3.2-3.81-3.35-.11-.15-.91-1.21-.91-2.31 0-1.1.58-1.64.79-1.86.2-.22.45-.27.6-.27" fill="currentColor"/></svg><span data-i18n="whatsapp"></span></a>
+          </div>
+          <div class="hero-stats reveal delay-3">
+            <div class="stat-card tilt-card">
+              <span class="stat-number" data-counter="stat1">0</span>
+              <span data-i18n="stat1Text"></span>
+            </div>
+            <div class="stat-card tilt-card">
+              <span class="stat-number" data-counter="stat2">0</span>
+              <span data-i18n="stat2Text"></span>
+            </div>
+            <div class="stat-card tilt-card">
+              <span class="stat-number" data-counter="stat3">0</span>
+              <span data-i18n="stat3Text"></span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal from-left delay-2">
+          <div class="hero-main-card">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="دكتور جوي للإستشارات الحياتية" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+              <source src="Images/amna-hero.webm" type="video/webm">
+              <source src="Images/amna-hero.mp4" type="video/mp4">
+              </video>
+          </div>
+          <div class="hero-side-row">
+            <div class="mini-media">
+              <video autoplay muted loop playsinline preload="metadata" aria-label="جلسة استشارة أونلاين" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+              <source src="Images/amna-online.webm" type="video/webm">
+              <source src="Images/amna-online.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="floating-note">
+              <h3 data-i18n="floatTitle"></h3>
+              <p data-i18n="floatText"></p>
+              <div class="progress-line"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker" data-i18n="servicesKicker"></div>
+          <h2 class="section-title" data-i18n="servicesTitle"></h2>
+          <p class="section-desc" data-i18n="servicesDesc"></p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card service-highlight tilt-card reveal">
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 data-i18n="feature1Title"></h3>
+            <p data-i18n="feature1Text"></p>
+          </article>
+          <article class="feature-card service-highlight tilt-card reveal">
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 data-i18n="feature2Title"></h3>
+            <p data-i18n="feature2Text"></p>
+          </article>
+          <article class="feature-card service-highlight tilt-card reveal">
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 data-i18n="feature3Title"></h3>
+            <p data-i18n="feature3Text"></p>
+          </article>
+          <article class="feature-card service-highlight tilt-card reveal">
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 data-i18n="feature4Title"></h3>
+            <p data-i18n="feature4Text"></p>
+          </article>
+        </div>
+        <div class="services-list-shell reveal delay-2">
+          <div class="services-list-head">
+            <h3 data-i18n="serviceListTitle"></h3>
+            <p data-i18n="serviceListDesc"></p>
+          </div>
+          <div class="service-tags" data-i18n-html="serviceTagsHtml"></div>
+          <div class="legal-note service-legal" data-i18n="serviceLegal"></div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="soft-section">
+      <div class="container about-box reveal">
+        <div class="profile-img">
+          <img src="Images/amna-about.png" alt="عن دكتور جوي" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+        </div>
+        <div class="about-text">
+          <div class="kicker" data-i18n="aboutKicker"></div>
+          <h2 data-i18n="aboutTitle"></h2>
+          <p data-i18n="aboutText1"></p>
+          <p data-i18n="aboutText2"></p>
+          <div class="chips">
+            <div class="chip">
+              <strong data-i18n="chip1Title"></strong>
+              <span data-i18n="chip1Text"></span>
+            </div>
+            <div class="chip">
+              <strong data-i18n="chip2Title"></strong>
+              <span data-i18n="chip2Text"></span>
+            </div>
+            <div class="chip">
+              <strong data-i18n="chip3Title"></strong>
+              <span data-i18n="chip3Text"></span>
+            </div>
+            <div class="chip">
+              <strong data-i18n="chip4Title"></strong>
+              <span data-i18n="chip4Text"></span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-outline" data-wa="about" href="#" target="_blank" rel="noopener"><span data-i18n="ask"></span></a>
+          </div>
+          <div class="legal-note" data-i18n="legal"></div>
+        </div>
+      </div>
+    </section>
+    <section id="steps">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker" data-i18n="stepsKicker"></div>
+          <h2 class="section-title" data-i18n="stepsTitle"></h2>
+          <p class="section-desc" data-i18n="stepsDesc"></p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card reveal tilt-card">
+            <h3 data-i18n="step1Title"></h3>
+            <p data-i18n="step1Text"></p>
+          </article>
+          <article class="step-card reveal tilt-card">
+            <h3 data-i18n="step2Title"></h3>
+            <p data-i18n="step2Text"></p>
+          </article>
+          <article class="step-card reveal tilt-card">
+            <h3 data-i18n="step3Title"></h3>
+            <p data-i18n="step3Text"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="experience" class="soft-section">
+      <div class="container experience-layout">
+        <div class="experience-panel image-bg reveal">
+          <video class="panel-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+            <source src="Images/amna-calm.webm" type="video/webm">
+            <source src="Images/amna-calm.mp4" type="video/mp4">
+          </video>
+          <div class="small-label" data-i18n="experienceKicker"></div>
+          <h2 data-i18n="experienceTitle"></h2>
+          <p data-i18n="experienceText"></p>
+        </div>
+        <div class="experience-panel reveal">
+          <div class="small-label" data-i18n="whyKicker"></div>
+          <h2 data-i18n="whyTitle"></h2>
+          <p data-i18n="whyText"></p>
+          <div class="soft-list">
+            <div class="soft-item">
+              <span class="soft-check"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span data-i18n="whyItem1"></span>
+            </div>
+            <div class="soft-item">
+              <span class="soft-check"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span data-i18n="whyItem2"></span>
+            </div>
+            <div class="soft-item">
+              <span class="soft-check"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span data-i18n="whyItem3"></span>
+            </div>
+            <div class="soft-item">
+              <span class="soft-check"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span data-i18n="whyItem4"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="programs">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker" data-i18n="programsKicker"></div>
+          <h2 class="section-title" data-i18n="programsTitle"></h2>
+          <p class="section-desc" data-i18n="programsDesc"></p>
+        </div>
+        <div class="tabs-shell reveal">
+          <div class="tabs-nav" role="tablist">
+            <button class="tab-btn is-active" type="button" data-tab="tab1" role="tab" data-i18n="tab1Btn"></button>
+            <button class="tab-btn" type="button" data-tab="tab2" role="tab" data-i18n="tab2Btn"></button>
+            <button class="tab-btn" type="button" data-tab="tab3" role="tab" data-i18n="tab3Btn"></button>
+            <button class="tab-btn" type="button" data-tab="tab4" role="tab" data-i18n="tab4Btn"></button>
+          </div>
+          <div class="tab-panel is-active" id="tab1" role="tabpanel">
+            <div class="tab-image">
+              <img src="Images/amna-session.png" alt="برنامج استشاري" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+            </div>
+            <div class="tab-content">
+              <h3 data-i18n="tab1Title"></h3>
+              <p data-i18n="tab1Text"></p>
+              <ul class="tab-list">
+                <li data-i18n="tab1Item1"></li>
+                <li data-i18n="tab1Item2"></li>
+                <li data-i18n="tab1Item3"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab2" role="tabpanel">
+            <div class="tab-image">
+              <img src="Images/amna-planning.png" alt="برنامج استشاري" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+            </div>
+            <div class="tab-content">
+              <h3 data-i18n="tab2Title"></h3>
+              <p data-i18n="tab2Text"></p>
+              <ul class="tab-list">
+                <li data-i18n="tab2Item1"></li>
+                <li data-i18n="tab2Item2"></li>
+                <li data-i18n="tab2Item3"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab3" role="tabpanel">
+            <div class="tab-image">
+              <img src="Images/amna-nature.png" alt="برنامج استشاري" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+            </div>
+            <div class="tab-content">
+              <h3 data-i18n="tab3Title"></h3>
+              <p data-i18n="tab3Text"></p>
+              <ul class="tab-list">
+                <li data-i18n="tab3Item1"></li>
+                <li data-i18n="tab3Item2"></li>
+                <li data-i18n="tab3Item3"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab4" role="tabpanel">
+            <div class="tab-image">
+              <img src="Images/amna-journal.png" alt="برنامج استشاري" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+            </div>
+            <div class="tab-content">
+              <h3 data-i18n="tab4Title"></h3>
+              <p data-i18n="tab4Text"></p>
+              <ul class="tab-list">
+                <li data-i18n="tab4Item1"></li>
+                <li data-i18n="tab4Item2"></li>
+                <li data-i18n="tab4Item3"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery" class="soft-section">
+      <div class="container image-strip reveal">
+        <div class="image-card"><img src="Images/amna-consultation.png" alt="جلسة استشارة" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';"></div>
+        <div class="image-stack">
+          <div class="image-card"><img src="Images/amna-abstract.png" alt="تصميم هادئ" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';"></div>
+          <div class="image-card"><img src="Images/amna-planning.png" alt="تخطيط الأهداف" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';"></div>
+        </div>
+        <div class="image-card"><video autoplay muted loop playsinline preload="metadata" aria-label="مساحة هادئة" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+            <source src="Images/amna-calm.webm" type="video/webm">
+            <source src="Images/amna-calm.mp4" type="video/mp4">
+          </video></div>
+      </div>
+    </section>
+    <section id="quote">
+      <div class="container quote reveal">
+        <h2 data-i18n="quoteTitle"></h2>
+        <p data-i18n="quoteText"></p>
+        <div class="quote-actions">
+          <button class="btn btn-accent" type="button" data-open-modal><span data-i18n="quickBook"></span></button>
+          <a class="btn btn-soft" data-wa="inquiry" href="#" target="_blank" rel="noopener"><span data-i18n="ask"></span></a>
+        </div>
+      </div>
+    </section>
+    <section id="packages" class="soft-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker" data-i18n="packagesKicker"></div>
+          <h2 class="section-title" data-i18n="packagesTitle"></h2>
+          <p class="section-desc" data-i18n="packagesDesc"></p>
+        </div>
+        <div class="packages-grid">
+          <article class="package-card reveal tilt-card">
+            <h3 data-i18n="package1Title"></h3>
+            <p data-i18n="package1Text"></p>
+            <div class="price offer-price" data-i18n-html="package1Price"></div>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="package1Item1"></span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="package1Item2"></span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="package1Item3"></span></li>
+            </ul>
+            <a class="btn btn-outline" data-wa="intro" href="#" target="_blank" rel="noopener"><span data-i18n="ask"></span></a>
+          </article>
+          <article class="package-card highlight reveal tilt-card">
+            <h3 data-i18n="package2Title"></h3>
+            <p data-i18n="package2Text"></p>
+            <div class="price offer-price" data-i18n-html="package2Price"></div>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="package2Item1"></span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="package2Item2"></span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="package2Item3"></span></li>
+            </ul>
+            <a class="btn btn-primary" data-wa="development" href="#" target="_blank" rel="noopener"><span data-i18n="cta"></span></a>
+          </article>
+          <article class="package-card reveal tilt-card">
+            <h3 data-i18n="package3Title"></h3>
+            <p data-i18n="package3Text"></p>
+            <div class="price offer-price" data-i18n-html="package3Price"></div>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="package3Item1"></span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="package3Item2"></span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="package3Item3"></span></li>
+            </ul>
+            <a class="btn btn-outline" data-wa="monthly" href="#" target="_blank" rel="noopener"><span data-i18n="ask"></span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="tools">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker" data-i18n="toolsKicker"></div>
+          <h2 class="section-title" data-i18n="toolsTitle"></h2>
+          <p class="section-desc" data-i18n="toolsDesc"></p>
+        </div>
+        <div class="interactive-area">
+          <div class="tool-card reveal">
+            <h3 data-i18n="moodTitle"></h3>
+            <p data-i18n="moodText"></p>
+            <div class="mood-grid" id="moodGrid">
+              <button class="mood-btn" type="button" data-mood="1"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.35-7-10.2C5 7.58 7.32 5 10.22 5c1.48 0 2.67.68 3.48 1.75C14.5 5.68 15.7 5 17.18 5 20.08 5 22.4 7.58 22.4 10.8 22.4 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="mood1"></span></button>
+              <button class="mood-btn" type="button" data-mood="2"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.35-7-10.2C5 7.58 7.32 5 10.22 5c1.48 0 2.67.68 3.48 1.75C14.5 5.68 15.7 5 17.18 5 20.08 5 22.4 7.58 22.4 10.8 22.4 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="mood2"></span></button>
+              <button class="mood-btn" type="button" data-mood="3"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.35-7-10.2C5 7.58 7.32 5 10.22 5c1.48 0 2.67.68 3.48 1.75C14.5 5.68 15.7 5 17.18 5 20.08 5 22.4 7.58 22.4 10.8 22.4 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="mood3"></span></button>
+              <button class="mood-btn" type="button" data-mood="4"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.35-7-10.2C5 7.58 7.32 5 10.22 5c1.48 0 2.67.68 3.48 1.75C14.5 5.68 15.7 5 17.18 5 20.08 5 22.4 7.58 22.4 10.8 22.4 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="mood4"></span></button>
+              <button class="mood-btn" type="button" data-mood="5"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.35-7-10.2C5 7.58 7.32 5 10.22 5c1.48 0 2.67.68 3.48 1.75C14.5 5.68 15.7 5 17.18 5 20.08 5 22.4 7.58 22.4 10.8 22.4 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="mood5"></span></button>
+            </div>
+            <div class="score-box" id="moodResult" data-i18n="moodHint"></div>
+          </div>
+          <div class="tool-card reveal delay-1">
+            <h3 data-i18n="breathTitle"></h3>
+            <p data-i18n="breathText"></p>
+            <div class="breathing-circle-wrap">
+              <div class="breathing-circle" id="breathingCircle" data-i18n="breatheReady"></div>
+            </div>
+            <div class="breathing-actions">
+              <button class="btn btn-primary" type="button" id="breathStart" data-i18n="start"></button>
+              <button class="btn btn-outline" type="button" id="breathStop" data-i18n="stop"></button>
+            </div>
+          </div>
+          <div class="tool-card reveal delay-2">
+            <h3 data-i18n="checkTitle"></h3>
+            <p data-i18n="checkText"></p>
+            <div class="checklist" id="checklist">
+              <label class="check-row"><input type="checkbox" data-check><span data-i18n="check1"></span></label>
+              <label class="check-row"><input type="checkbox" data-check><span data-i18n="check2"></span></label>
+              <label class="check-row"><input type="checkbox" data-check><span data-i18n="check3"></span></label>
+              <label class="check-row"><input type="checkbox" data-check><span data-i18n="check4"></span></label>
+              <label class="check-row"><input type="checkbox" data-check><span data-i18n="check5"></span></label>
+            </div>
+            <div class="score-box" id="checkScore" data-i18n="checkScoreInitial"></div>
+          </div>
+          <div class="tool-card reveal delay-3">
+            <h3 data-i18n="journalTitle"></h3>
+            <p data-i18n="journalText"></p>
+            <div class="score-box" id="journalPrompt" data-i18n="journalPrompt1"></div>
+            <div class="breathing-actions">
+              <button class="btn btn-primary" type="button" id="newPrompt" data-i18n="newPrompt"></button>
+            </div>
+          </div>
+          <div class="tool-card reveal delay-extra-12 interactive-special-card">
+            <h3 data-i18n="tipTitle"></h3>
+            <p data-i18n="tipText"></p>
+            <button class="flip-tip" id="dailyTipCard" type="button" aria-live="polite">
+              <span class="flip-face flip-front">
+                <span class="mini-orbit" aria-hidden="true"></span>
+                <strong data-i18n="tipCardFront"></strong>
+                <small data-i18n="tipCardHint"></small>
+              </span>
+              <span class="flip-face flip-back">
+                <strong data-i18n="tipCardBack"></strong>
+                <span id="dailyTipText"></span>
+              </span>
+            </button>
+            <div class="breathing-actions">
+              <button class="btn btn-primary" type="button" id="revealTip" data-i18n="revealTip"></button>
+              <button class="btn btn-outline" type="button" id="shuffleTip" data-i18n="shuffleTip"></button>
+            </div>
+          </div>
+          <div class="tool-card reveal delay-extra-24 interactive-special-card">
+            <h3 data-i18n="intentionTitle"></h3>
+            <p data-i18n="intentionText"></p>
+            <div class="intention-grid" id="intentionGrid">
+              <button class="intention-card" type="button" data-intention="focus"><span data-i18n="intentionFocus"></span></button>
+              <button class="intention-card" type="button" data-intention="calm"><span data-i18n="intentionCalm"></span></button>
+              <button class="intention-card" type="button" data-intention="habit"><span data-i18n="intentionHabit"></span></button>
+              <button class="intention-card" type="button" data-intention="boundaries"><span data-i18n="intentionBoundaries"></span></button>
+            </div>
+            <div class="score-box" id="intentionResult" data-i18n="intentionHint"></div>
+          </div>
+          <div class="tool-card reveal delay-extra-36 interactive-special-card">
+            <h3 data-i18n="challengeTitle"></h3>
+            <p data-i18n="challengeText"></p>
+            <div class="dice-wrap">
+              <button class="dice-btn" id="challengeDice" type="button" aria-label="تحدي عشوائي">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.9"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <div class="score-box challenge-result" id="challengeResult" data-i18n="challengeHint"></div>
+          </div>
+          <div class="tool-card reveal delay-extra-48 interactive-special-card">
+            <h3 data-i18n="habitTitle"></h3>
+            <p data-i18n="habitText"></p>
+            <div class="habit-meter" aria-hidden="true"><span id="habitMeterBar"></span></div>
+            <div class="habit-score" id="habitScore">0/7</div>
+            <div class="breathing-actions">
+              <button class="btn btn-primary" type="button" id="habitPlus" data-i18n="habitPlus"></button>
+              <button class="btn btn-outline" type="button" id="habitReset" data-i18n="habitReset"></button>
+            </div>
+            <div class="score-box" id="habitMessage" data-i18n="habitHint"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="faq" class="soft-section">
+      <div class="container faq-layout">
+        <div class="faq-img reveal">
+          <img src="Images/amna-faq.png" alt="الأسئلة الشائعة" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+        </div>
+        <div class="reveal">
+          <div class="kicker" data-i18n="faqKicker"></div>
+          <h2 class="section-title" data-i18n="faqTitle"></h2>
+          <div class="faq-list">
+            <details open>
+              <summary><div data-i18n="q1"></div><span>+</span></summary>
+              <p data-i18n="a1"></p>
+            </details>
+            <details>
+              <summary><div data-i18n="q2"></div><span>+</span></summary>
+              <p data-i18n="a2"></p>
+            </details>
+            <details>
+              <summary><div data-i18n="q3"></div><span>+</span></summary>
+              <p data-i18n="a3"></p>
+            </details>
+            <details>
+              <summary><div data-i18n="q4"></div><span>+</span></summary>
+              <p data-i18n="a4"></p>
+            </details>
+            <details>
+              <summary><div data-i18n="q5"></div><span>+</span></summary>
+              <p data-i18n="a5"></p>
+            </details>
+            <details>
+              <summary><div data-i18n="q6"></div><span>+</span></summary>
+              <p data-i18n="a6"></p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container contact-box reveal">
+        <div>
+          <div class="kicker" data-i18n="contactKicker"></div>
+          <h2 data-i18n="contactTitle"></h2>
+          <p data-i18n="contactText"></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" data-wa="booking" href="#" target="_blank" rel="noopener"><span data-i18n="cta"></span></a>
+            <a class="btn btn-whatsapp" data-wa="general" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.8A8.45 8.45 0 0 1 8.1 19.25L4 20.5l1.34-3.96A8.45 8.45 0 1 1 20.5 11.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.55 8.2c.18-.44.38-.45.62-.45h.45c.14 0 .36.05.55.42.2.38.68 1.67.74 1.8.06.12.1.27.02.43-.08.17-.13.27-.25.41-.13.15-.27.33-.38.44-.13.13-.26.27-.11.53.14.27.63 1.04 1.36 1.68.94.84 1.73 1.1 2 .23.27-.87.35-.1.55-.06.19.04 1.21.57 1.42.67.21.1.35.15.4.24.05.1.05.55-.13 1.08-.18.53-1.05 1.02-1.47 1.06-.38.04-.86.06-1.39-.09-.32-.1-.74-.24-1.27-.47-2.24-.96-3.7-3.2-3.81-3.35-.11-.15-.91-1.21-.91-2.31 0-1.1.58-1.64.79-1.86.2-.22.45-.27.6-.27" fill="currentColor"/></svg><span data-i18n="whatsapp"></span></a>
+            <a class="btn btn-soft" href="https://www.instagram.com/dramnahalmesmari?utm_source=qr&igsh=MThuZ3B2bjZnbnBmOA==" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg><span>Instagram</span></a>
+          </div>
+          <form class="booking-form" id="bookingForm">
+            <div class="field-row">
+              <div class="field"><input id="clientName" type="text" data-placeholder="namePlaceholder" required></div>
+              <div class="field"><input id="clientPhone" type="tel" data-placeholder="phonePlaceholder" required></div>
+            </div>
+            <div class="field-row">
+              <div class="field"><select id="clientTopic" required><option value="" data-i18n="topicPlaceholder"></option><option data-i18n="topicGoals"></option><option data-i18n="topicHabits"></option><option data-i18n="topicLife"></option><option data-i18n="topicOther"></option></select></div>
+              <div class="field"><select id="clientTime" required><option value="" data-i18n="timePlaceholder"></option><option data-i18n="timeMorning"></option><option data-i18n="timeAfternoon"></option><option data-i18n="timeEvening"></option></select></div>
+            </div>
+            <div class="field"><textarea id="clientMessage" data-placeholder="messagePlaceholder"></textarea></div>
+            <button class="btn btn-primary" type="submit"><span data-i18n="sendRequest"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </form>
+          <div class="legal-note" data-i18n="legal"></div>
+        </div>
+        <div class="contact-img">
+          <img src="Images/amna-contact.png" alt="احجز استشارتك" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))';">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3 data-i18n="footerBrand"></h3>
+        <p data-i18n="footerText"></p>
+      </div>
+      <div>
+        <h3 data-i18n="footerLinks"></h3>
+        <div class="footer-links">
+          <a href="#about" data-i18n="navAbout"></a>
+          <a href="#services" data-i18n="navServices"></a>
+          <a href="#steps" data-i18n="navSteps"></a>
+          <a href="#programs" data-i18n="navPrograms"></a>
+          <a href="#tools" data-i18n="navTools"></a>
+        </div>
+      </div>
+      <div>
+        <h3 data-i18n="footerContact"></h3>
+        <div class="footer-links">
+          <a data-wa="general" href="#" target="_blank" rel="noopener">WhatsApp: +971 50 000 0000</a>
+          <a href="https://www.instagram.com/dramnahalmesmari?utm_source=qr&igsh=MThuZ3B2bjZnbnBmOA==" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Dr. Joy Life Consulting</span>
+      <span data-i18n="footerLegal"></span>
+    </div>
+  </footer>
+  <div class="floating-actions">
+    <a class="floating-label" data-wa="booking" data-i18n="floatingLabel" href="#" target="_blank" rel="noopener"></a>
+    <a class="floating-whatsapp" data-wa="general" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.8A8.45 8.45 0 0 1 8.1 19.25L4 20.5l1.34-3.96A8.45 8.45 0 1 1 20.5 11.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.55 8.2c.18-.44.38-.45.62-.45h.45c.14 0 .36.05.55.42.2.38.68 1.67.74 1.8.06.12.1.27.02.43-.08.17-.13.27-.25.41-.13.15-.27.33-.38.44-.13.13-.26.27-.11.53.14.27.63 1.04 1.36 1.68.94.84 1.73 1.1 2 .23.27-.87.35-.1.55-.06.19.04 1.21.57 1.42.67.21.1.35.15.4.24.05.1.05.55-.13 1.08-.18.53-1.05 1.02-1.47 1.06-.38.04-.86.06-1.39-.09-.32-.1-.74-.24-1.27-.47-2.24-.96-3.7-3.2-3.81-3.35-.11-.15-.91-1.21-.91-2.31 0-1.1.58-1.64.79-1.86.2-.22.45-.27.6-.27" fill="currentColor"/></svg></a>
+  </div>
+  <div class="modal" id="bookingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 data-i18n="modalTitle"></h3>
+        <button class="btn btn-soft round-btn" type="button" data-close-modal aria-label="إغلاق"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      </div>
+      <p class="section-desc" data-i18n="modalText"></p>
+      <form class="booking-form" id="modalForm">
+        <div class="field"><input id="modalName" type="text" data-placeholder="namePlaceholder"></div>
+        <div class="field"><input id="modalPhone" type="tel" data-placeholder="phonePlaceholder"></div>
+        <div class="field"><textarea id="modalMessage" data-placeholder="messagePlaceholder"></textarea></div>
+        <button class="btn btn-primary" type="submit"><span data-i18n="sendWhatsapp"></span><svg class="icon-flip" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script>
+    const CONFIG = {
+      whatsappNumber: "971565678369",
+      instagramUrl: "https://www.instagram.com/dramnahalmesmari?utm_source=qr&igsh=MThuZ3B2bjZnbnBmOA=="
+    };
+
+    const translations = {
+      ar: {
+        topNote: "دكتور جوي للإستشارات الحياتية مع دكتورة آمنة المسماري | جلسات أونلاين للتوازن، الثقة، العلاقات، وتحقيق الأهداف",
+        brand: "دكتور جوي",
+        brandSub: "للإستشارات الحياتية",
+        navAbout: "عن الخدمة",
+        navServices: "المحاور",
+        navSteps: "الخطوات",
+        navPrograms: "البرامج",
+        navTools: "أدوات تفاعلية",
+        navFaq: "الأسئلة",
+        navContact: "الحجز",
+        cta: "احجز موعد الآن",
+        ask: "استفسر الآن",
+        quickBook: "حجز سريع",
+        whatsapp: "تواصل عبر واتساب",
+        floatingLabel: "احجز جلستك الآن",
+        badge: "دكتور جوي للإستشارات الحياتية أونلاين",
+        heroName: "مع دكتورة آمنة المسماري",
+        heroTitle: "رحلتك نحو <span class='accent-text'>الاتزان والوضوح</span> تبدأ من خطوة واعية",
+        heroSubtitle: "مساحة آمنة للتفكير، التنظيم، وبناء حياة أكثر اتزانًا",
+        heroText: "جلسات فردية أونلاين تساعدك على فهم احتياجك الحالي، ترتيب أهدافك، بناء الثقة، تحسين جودة الحياة، والتعامل مع التغييرات اليومية بأسلوب عملي وهادئ.",
+        stat1Text: "جلسات مرنة حسب جدولك",
+        stat2Text: "مسار شخصي حسب هدفك",
+        stat3Text: "خطوات عملية بعد كل جلسة",
+        floatTitle: "رحلة منظمة وليست عشوائية",
+        floatText: "نبدأ بفهم ما تحتاجه، ثم نرتب الأولويات، وبعدها نخرج بخطوات صغيرة تساعدك على التقدم بثبات.",
+        servicesKicker: "قائمة الخدمات",
+        servicesTitle: "جلسات لايف كوتش للتطوير الحياتي بدون إيحاء علاجي",
+        servicesDesc: "اختر الجلسة الأنسب لاحتياجك: تطوير ذات، توازن حياتي، علاقات، ثقة، أهداف، ووضوح ذهني.",
+        serviceListTitle: "خدمات إضافية للتطوير الشخصي وجودة الحياة",
+        serviceListDesc: "أسماء الخدمات مصاغة بشكل مهني مناسب للايف كوتش، وتركز على التطوير الشخصي وبناء المهارات الحياتية.",
+        serviceTagsHtml: "<span>جلسات التوازن الحياتي</span><span>جلسات تطوير الذات</span><span>جلسات الوضوح الذهني</span><span>جلسات اكتشاف الذات</span><span>جلسات بناء الثقة بالنفس</span><span>جلسات تحقيق الأهداف</span><span>جلسات التمكين الشخصي</span><span>جلسات جودة الحياة</span><span>جلسات إدارة الضغوط الحياتية</span><span>جلسات المرونة النفسية</span><span>جلسات الوعي الذاتي</span><span>جلسات التغيير الإيجابي</span><span>جلسات إعادة ترتيب الأولويات</span><span>جلسات بناء العادات الإيجابية</span><span>جلسات النمو الشخصي</span><span>جلسات الاتزان العاطفي</span><span>جلسات القيادة الذاتية</span><span>جلسات صناعة التغيير</span><span>جلسات الانطلاق نحو الأفضل</span><span>جلسات الحياة الواعية Mindful Living</span><span class='executive'>Executive Life Coaching</span><span class='executive'>Personal Growth Sessions</span><span class='executive'>Mindset Coaching</span><span class='executive'>Life Balance Coaching</span><span class='executive'>Peak Performance Coaching</span><span class='executive'>Empowerment Sessions</span><span class='executive'>Transformational Coaching</span>",
+        serviceLegal: "تنويه مهم: الجلسات ليست بديلاً عن التقييم أو العلاج النفسي أو التشخيص الطبي، بل تركز على التطوير الشخصي، تحقيق الأهداف، بناء الوعي، وتنمية المهارات الحياتية.",
+        feature1Title: "جلسة الزواج",
+        feature1Text: "جلسة مميزة تساعد على فهم التوقعات، ترتيب الأولويات، وتحسين الحوار قبل أو أثناء الحياة الزوجية.",
+        feature2Title: "جلسة فهم شخصية شريكي",
+        feature2Text: "جلسة عملية تساعدك على قراءة أنماط الشخصية، احتياجات الشريك، وطريقة التواصل الأنسب.",
+        feature3Title: "جلسة حب",
+        feature3Text: "مساحة واعية لفهم المشاعر، بناء تواصل أكثر نضجًا، والتعامل مع تحديات العلاقة بهدوء.",
+        feature4Title: "جلسة اختبار شخصية",
+        feature4Text: "تجربة إرشادية تساعدك على اكتشاف نقاط القوة، أسلوب التفكير، وما يناسبك في العلاقات والحياة.",
+        aboutKicker: "عن دكتور جوي",
+        aboutTitle: "دكتور جوي للإستشارات الحياتية مع دكتورة آمنة المسماري",
+        aboutText1: "تجربة أونلاين هادئة تساعدك على ترتيب أفكارك، فهم احتياجك، واختيار خطوات عملية تناسب حياتك اليومية.",
+        aboutText2: "الخدمة مخصصة للتطوير الشخصي وجودة الحياة وبناء المهارات الحياتية، مع أسلوب واضح وراقي بعيد عن الوعود المبالغ فيها.",
+        chip1Title: "طريقة الجلسات",
+        chip1Text: "أونلاين وبمواعيد مسبقة",
+        chip2Title: "مجال الخدمة",
+        chip2Text: "تطوير نمط الحياة والذات",
+        chip3Title: "أسلوب العمل",
+        chip3Text: "أسئلة، ترتيب، وخطة عملية",
+        chip4Title: "التركيز",
+        chip4Text: "أهداف، عادات، توازن، ووضوح",
+        legal: "تنويه: الخدمة مخصصة للاستشارات الحياتية والتطوير الشخصي وليست تشخيصًا طبيًا أو علاجًا نفسيًا أو خدمة صحية، ولا تغني عن مراجعة مختص مرخص عند الحاجة.",
+        stepsKicker: "كيف تبدأ؟",
+        stepsTitle: "ثلاث خطوات بسيطة قبل أول جلسة",
+        stepsDesc: "التجربة مصممة لتكون سهلة ومفهومة من أول تواصل حتى نهاية الجلسة.",
+        step1Title: "تواصل وحجز الموعد",
+        step1Text: "أرسل طلب الحجز عبر واتساب أو النموذج، وسيتم تنسيق الموعد المناسب حسب التوفر.",
+        step2Title: "تحديد هدف الجلسة",
+        step2Text: "نحدد الموضوع الأساسي: هدف، عادة، علاقة، قرار، أو ترتيب أولويات.",
+        step3Title: "خطة قابلة للتطبيق",
+        step3Text: "تنتهي الجلسة بخطوات صغيرة واضحة تساعدك على البدء دون إرهاق أو تعقيد.",
+        experienceKicker: "تجربة مختلفة",
+        experienceTitle: "هدوء، وضوح، وخطوات صغيرة تصنع فرقًا",
+        experienceText: "الفكرة ليست تغيير كل شيء بسرعة، بل فهم ما يحدث ثم ترتيب الخطوة القادمة بطريقة واقعية.",
+        whyKicker: "ما الذي يميز الجلسات؟",
+        whyTitle: "أسلوب عملي يناسب الحياة الواقعية",
+        whyText: "الجلسات مبنية على أسئلة منظمة، تلخيص واضح، وخطوات مجربة تساعد على تحويل النية إلى فعل.",
+        whyItem1: "فهم احتياجك بدون أحكام",
+        whyItem2: "ترتيب الأولويات حسب واقعك",
+        whyItem3: "أدوات متابعة ذاتية بسيطة",
+        whyItem4: "تدرج مريح بدل الضغط والمثالية",
+        programsKicker: "برامج الجلسات",
+        programsTitle: "مسارات مختلفة حسب احتياجك",
+        programsDesc: "يمكن للزائر اختيار المسار الأقرب لاحتياجه، ثم التواصل للتنسيق.",
+        tab1Btn: "البداية",
+        tab2Btn: "العادات",
+        tab3Btn: "التغيير",
+        tab4Btn: "المتابعة",
+        tab1Title: "جلسة البدايات الواضحة",
+        tab1Text: "مناسبة لمن يشعر بتشتت ويريد فهم نقطة البداية وترتيب الأفكار الأساسية.",
+        tab1Item1: "تحديد الموضوع الأساسي",
+        tab1Item2: "تلخيص الأولويات",
+        tab1Item3: "خطوة عملية بعد الجلسة",
+        tab2Title: "جلسة بناء العادات",
+        tab2Text: "مناسبة لمن يريد روتينًا واقعيًا يمكن الالتزام به مع ضغط الحياة اليومية.",
+        tab2Item1: "تحليل العادة الحالية",
+        tab2Item2: "تصميم روتين بسيط",
+        tab2Item3: "خطة متابعة ذاتية",
+        tab3Title: "جلسة إدارة التغيير",
+        tab3Text: "مناسبة عند وجود انتقال أو قرار مهم يحتاج هدوءًا وتفكيرًا منظمًا.",
+        tab3Item1: "فهم الخيارات المتاحة",
+        tab3Item2: "تقليل الضبابية",
+        tab3Item3: "خطة قرار مريحة",
+        tab4Title: "متابعة شهرية",
+        tab4Text: "مناسبة لمن يريد متابعة تطوره وتعديل الخطة حسب الواقع خطوة بخطوة.",
+        tab4Item1: "مراجعة التقدم",
+        tab4Item2: "تعديل الخطة",
+        tab4Item3: "دعم الاستمرارية",
+        quoteTitle: "أحيانًا لا تحتاج إلى تغيير حياتك كلها، بل تحتاج إلى ترتيب الخطوة القادمة فقط.",
+        quoteText: "في جلسات دكتور جوي، يتم التركيز على التفاصيل اليومية الصغيرة التي تصنع فرقًا حقيقيًا مع الوقت.",
+        packagesKicker: "خيارات الجلسات",
+        packagesTitle: "اختر ما يناسبك",
+        packagesDesc: "الأسعار والمدد قابلة للتعديل حسب القرار النهائي. هذه بنية جاهزة وأنيقة للموقع.",
+        package1Title: "جلسة استشارة حياتية",
+        package1Text: "جلسة فردية أونلاين للوضوح، ترتيب الأولويات، وبناء خطوة عملية مناسبة.",
+        package1Price: "<span class='offer-badge'>عرض خاص على الجلسات</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span>",
+        package1Item1: "فهم الاحتياج الحالي",
+        package1Item2: "خطة واضحة وبسيطة",
+        package1Item3: "توصية عملية بعد الجلسة",
+        package2Title: "جلسة العلاقات والشخصية",
+        package2Text: "الأكثر طلبًا لفهم الشريك، الحب، الزواج، واختبار الشخصية بطريقة عملية.",
+        package2Price: "<span class='offer-badge'>خصم محدود للجلسات</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span>",
+        package2Item1: "جلسة الزواج أو الحب",
+        package2Item2: "فهم شخصية الشريك",
+        package2Item3: "اختبار شخصية إرشادي",
+        package3Title: "جلسة نمو وتوازن",
+        package3Text: "لمن يريد تطوير الثقة، العادات، جودة الحياة، وتحقيق الأهداف.",
+        package3Price: "<span class='offer-badge'>سعر خاص الآن</span><span class='price-row'><del>2000 درهم</del><strong>600 درهم</strong></span>",
+        package3Item1: "بناء الثقة بالنفس",
+        package3Item2: "إدارة الضغوط الحياتية",
+        package3Item3: "خطة نمو شخصية",
+        toolsKicker: "أدوات تفاعلية",
+        toolsTitle: "ابدأ بتجربة صغيرة قبل الحجز",
+        toolsDesc: "أدوات بسيطة تساعد الزائر على التفاعل مع الصفحة بطريقة مفيدة وهادئة.",
+        moodTitle: "مؤشر اليوم",
+        moodText: "اختر الوصف الأقرب ليومك الآن، وسيظهر اقتراح بسيط.",
+        mood1: "هادئ",
+        mood2: "مشغول",
+        mood3: "متردد",
+        mood4: "مرهق",
+        mood5: "متحمس",
+        moodHint: "اختر حالة اليوم لعرض اقتراح مناسب.",
+        breathTitle: "تمرين تهدئة قصير",
+        breathText: "اضغط ابدأ، وخذ دقيقة واحدة لملاحظة النفس بهدوء.",
+        breatheReady: "جاهز؟",
+        start: "ابدأ",
+        stop: "إيقاف",
+        checkTitle: "قائمة استعداد للجلسة",
+        checkText: "اختر ما يناسبك قبل التواصل حتى تكون الجلسة أوضح.",
+        check1: "لدي موضوع محدد للنقاش",
+        check2: "أريد ترتيب أولوياتي",
+        check3: "أحتاج روتينًا يوميًا أبسط",
+        check4: "أريد قرارًا أكثر وضوحًا",
+        check5: "أحتاج متابعة تدريجية",
+        checkScoreInitial: "اختر العناصر المناسبة لك.",
+        journalTitle: "سؤال للتأمل",
+        journalText: "سؤال صغير يساعدك على التفكير قبل أول جلسة.",
+        journalPrompt1: "ما الخطوة الصغيرة التي لو بدأت بها هذا الأسبوع ستشعر أن يومك أصبح أوضح؟",
+        journalPrompt2: "ما الشيء الذي يأخذ من طاقتك أكثر مما يستحق؟",
+        journalPrompt3: "ما العادة الصغيرة التي تريد أن تجعلها أسهل بدل أن تجعلها مثالية؟",
+        journalPrompt4: "ما القرار الذي يحتاج منك ترتيبًا لا استعجالًا؟",
+        newPrompt: "سؤال جديد",
+
+        tipTitle: "نصيحة اليوم",
+        tipText: "بطاقة خفيفة تظهر نصيحة عشوائية تساعدك على تطوير الذات ونمط الحياة بخطوة بسيطة.",
+        tipCardFront: "اقلب البطاقة",
+        tipCardHint: "اضغط لاكتشاف نصيحة مناسبة لليوم",
+        tipCardBack: "نصيحتك اليوم",
+        revealTip: "اكشف النصيحة",
+        shuffleTip: "نصيحة أخرى",
+        intentionTitle: "بوصلة النية",
+        intentionText: "اختر نية صغيرة ليومك، وستظهر لك خطوة عملية مرتبطة بها.",
+        intentionFocus: "تركيز",
+        intentionCalm: "هدوء",
+        intentionHabit: "عادة",
+        intentionBoundaries: "حدود",
+        intentionHint: "اختر نية اليوم لعرض خطوة لطيفة.",
+        challengeTitle: "تحدي صغير",
+        challengeText: "اضغط النرد لتحصل على تحدي بسيط يمكن تنفيذه خلال دقائق.",
+        challengeHint: "اضغط النرد لاقتراح تحدي اليوم.",
+        habitTitle: "عداد عادة 7 أيام",
+        habitText: "سجّل خطوة صغيرة يومية، وشاهد تقدمك حتى 7 أيام بطريقة مشجعة.",
+        habitPlus: "سجل خطوة",
+        habitReset: "إعادة ضبط",
+        habitHint: "ابدأ بخطوة واحدة اليوم، ولا تنتظر الكمال.",
+        habitDone: "ممتاز، أكملت دائرة 7 أيام. يمكنك البدء من جديد بخطوة أبسط.",
+        faqKicker: "أسئلة شائعة",
+        faqTitle: "قبل أن تبدأ",
+        q1: "هل الجلسات أونلاين؟",
+        a1: "نعم، الجلسات أونلاين وبموعد مسبق، ويتم تنسيق التفاصيل عبر واتساب.",
+        q2: "ما المواضيع المناسبة؟",
+        a2: "تنظيم الأهداف، بناء العادات، إدارة الوقت، التغيير، وضوح العلاقات، وتحسين الروتين اليومي.",
+        q3: "كيف يتم الحجز؟",
+        a3: "اضغط زر احجز موعد الآن أو املأ النموذج، وسيتم فتح واتساب برسالة جاهزة.",
+        q4: "هل الخدمة طبية؟",
+        a4: "لا، الصفحة مصممة للتوجيه الشخصي وتطوير نمط الحياة وليست تشخيصًا أو علاجًا طبيًا.",
+        q5: "هل يمكن تعديل الموعد؟",
+        a5: "يمكن تنسيق تعديل الموعد حسب التوفر، ويفضل الإبلاغ قبل الموعد بوقت كاف.",
+        q6: "هل توجد متابعة بعد الجلسة؟",
+        a6: "يمكن الاتفاق على متابعة شهرية أو جلسات دورية حسب الاحتياج والتوفر.",
+        contactKicker: "ابدأ الآن",
+        contactTitle: "احجز جلستك الأولى مع دكتور جوي",
+        contactText: "إذا كنت تريد ترتيب أهدافك، بناء عادات أفضل، أو تحسين تفاصيل يومك، يمكنك التواصل الآن عبر واتساب.",
+        namePlaceholder: "الاسم الكامل",
+        phonePlaceholder: "رقم الهاتف",
+        topicPlaceholder: "اختر موضوع الجلسة",
+        topicGoals: "تنظيم الأهداف",
+        topicHabits: "بناء العادات",
+        topicLife: "تغيير أو قرار مهم",
+        topicOther: "موضوع آخر",
+        timePlaceholder: "الوقت المناسب",
+        timeMorning: "صباحًا",
+        timeAfternoon: "بعد الظهر",
+        timeEvening: "مساءً",
+        messagePlaceholder: "اكتب ملاحظة قصيرة اختياريًا",
+        sendRequest: "إرسال طلب الحجز",
+        sendWhatsapp: "إرسال عبر واتساب",
+        modalTitle: "حجز سريع",
+        modalText: "اكتب بياناتك الأساسية وسيتم تجهيز رسالة واتساب تلقائيًا.",
+        footerBrand: "دكتور جوي",
+        footerText: "دكتور جوي للإستشارات الحياتية: مساحة أونلاين للتطوير الشخصي، العلاقات، التوازن، وتحقيق الأهداف مع دكتورة آمنة المسماري.",
+        footerLinks: "روابط",
+        footerContact: "التواصل",
+        footerLegal: "خدمة تطوير نمط حياة وتوجيه شخصي."
+      },
+      en: {
+        topNote: "Dr. Joy Life Consulting with Dr. Joyh AlMesmari | Online sessions for balance, confidence, relationships, and goals",
+        brand: "Dr. Joy",
+        brandSub: "Life Consulting",
+        navAbout: "About",
+        navServices: "Focus Areas",
+        navSteps: "Steps",
+        navPrograms: "Programs",
+        navTools: "Interactive Tools",
+        navFaq: "FAQ",
+        navContact: "Booking",
+        cta: "Book Now",
+        ask: "Ask Now",
+        quickBook: "Quick Booking",
+        whatsapp: "Contact on WhatsApp",
+        floatingLabel: "Book your session now",
+        badge: "Dr. Joy Life Consulting Online",
+        heroName: "Dr.Amnah AlMesmari",
+        heroTitle: "Your journey toward <span class='accent-text'>balance and clarity</span> starts with one mindful step",
+        heroSubtitle: "A safe space for clarity, organization, and a more balanced life",
+        heroText: "One-to-one online sessions to understand your current needs, organize goals, build confidence, improve quality of life, and handle daily change with a calm practical approach.",
+        stat1Text: "Flexible sessions that fit your schedule",
+        stat2Text: "A path tailored to your goal",
+        stat3Text: "Practical steps after every session",
+        floatTitle: "A structured journey, not a random one",
+        floatText: "We begin by understanding your needs, then clarify priorities, and shape small practical steps for steady progress.",
+        servicesKicker: "Services Menu",
+        servicesTitle: "Life coaching sessions for personal development without clinical claims",
+        servicesDesc: "Choose the session that fits your need: self-development, life balance, relationships, confidence, goals, and mental clarity.",
+        serviceListTitle: "Additional personal growth and quality-of-life services",
+        serviceListDesc: "Service names are worded professionally for life coaching and focus on personal growth and life skills.",
+        serviceTagsHtml: "<span>Life Balance Sessions</span><span>Self-Development Sessions</span><span>Mental Clarity Sessions</span><span>Self-Discovery Sessions</span><span>Confidence Building Sessions</span><span>Goal Achievement Sessions</span><span>Personal Empowerment Sessions</span><span>Quality of Life Sessions</span><span>Life Stress Management Sessions</span><span>Psychological Resilience Sessions</span><span>Self-Awareness Sessions</span><span>Positive Change Sessions</span><span>Priority Reset Sessions</span><span>Positive Habit Building Sessions</span><span>Personal Growth Sessions</span><span>Emotional Balance Sessions</span><span>Self-Leadership Sessions</span><span>Change-Making Sessions</span><span>Moving Forward Sessions</span><span>Mindful Living Sessions</span><span class='executive'>Executive Life Coaching</span><span class='executive'>Personal Growth Sessions</span><span class='executive'>Mindset Coaching</span><span class='executive'>Life Balance Coaching</span><span class='executive'>Peak Performance Coaching</span><span class='executive'>Empowerment Sessions</span><span class='executive'>Transformational Coaching</span>",
+        serviceLegal: "Important note: Sessions are not a substitute for psychological assessment, therapy, or medical diagnosis. They focus on personal development, goals, awareness, and life skills.",
+        feature1Title: "Marriage Session",
+        feature1Text: "A focused session for understanding expectations, organizing priorities, and improving communication before or during marriage.",
+        feature2Title: "Understanding My Partner Session",
+        feature2Text: "A practical session to understand personality patterns, partner needs, and the most suitable communication style.",
+        feature3Title: "Love Session",
+        feature3Text: "A mindful space to understand feelings, build more mature communication, and handle relationship challenges calmly.",
+        feature4Title: "Personality Test Session",
+        feature4Text: "A guided experience to discover strengths, thinking style, and what suits you in life and relationships.",
+        aboutKicker: "About Dr. Joy",
+        aboutTitle: "Dr. Joy Life Consulting with Dr. Joyh AlMesmari",
+        aboutText1: "A calm online experience that helps you organize thoughts, understand needs, and choose practical steps that fit daily life.",
+        aboutText2: "The service is dedicated to personal development, quality of life, and life skills with a clear premium approach away from exaggerated promises.",
+        chip1Title: "Session Method",
+        chip1Text: "Online by appointment",
+        chip2Title: "Service Area",
+        chip2Text: "Life and self development",
+        chip3Title: "Approach",
+        chip3Text: "Questions, organization, and practical planning",
+        chip4Title: "Focus",
+        chip4Text: "Goals, habits, balance, and clarity",
+        legal: "Note: This service is for life consulting and personal development. It is not medical diagnosis, psychotherapy, or healthcare, and does not replace consulting a licensed professional when needed.",
+        stepsKicker: "How to Start",
+        stepsTitle: "Three simple steps before your first session",
+        stepsDesc: "The experience is designed to be easy and clear from the first message to the end of the session.",
+        step1Title: "Contact and Book",
+        step1Text: "Send a booking request via WhatsApp or the form, and the suitable time will be arranged based on availability.",
+        step2Title: "Define the Session Goal",
+        step2Text: "We identify the main focus: a goal, habit, relationship, decision, or priority organization.",
+        step3Title: "Practical Plan",
+        step3Text: "The session ends with small clear steps that help you start without pressure or complexity.",
+        experienceKicker: "A Different Experience",
+        experienceTitle: "Calm, clarity, and small steps that create progress",
+        experienceText: "The idea is not to change everything quickly, but to understand what is happening and organize the next step realistically.",
+        whyKicker: "What makes the sessions different?",
+        whyTitle: "A practical style for real life",
+        whyText: "Sessions are built around organized questions, clear summaries, and practical steps that turn intention into action.",
+        whyItem1: "Understanding your need without judgment",
+        whyItem2: "Organizing priorities based on reality",
+        whyItem3: "Simple self-follow-up tools",
+        whyItem4: "Comfortable progression instead of pressure",
+        programsKicker: "Session Programs",
+        programsTitle: "Different paths for different needs",
+        programsDesc: "Visitors can choose the path closest to their needs, then contact for scheduling.",
+        tab1Btn: "Start",
+        tab2Btn: "Habits",
+        tab3Btn: "Change",
+        tab4Btn: "Follow-up",
+        tab1Title: "Clear Beginning Session",
+        tab1Text: "Suitable for anyone feeling scattered and wanting a clear starting point.",
+        tab1Item1: "Define the main topic",
+        tab1Item2: "Summarize priorities",
+        tab1Item3: "One practical step after the session",
+        tab2Title: "Habit Building Session",
+        tab2Text: "Suitable for anyone who wants a realistic routine that fits daily pressure.",
+        tab2Item1: "Analyze the current habit",
+        tab2Item2: "Design a simple routine",
+        tab2Item3: "Create a self-follow-up plan",
+        tab3Title: "Change Management Session",
+        tab3Text: "Suitable when a transition or important decision needs calm and organized thinking.",
+        tab3Item1: "Understand available options",
+        tab3Item2: "Reduce uncertainty",
+        tab3Item3: "Create a comfortable decision plan",
+        tab4Title: "Monthly Follow-up",
+        tab4Text: "Suitable for anyone who wants to follow progress and adjust plans step by step.",
+        tab4Item1: "Review progress",
+        tab4Item2: "Adjust the plan",
+        tab4Item3: "Support consistency",
+        quoteTitle: "Sometimes you do not need to change your whole life. You only need to organize the next step.",
+        quoteText: "In Dr. Joy’s sessions, the focus is on small daily details that make a real difference over time.",
+        packagesKicker: "Session Options",
+        packagesTitle: "Choose what fits your needs",
+        packagesDesc: "Prices and durations can be adjusted later. This is a ready elegant structure for now.",
+        package1Title: "Life Consulting Session",
+        package1Text: "One-to-one online session for clarity, priority setting, and one practical next step.",
+        package1Price: "<span class='offer-badge'>Special session offer</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span>",
+        package1Item1: "Understand the current need",
+        package1Item2: "Clear and simple plan",
+        package1Item3: "Practical recommendation after the session",
+        package2Title: "Relationships & Personality Session",
+        package2Text: "Most requested for understanding a partner, love, marriage, and personality in a practical way.",
+        package2Price: "<span class='offer-badge'>Limited session discount</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span>",
+        package2Item1: "Marriage or love session",
+        package2Item2: "Understand partner personality",
+        package2Item3: "Guided personality test",
+        package3Title: "Growth & Balance Session",
+        package3Text: "For developing confidence, habits, quality of life, and goal achievement.",
+        package3Price: "<span class='offer-badge'>Special price now</span><span class='price-row'><del>AED 2000</del><strong>AED 600</strong></span>",
+        package3Item1: "Build self-confidence",
+        package3Item2: "Manage life stress",
+        package3Item3: "Personal growth plan",
+        toolsKicker: "Interactive Tools",
+        toolsTitle: "Start with a small experience before booking",
+        toolsDesc: "Simple tools that help visitors interact with the page in a calm and useful way.",
+        moodTitle: "Today Indicator",
+        moodText: "Choose the closest description of your day, and a simple suggestion will appear.",
+        mood1: "Calm",
+        mood2: "Busy",
+        mood3: "Unsure",
+        mood4: "Overloaded",
+        mood5: "Motivated",
+        moodHint: "Choose today’s state to see a suggestion.",
+        breathTitle: "Short Calming Exercise",
+        breathText: "Press start and take one minute to notice your breath calmly.",
+        breatheReady: "Ready?",
+        start: "Start",
+        stop: "Stop",
+        checkTitle: "Session Readiness Checklist",
+        checkText: "Select what fits before contacting, so the session can be clearer.",
+        check1: "I have a specific topic",
+        check2: "I want to organize priorities",
+        check3: "I need a simpler daily routine",
+        check4: "I want more decision clarity",
+        check5: "I need gradual follow-up",
+        checkScoreInitial: "Select the items that fit you.",
+        journalTitle: "Reflection Question",
+        journalText: "A small question to help you think before your first session.",
+        journalPrompt1: "What small step this week would make your day clearer?",
+        journalPrompt2: "What takes more energy than it deserves?",
+        journalPrompt3: "What small habit do you want to make easier rather than perfect?",
+        journalPrompt4: "Which decision needs organization rather than rushing?",
+        newPrompt: "New Question",
+
+        tipTitle: "Tip of the Day",
+        tipText: "A light card with a random practical tip for self-development and lifestyle improvement.",
+        tipCardFront: "Flip the Card",
+        tipCardHint: "Tap to discover a useful tip for today",
+        tipCardBack: "Your Tip Today",
+        revealTip: "Reveal Tip",
+        shuffleTip: "Another Tip",
+        intentionTitle: "Intention Compass",
+        intentionText: "Choose a small intention for your day, and you will get one practical step.",
+        intentionFocus: "Focus",
+        intentionCalm: "Calm",
+        intentionHabit: "Habit",
+        intentionBoundaries: "Boundaries",
+        intentionHint: "Choose today’s intention to see a gentle step.",
+        challengeTitle: "Small Challenge",
+        challengeText: "Roll the dice to get a simple challenge you can do in a few minutes.",
+        challengeHint: "Press the dice to suggest today’s challenge.",
+        habitTitle: "7-Day Habit Counter",
+        habitText: "Record a small daily step and watch your progress toward 7 days.",
+        habitPlus: "Log Step",
+        habitReset: "Reset",
+        habitHint: "Start with one step today; do not wait for perfection.",
+        habitDone: "Great, you completed a 7-day cycle. You can start again with an easier step.",
+        faqKicker: "FAQ",
+        faqTitle: "Before You Start",
+        q1: "Are the sessions online?",
+        a1: "Yes. Sessions are online by appointment, and details are arranged through WhatsApp.",
+        q2: "What topics are suitable?",
+        a2: "Goal organization, habit building, time management, change, relationship clarity, and improving daily routines.",
+        q3: "How do I book?",
+        a3: "Click Book Now or fill the form, and WhatsApp will open with a ready message.",
+        q4: "Is this a medical service?",
+        a4: "No. The page is designed for personal guidance and lifestyle development, not medical diagnosis or treatment.",
+        q5: "Can the appointment be changed?",
+        a5: "Changes can be arranged based on availability. Early notice is preferred.",
+        q6: "Is follow-up available?",
+        a6: "Monthly or periodic follow-up can be arranged based on need and availability.",
+        contactKicker: "Start Now",
+        contactTitle: "Book your first session with Dr. Joy",
+        contactText: "If you would like to organize goals, build better habits, or improve your daily routine, you can contact us now through WhatsApp.",
+        namePlaceholder: "Full name",
+        phonePlaceholder: "Phone number",
+        topicPlaceholder: "Choose a session topic",
+        topicGoals: "Goal organization",
+        topicHabits: "Habit building",
+        topicLife: "Change or important decision",
+        topicOther: "Other topic",
+        timePlaceholder: "Preferred time",
+        timeMorning: "Morning",
+        timeAfternoon: "Afternoon",
+        timeEvening: "Evening",
+        messagePlaceholder: "Write a short optional note",
+        sendRequest: "Send Booking Request",
+        sendWhatsapp: "Send on WhatsApp",
+        modalTitle: "Quick Booking",
+        modalText: "Enter basic details and a WhatsApp message will be prepared automatically.",
+        footerBrand: "Dr. Joy",
+        footerText: "Dr. Joy Life Consulting: an online space for personal growth, relationships, balance, and goal achievement with Dr. Joyh AlMesmari.",
+        footerLinks: "Links",
+        footerContact: "Contact",
+        footerLegal: "Lifestyle development and personal guidance service."
+      }
+    };
+
+    const whatsappMessages = {
+      ar: {
+        booking: "مرحباً، أريد حجز موعد مع دكتور جوي.",
+        inquiry: "مرحباً، أرغب بالاستفسار عن المواعيد المتاحة.",
+        intro: "مرحباً، أرغب بالاستفسار عن جلسة البداية.",
+        development: "مرحباً، أريد حجز جلسة تطوير مع دكتور جوي.",
+        monthly: "مرحباً، أرغب بالاستفسار عن المتابعة الشهرية.",
+        about: "مرحباً، أرغب بمعرفة المزيد عن استشارات دكتور جوي.",
+        general: "مرحباً، أرغب بالتواصل مع دكتور جوي."
+      },
+      en: {
+        booking: "Hello, I would like to book an appointment with Dr. Joy.",
+        inquiry: "Hello, I would like to ask about available appointments.",
+        intro: "Hello, I would like to ask about the introductory session.",
+        development: "Hello, I would like to book a development session with Dr. Joy.",
+        monthly: "Hello, I would like to ask about the monthly follow-up.",
+        about: "Hello, I would like to know more about Dr. Joy consultations.",
+        general: "Hello, I would like to contact Dr. Joy."
+      }
+    };
+
+    const html = document.documentElement;
+    const body = document.body;
+    const siteHeader = document.getElementById("siteHeader");
+    const scrollProgress = document.getElementById("scrollProgress");
+    const langBtn = document.getElementById("langBtn");
+    const themeBtn = document.getElementById("themeBtn");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobilePanel = document.getElementById("mobilePanel");
+    const cursorRing = document.getElementById("cursorRing");
+    const toast = document.getElementById("toast");
+    const bookingModal = document.getElementById("bookingModal");
+
+    function currentLang() {
+      return localStorage.getItem("amnaSiteLanguage") || "ar";
+    }
+
+    function getWhatsAppUrl(type, lang, customMessage) {
+      const selectedType = type || "general";
+      const message = customMessage || whatsappMessages[lang][selectedType] || whatsappMessages[lang].general;
+      return "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(message);
+    }
+
+    function updateWhatsAppLinks(lang) {
+      document.querySelectorAll("[data-wa]").forEach(function(link) {
+        const type = link.getAttribute("data-wa");
+        link.href = getWhatsAppUrl(type, lang);
+      });
+    }
+
+    function updatePlaceholders(lang) {
+      document.querySelectorAll("[data-placeholder]").forEach(function(element) {
+        const key = element.getAttribute("data-placeholder");
+        element.placeholder = translations[lang][key] || "";
+      });
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem("amnaSiteLanguage", lang);
+      html.lang = lang;
+      html.dir = lang === "ar" ? "rtl" : "ltr";
+      body.classList.toggle("en", lang === "en");
+
+      document.querySelectorAll("[data-i18n]").forEach(function(element) {
+        const key = element.getAttribute("data-i18n");
+        element.textContent = translations[lang][key] || "";
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach(function(element) {
+        const key = element.getAttribute("data-i18n-html");
+        element.innerHTML = translations[lang][key] || "";
+      });
+
+      langBtn.textContent = lang === "ar" ? "EN" : "ع";
+      document.title = lang === "ar" ? "دكتور جوي للإستشارات الحياتية" : "Dr. Joy Life Consulting";
+      updatePlaceholders(lang);
+      updateWhatsAppLinks(lang);
+      updateToolTexts(lang);
+    }
+
+    function setTheme(theme) {
+      localStorage.setItem("amnaTheme", theme);
+      body.classList.toggle("dark-mode", theme === "dark");
+    }
+
+    function updateScrollEffects() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = documentHeight > 0 ? (scrollTop / documentHeight) * 100 : 0;
+      scrollProgress.style.width = progress + "%";
+      siteHeader.classList.toggle("scrolled", scrollTop > 20);
+      updateActiveNav();
+    }
+
+    function updateActiveNav() {
+      const links = Array.from(document.querySelectorAll("[data-nav-link]"));
+      let activeId = "about";
+      document.querySelectorAll("main section[id]").forEach(function(section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          activeId = section.id;
+        }
+      });
+      links.forEach(function(link) {
+        link.classList.toggle("is-active", link.getAttribute("href") === "#" + activeId);
+      });
+    }
+
+    function openMenu() {
+      mobilePanel.classList.add("is-open");
+      mobilePanel.setAttribute("aria-hidden", "false");
+      body.classList.add("no-scroll");
+    }
+
+    function closeMenu() {
+      mobilePanel.classList.remove("is-open");
+      mobilePanel.setAttribute("aria-hidden", "true");
+      body.classList.remove("no-scroll");
+    }
+
+    function openModal() {
+      bookingModal.classList.add("is-open");
+      bookingModal.setAttribute("aria-hidden", "false");
+      body.classList.add("no-scroll");
+    }
+
+    function closeModal() {
+      bookingModal.classList.remove("is-open");
+      bookingModal.setAttribute("aria-hidden", "true");
+      body.classList.remove("no-scroll");
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("is-visible");
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(function() {
+        toast.classList.remove("is-visible");
+      }, 3300);
+    }
+
+    function buildBookingMessage(source) {
+      const lang = currentLang();
+      const isModal = source === "modal";
+      const name = document.getElementById(isModal ? "modalName" : "clientName").value.trim();
+      const phone = document.getElementById(isModal ? "modalPhone" : "clientPhone").value.trim();
+      const message = document.getElementById(isModal ? "modalMessage" : "clientMessage").value.trim();
+      const topic = isModal ? "" : document.getElementById("clientTopic").value;
+      const time = isModal ? "" : document.getElementById("clientTime").value;
+
+      if (lang === "ar") {
+        return [
+          "مرحباً، أريد حجز موعد مع دكتور جوي.",
+          name ? "الاسم: " + name : "",
+          phone ? "رقم الهاتف: " + phone : "",
+          topic ? "موضوع الجلسة: " + topic : "",
+          time ? "الوقت المناسب: " + time : "",
+          message ? "ملاحظة: " + message : ""
+        ].filter(Boolean).join("\n");
+      }
+
+      return [
+        "Hello, I would like to book an appointment with Dr. Joy.",
+        name ? "Name: " + name : "",
+        phone ? "Phone: " + phone : "",
+        topic ? "Session topic: " + topic : "",
+        time ? "Preferred time: " + time : "",
+        message ? "Note: " + message : ""
+      ].filter(Boolean).join("\n");
+    }
+
+    function handleBookingForm(event, source) {
+      event.preventDefault();
+      const lang = currentLang();
+      const customMessage = buildBookingMessage(source);
+      window.open(getWhatsAppUrl("booking", lang, customMessage), "_blank", "noopener");
+      showToast(lang === "ar" ? "تم تجهيز رسالة واتساب للحجز." : "WhatsApp booking message is ready.");
+      if (source === "modal") {
+        closeModal();
+      }
+    }
+
+    function updateToolTexts(lang) {
+      const moodResult = document.getElementById("moodResult");
+      const checkScore = document.getElementById("checkScore");
+      if (moodResult && !moodResult.dataset.selected) {
+        moodResult.textContent = translations[lang].moodHint;
+      }
+      if (checkScore && !checkScore.dataset.changed) {
+        checkScore.textContent = translations[lang].checkScoreInitial;
+      }
+      updateExtraInteractiveTexts(lang);
+    }
+
+
+
+    const extraInteractiveData = {
+      ar: {
+        tips: [
+          "اختر عادة واحدة فقط هذا الأسبوع، واجعلها سهلة لدرجة يصعب تركها.",
+          "ابدأ يومك بسؤال: ما الشيء الواحد الذي يجعل بقية اليوم أخف؟",
+          "بدل أن تضع قائمة طويلة، اختر خطوة واحدة وامنحها وقتًا واضحًا.",
+          "رتّب مكانًا صغيرًا حولك؛ أحيانًا الوضوح يبدأ من مساحة بسيطة.",
+          "قلّل القرار القادم إلى خيارين، ثم اسأل: أيهما أقرب لقيمي الحالية؟",
+          "اكتب إنجازًا صغيرًا قبل النوم حتى لا يرى عقلك النقص فقط.",
+          "اجعل العادة مرتبطة بشيء موجود أصلًا: بعد القهوة، بعد الصلاة، أو بعد إغلاق اللابتوب.",
+          "إذا شعرت بالتشتت، اكتب ثلاث كلمات: أحتاج، أستطيع، سأبدأ."
+        ],
+        intentions: {
+          focus: "خطوة التركيز: اختر مهمة واحدة، واضبط مؤقتًا 20 دقيقة بدون تبديل.",
+          calm: "خطوة الهدوء: خذ 6 أنفاس بطيئة قبل الرد أو اتخاذ قرار.",
+          habit: "خطوة العادة: اجعل البداية دقيقتين فقط حتى يصبح الدخول أسهل.",
+          boundaries: "خطوة الحدود: قل جملة واضحة ولطيفة بدل شرح طويل يستهلك طاقتك."
+        },
+        challenges: [
+          "اكتب 3 أولويات فقط لليوم، ثم ابدأ بالأخف.",
+          "رتّب سطح المكتب أو الهاتف لمدة 5 دقائق.",
+          "اشرب كوب ماء، ثم خذ دقيقة تنفس قبل متابعة يومك.",
+          "اكتب جملة واحدة تصف ما تحتاجه الآن بوضوح.",
+          "احذف مهمة غير ضرورية من قائمة اليوم.",
+          "أرسل رسالة تقدير قصيرة لشخص ساعدك أو ألهمك.",
+          "امشِ داخل المكان أو خارجه لمدة 7 دقائق بدون هاتف."
+        ],
+        habitProgress: "تم تسجيل {count} من 7 خطوات. الاستمرارية الصغيرة أهم من المثالية."
+      },
+      en: {
+        tips: [
+          "Choose one habit this week and make it so easy that it is hard to skip.",
+          "Start your day by asking: what one thing would make the rest of today lighter?",
+          "Instead of a long list, choose one step and give it a clear time.",
+          "Organize one small space around you; clarity often begins with a simple area.",
+          "Narrow the next decision to two options, then ask which one fits your current values.",
+          "Write one small win before sleep so your mind does not only notice what is missing.",
+          "Attach the habit to something already present: after coffee, after prayer, or after closing the laptop.",
+          "When you feel scattered, write three words: I need, I can, I will start."
+        ],
+        intentions: {
+          focus: "Focus step: choose one task and set a 20-minute timer without switching.",
+          calm: "Calm step: take 6 slow breaths before replying or deciding.",
+          habit: "Habit step: make the beginning only two minutes so it is easier to enter.",
+          boundaries: "Boundary step: use one clear and kind sentence instead of a long explanation."
+        },
+        challenges: [
+          "Write only 3 priorities for today, then start with the lightest one.",
+          "Organize your desk or phone for 5 minutes.",
+          "Drink a glass of water, then take one breathing minute.",
+          "Write one sentence that clearly says what you need now.",
+          "Remove one unnecessary task from today’s list.",
+          "Send a short appreciation message to someone who helped or inspired you.",
+          "Walk inside or outside for 7 minutes without your phone."
+        ],
+        habitProgress: "You logged {count} of 7 steps. Small consistency matters more than perfection."
+      }
+    };
+
+    function setRandomTip(forceNew) {
+      const card = document.getElementById("dailyTipCard");
+      const text = document.getElementById("dailyTipText");
+      if (!card || !text) return;
+      const lang = currentLang();
+      const tips = extraInteractiveData[lang].tips;
+      let index = Number(card.dataset.tipIndex || "-1");
+      if (forceNew || index < 0) {
+        const next = Math.floor(Math.random() * tips.length);
+        index = next === index ? (next + 1) % tips.length : next;
+        card.dataset.tipIndex = String(index);
+      }
+      text.textContent = tips[index];
+      card.classList.add("is-flipped");
+    }
+
+    function updateExtraInteractiveTexts(lang) {
+      const tipCard = document.getElementById("dailyTipCard");
+      const dailyTipText = document.getElementById("dailyTipText");
+      const intentionResult = document.getElementById("intentionResult");
+      const challengeResult = document.getElementById("challengeResult");
+      const habitMessage = document.getElementById("habitMessage");
+      if (tipCard && tipCard.classList.contains("is-flipped") && dailyTipText) {
+        const index = Number(tipCard.dataset.tipIndex || "0");
+        dailyTipText.textContent = extraInteractiveData[lang].tips[index] || extraInteractiveData[lang].tips[0];
+      }
+      if (intentionResult && !intentionResult.dataset.selected) {
+        intentionResult.textContent = translations[lang].intentionHint;
+      }
+      if (challengeResult && !challengeResult.dataset.changed) {
+        challengeResult.textContent = translations[lang].challengeHint;
+      }
+      updateHabitMeter(false);
+      if (habitMessage && !habitMessage.dataset.changed) {
+        habitMessage.textContent = translations[lang].habitHint;
+      }
+    }
+
+    function initExtraInteractiveTools() {
+      const card = document.getElementById("dailyTipCard");
+      const reveal = document.getElementById("revealTip");
+      const shuffle = document.getElementById("shuffleTip");
+      if (card) card.addEventListener("click", function() { setRandomTip(!card.classList.contains("is-flipped")); });
+      if (reveal) reveal.addEventListener("click", function() { setRandomTip(false); });
+      if (shuffle) shuffle.addEventListener("click", function() { setRandomTip(true); });
+
+      const intentionResult = document.getElementById("intentionResult");
+      document.querySelectorAll("[data-intention]").forEach(function(button) {
+        button.addEventListener("click", function() {
+          document.querySelectorAll("[data-intention]").forEach(function(btn) { btn.classList.remove("is-selected"); });
+          button.classList.add("is-selected");
+          const key = button.getAttribute("data-intention");
+          intentionResult.dataset.selected = "true";
+          intentionResult.textContent = extraInteractiveData[currentLang()].intentions[key];
+        });
+      });
+
+      const dice = document.getElementById("challengeDice");
+      const result = document.getElementById("challengeResult");
+      if (dice && result) {
+        dice.addEventListener("click", function() {
+          const challenges = extraInteractiveData[currentLang()].challenges;
+          dice.classList.remove("is-rolling");
+          void dice.offsetWidth;
+          dice.classList.add("is-rolling");
+          const index = Math.floor(Math.random() * challenges.length);
+          result.dataset.changed = "true";
+          setTimeout(function() { result.textContent = challenges[index]; }, 180);
+        });
+      }
+
+      const plus = document.getElementById("habitPlus");
+      const reset = document.getElementById("habitReset");
+      if (plus) plus.addEventListener("click", function() {
+        const current = Number(localStorage.getItem("amnaHabitCount") || "0");
+        localStorage.setItem("amnaHabitCount", String(Math.min(7, current + 1)));
+        updateHabitMeter(true);
+      });
+      if (reset) reset.addEventListener("click", function() {
+        localStorage.setItem("amnaHabitCount", "0");
+        updateHabitMeter(true);
+      });
+      updateExtraInteractiveTexts(currentLang());
+    }
+
+    function updateHabitMeter(markChanged) {
+      const bar = document.getElementById("habitMeterBar");
+      const score = document.getElementById("habitScore");
+      const message = document.getElementById("habitMessage");
+      if (!bar || !score || !message) return;
+      const count = Math.max(0, Math.min(7, Number(localStorage.getItem("amnaHabitCount") || "0")));
+      bar.style.width = (count / 7 * 100) + "%";
+      score.textContent = count + "/7";
+      if (markChanged || message.dataset.changed) {
+        message.dataset.changed = "true";
+        message.textContent = count >= 7 ? translations[currentLang()].habitDone : extraInteractiveData[currentLang()].habitProgress.replace("{count}", count);
+      }
+    }
+
+    function initReveal() {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".reveal").forEach(function(element) {
+        observer.observe(element);
+      });
+    }
+
+    function initTilt() {
+      if (window.innerWidth <= 768) return;
+      document.querySelectorAll(".tilt-card").forEach(function(card) {
+        card.addEventListener("mousemove", function(event) {
+          const rect = card.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -4;
+          const rotateY = ((x - centerX) / centerX) * 4;
+          card.style.transform = "translateY(-6px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+        });
+
+        card.addEventListener("mouseleave", function() {
+          card.style.transform = "";
+        });
+      });
+    }
+
+    function initCounters() {
+      const values = { stat1: 100, stat2: 4, stat3: 7 };
+      const counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          const target = entry.target;
+          const key = target.getAttribute("data-counter");
+          const finalValue = values[key] || 0;
+          const suffix = key === "stat1" ? "%" : key === "stat2" ? "+" : "";
+          let current = 0;
+          const step = Math.max(1, Math.ceil(finalValue / 36));
+          const timer = setInterval(function() {
+            current += step;
+            if (current >= finalValue) {
+              current = finalValue;
+              clearInterval(timer);
+            }
+            target.textContent = current + suffix;
+          }, 28);
+          counterObserver.unobserve(target);
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll("[data-counter]").forEach(function(counter) {
+        counterObserver.observe(counter);
+      });
+    }
+
+    function initTabs() {
+      document.querySelectorAll("[data-tab]").forEach(function(button) {
+        button.addEventListener("click", function() {
+          const id = button.getAttribute("data-tab");
+          document.querySelectorAll("[data-tab]").forEach(function(btn) { btn.classList.remove("is-active"); });
+          document.querySelectorAll(".tab-panel").forEach(function(panel) { panel.classList.remove("is-active"); });
+          button.classList.add("is-active");
+          document.getElementById(id).classList.add("is-active");
+        });
+      });
+    }
+
+    function initFaq() {
+      document.querySelectorAll("details").forEach(function(detail) {
+        detail.addEventListener("toggle", function() {
+          if (detail.open && detail.closest(".faq-list")) {
+            document.querySelectorAll(".faq-list details").forEach(function(other) {
+              if (other !== detail) other.open = false;
+            });
+          }
+        });
+      });
+    }
+
+    function initCursor() {
+      if (!cursorRing || window.innerWidth < 900) return;
+      window.addEventListener("mousemove", function(event) {
+        cursorRing.style.left = event.clientX + "px";
+        cursorRing.style.top = event.clientY + "px";
+        cursorRing.classList.add("is-active");
+      });
+      document.querySelectorAll("a, button, input, textarea, select").forEach(function(element) {
+        element.addEventListener("mouseenter", function() { cursorRing.classList.add("is-hovering"); });
+        element.addEventListener("mouseleave", function() { cursorRing.classList.remove("is-hovering"); });
+      });
+    }
+
+    function initMoodTool() {
+      const lang = currentLang();
+      const moodResult = document.getElementById("moodResult");
+      const suggestions = {
+        ar: [
+          "اقتراح اليوم: حافظ على خطوة صغيرة ثابتة ولا تكثر المهام.",
+          "اقتراح اليوم: اختر أولوية واحدة ولا تجعل القائمة طويلة.",
+          "اقتراح اليوم: اكتب الخيارات على ورقة قبل اتخاذ قرار.",
+          "اقتراح اليوم: خفف المتطلبات وابدأ بخمس دقائق تهدئة.",
+          "اقتراح اليوم: استثمر حماسك في عادة بسيطة قابلة للاستمرار."
+        ],
+        en: [
+          "Today’s suggestion: Keep one small steady step.",
+          "Today’s suggestion: Choose one priority and keep the list short.",
+          "Today’s suggestion: Write your options before deciding.",
+          "Today’s suggestion: Reduce demands and start with five calm minutes.",
+          "Today’s suggestion: Turn motivation into one sustainable habit."
+        ]
+      };
+
+      document.querySelectorAll(".mood-btn").forEach(function(button) {
+        button.addEventListener("click", function() {
+          document.querySelectorAll(".mood-btn").forEach(function(btn) { btn.classList.remove("is-selected"); });
+          button.classList.add("is-selected");
+          const index = Number(button.getAttribute("data-mood")) - 1;
+          moodResult.dataset.selected = "true";
+          moodResult.textContent = suggestions[currentLang()][index];
+        });
+      });
+    }
+
+    function initBreathing() {
+      const circle = document.getElementById("breathingCircle");
+      const start = document.getElementById("breathStart");
+      const stop = document.getElementById("breathStop");
+      if (!circle || !start || !stop) return;
+      start.addEventListener("click", function() {
+        circle.classList.add("is-breathing");
+        circle.textContent = currentLang() === "ar" ? "تنفّس" : "Breathe";
+      });
+      stop.addEventListener("click", function() {
+        circle.classList.remove("is-breathing");
+        circle.textContent = translations[currentLang()].breatheReady;
+      });
+    }
+
+    function initChecklist() {
+      const score = document.getElementById("checkScore");
+      document.querySelectorAll("[data-check]").forEach(function(check) {
+        check.addEventListener("change", function() {
+          const selected = document.querySelectorAll("[data-check]:checked").length;
+          score.dataset.changed = "true";
+          score.textContent = currentLang() === "ar" ? "اخترت " + selected + " من 5 عناصر. هذا يساعد على تجهيز جلسة أوضح." : "You selected " + selected + " of 5 items. This helps prepare a clearer session.";
+        });
+      });
+    }
+
+    function initJournal() {
+      const prompts = ["journalPrompt1", "journalPrompt2", "journalPrompt3", "journalPrompt4"];
+      const box = document.getElementById("journalPrompt");
+      const button = document.getElementById("newPrompt");
+      let current = 0;
+      button.addEventListener("click", function() {
+        current = (current + 1) % prompts.length;
+        box.textContent = translations[currentLang()][prompts[current]];
+      });
+    }
+
+    document.querySelectorAll("img").forEach(function(img) {
+      img.addEventListener("error", function() {
+        this.style.display = "none";
+        const parent = this.parentElement;
+        if (parent) {
+          parent.style.background = "linear-gradient(135deg, rgba(74,103,96,0.18), rgba(212,163,115,0.16))";
+        }
+      });
+    });
+
+    document.querySelectorAll("video").forEach(function(video) {
+      video.addEventListener("error", function() {
+        this.style.display = "none";
+        if (this.nextElementSibling) {
+          this.nextElementSibling.style.display = "block";
+        }
+      });
+    });
+
+    langBtn.addEventListener("click", function() {
+      setLanguage(currentLang() === "ar" ? "en" : "ar");
+    });
+
+    themeBtn.addEventListener("click", function() {
+      setTheme(body.classList.contains("dark-mode") ? "light" : "dark");
+    });
+
+    menuBtn.addEventListener("click", openMenu);
+    document.querySelectorAll("[data-close-menu]").forEach(function(element) {
+      element.addEventListener("click", closeMenu);
+    });
+
+    document.querySelectorAll("[data-open-modal]").forEach(function(element) {
+      element.addEventListener("click", openModal);
+    });
+
+    document.querySelectorAll("[data-close-modal]").forEach(function(element) {
+      element.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeMenu();
+        closeModal();
+      }
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      handleBookingForm(event, "main");
+    });
+
+    document.getElementById("modalForm").addEventListener("submit", function(event) {
+      handleBookingForm(event, "modal");
+    });
+
+    window.addEventListener("scroll", updateScrollEffects, { passive: true });
+    window.addEventListener("resize", updateScrollEffects);
+
+    setTheme(localStorage.getItem("amnaTheme") || "light");
+    setLanguage(currentLang());
+    initReveal();
+    initTilt();
+    initCounters();
+    initTabs();
+    initFaq();
+    initCursor();
+    initMoodTool();
+    initBreathing();
+    initChecklist();
+    initJournal();
+    initExtraInteractiveTools();
+    updateScrollEffects();
+  </script>
+</body>
+</html>
